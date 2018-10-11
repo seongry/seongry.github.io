@@ -1,0 +1,10 @@
+.wrap{
+    animation: caret 1s steps(1) infinite;
+    border-right: 0.08em solid #000;
+    padding-right: 1px;
+}
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
