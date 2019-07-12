@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Raina's log]]></title><description><![CDATA[A log about Web development written by raina]]></description><link>https://raina94.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 02 Apr 2019 14:12:46 GMT</lastBuildDate><item><title><![CDATA[Gatsby 블로그 만드는 법]]></title><description><![CDATA[우여곡절 끝에 드디어 블로그가 완성되었다.😂😂 개발자가 되고 나서 많은 정보를 얻어가던 곳이 개인이 운영하는 블로그이기도해서 나도 이런 블로그를 운영 해보고 싶다하는 생각이 항상 있었다. 아직…]]></description><link>https://raina94.github.io//2019/2019-03-17-start-gatsby-blog/</link><guid isPermaLink="false">https://raina94.github.io//2019/2019-03-17-start-gatsby-blog/</guid><pubDate>Sat, 16 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://l56spuxk1t14k3seci6s2bja-wpengine.netdna-ssl.com/wp-content/uploads/GIF/2014/12/-Cookie-Monster-Dance-GIF-2015.gif&quot; alt=&quot;dance&quot;&gt;&lt;/p&gt;
-&lt;p&gt;우여곡절 끝에 드디어 블로그가 완성되었다.😂😂&lt;/p&gt;
-&lt;p&gt;개발자가 되고 나서 많은 정보를 얻어가던 곳이 개인이 운영하는 블로그이기도해서 나도 이런 블로그를 운영 해보고 싶다하는 생각이 항상 있었다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[나 같은 사람을 위한 개발로그]]></title><description><![CDATA[A log about Web development written by raina]]></description><link>https://raina94.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 12 Jul 2019 18:37:17 GMT</lastBuildDate><item><title><![CDATA[모두의 Toy Story 컨퍼런스 후기]]></title><description><![CDATA[GDG Campus Korea에서 개최하는   컨퍼런스에 가게 되었다.🥰
+부산 살땐 이런 행사 있어도 정말 그림의 떡이였는데, 올라오니 이건 정말 좋은듯.]]></description><link>https://raina94.github.io//2019/2019-07-14-toy-story-conference-review/</link><guid isPermaLink="false">https://raina94.github.io//2019/2019-07-14-toy-story-conference-review/</guid><pubDate>Sun, 14 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GDG Campus Korea에서 개최하는 &lt;code class=&quot;language-text&quot;&gt;모두의 TOY STORY: Side Project 어디까지 가봤니?&lt;/code&gt; 컨퍼런스에 가게 되었다.🥰
+부산 살땐 이런 행사 있어도 정말 그림의 떡이였는데, 올라오니 이건 정말 좋은듯.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby 블로그 만드는 법]]></title><description><![CDATA[우여곡절 끝에 드디어 블로그가 완성되었다.😂😂
+개발자가 되고 나서 많은 정보를 얻어가던 곳이 개인이 운영하는 블로그이기도해서 나도 이런 블로그를 운영 해보고 싶다하는 생각이 항상 있었다. 아직…]]></description><link>https://raina94.github.io//2019/2019-03-17-start-gatsby-blog/</link><guid isPermaLink="false">https://raina94.github.io//2019/2019-03-17-start-gatsby-blog/</guid><pubDate>Sat, 16 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://l56spuxk1t14k3seci6s2bja-wpengine.netdna-ssl.com/wp-content/uploads/GIF/2014/12/-Cookie-Monster-Dance-GIF-2015.gif&quot; alt=&quot;dance&quot;&gt;&lt;/p&gt;
+&lt;p&gt;우여곡절 끝에 드디어 블로그가 완성되었다.😂😂
+개발자가 되고 나서 많은 정보를 얻어가던 곳이 개인이 운영하는 블로그이기도해서 나도 이런 블로그를 운영 해보고 싶다하는 생각이 항상 있었다.&lt;/p&gt;
 &lt;p&gt;아직 1차로 오픈했을 뿐이고.. 다듬고 추가할 부분도 아직 많이 남아 있지만
 글을 써가면서 차근차근 다듬어 나갈 예정.
 어릴때 꾸미던 다이어리처럼 이것저것 꾸며보고싶은 욕심이 많이 생긴다. &lt;/p&gt;
 &lt;p&gt;기념비적인 첫번째 포스팅은 내가 Gatsby로 블로그를 만든 과정을 기록해두기로 했다.&lt;/p&gt;
 &lt;h2&gt;1. 왜 Gatsby 인가?&lt;/h2&gt;
-&lt;p&gt;사실 블로그를 만들려고 시도한 적이 이번이 처음은 아니다.&lt;/p&gt;
-&lt;p&gt;이 블로그가 완성되기전까지 맘에 쏙 드는 블로그를 얼마나 찾아다녔었는지…&lt;/p&gt;
+&lt;p&gt;사실 블로그를 만들려고 시도한 적이 이번이 처음은 아니다.
+이 블로그가 완성되기전까지 맘에 쏙 드는 블로그를 얼마나 찾아다녔었는지…&lt;/p&gt;
 &lt;h3&gt;목표&lt;/h3&gt;
 &lt;p&gt;내가 생각하는 블로그가 충족 해야하는 목표는 아래와 같다.&lt;/p&gt;
 &lt;ol&gt;
@@ -77,9 +80,9 @@
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;gatsby develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;개발중인 화면은 &lt;code class=&quot;language-text&quot;&gt;localhost:8000&lt;/code&gt; 에서 확인 할 수 있다!&lt;/p&gt;
 &lt;h3&gt;2.3 github pages로 배포하기&lt;/h3&gt;
-&lt;p&gt;나는 깃헙페이지를 이용해서 배포하는 방식을 이용중이라 해당 방법에 대해 설명한다.&lt;/p&gt;
-&lt;p&gt;우선 깃헙에서 &lt;code class=&quot;language-text&quot;&gt;[자신의 깃헙 id].github.io&lt;/code&gt; 으로 새 저장소를 만든다.&lt;/p&gt;
-&lt;p&gt;그리고 gh-pages을 개발모드로 설치해준다&lt;/p&gt;
+&lt;p&gt;나는 깃헙페이지를 이용해서 배포하는 방식을 이용중이라 해당 방법에 대해 설명한다.
+우선 깃헙에서 &lt;code class=&quot;language-text&quot;&gt;[자신의 깃헙 id].github.io&lt;/code&gt; 으로 새 저장소를 만든다.
+그리고 gh-pages을 개발모드로 설치해준다&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --save --dev gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;그다음 &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; 파일에 스크립트를 추가한다&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;deploy&quot;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;gatsby build &amp;amp;&amp;amp; gh-pages -d public -b master -r [내 깃헙 주소]&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -88,12 +91,12 @@
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; bar &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이런 깔끔한 코드 스타일을 추가 하기 위해선 몇가지 작업이 필요하다.&lt;/p&gt;
-&lt;p&gt;바로 &lt;a href=&quot;https://prismjs.com/&quot;&gt;prismjs&lt;/a&gt; ! 공식 홈페이지에 여러 테마도 있지만 나는 &lt;strong&gt;OKADIA&lt;/strong&gt; 테마를 선택했다. 이유는 그냥 내가 주로 보는 코드 색과 제일 비슷해서😊&lt;/p&gt;
-&lt;p&gt;적용하기 위해선 우선 gatsby 플러그인을 설치해야한다.&lt;/p&gt;
+&lt;p&gt;이런 깔끔한 코드 스타일을 추가 하기 위해선 몇가지 작업이 필요하다.
+바로 &lt;a href=&quot;https://prismjs.com/&quot;&gt;prismjs&lt;/a&gt; ! 공식 홈페이지에 여러 테마도 있지만 나는 &lt;strong&gt;OKADIA&lt;/strong&gt; 테마를 선택했다. 이유는 그냥 내가 주로 보는 코드 색과 제일 비슷해서😊
+적용하기 위해선 우선 gatsby 플러그인을 설치해야한다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --save gatsby-transformer-remark gatsby-remark-prismjs prismjs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;혹시 내가 적어둔 starter 팩을 사용하시는 분이라면 이미 해당 플러그인이 설치되어 있으므로 넘어가셔도 좋다!&lt;/p&gt;
-&lt;p&gt;그다음 개츠비 환경설정 파일인 &lt;code class=&quot;language-text&quot;&gt;gatsby-config.js&lt;/code&gt; 에 플러그인을 추가해준다.&lt;/p&gt;
+&lt;p&gt;혹시 내가 적어둔 starter 팩을 사용하시는 분이라면 이미 해당 플러그인이 설치되어 있으므로 넘어가셔도 좋다!
+그다음 개츠비 환경설정 파일인 &lt;code class=&quot;language-text&quot;&gt;gatsby-config.js&lt;/code&gt; 에 플러그인을 추가해준다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;plugins&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     resolve&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`gatsby-transformer-remark`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
