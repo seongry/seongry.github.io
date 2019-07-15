@@ -1,7 +1,928 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[나 같은 사람을 위한 개발로그]]></title><description><![CDATA[A log about Web development written by raina]]></description><link>https://raina94.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 12 Jul 2019 18:47:08 GMT</lastBuildDate><item><title><![CDATA[모두의 Toy Story 컨퍼런스 후기]]></title><description><![CDATA[GDG Campus Korea에서 개최하는   컨퍼런스에 가게 되었다.🥰
-부산 살땐 이런 행사 있어도 정말 그림의 떡이였는데, 올라오니 이건 정말 좋은듯.]]></description><link>https://raina94.github.io//2019/2019-07-14-toy-story-conference-review/</link><guid isPermaLink="false">https://raina94.github.io//2019/2019-07-14-toy-story-conference-review/</guid><pubDate>Sun, 14 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;GDG Campus Korea에서 개최하는 &lt;code class=&quot;language-text&quot;&gt;모두의 TOY STORY: Side Project 어디까지 가봤니?&lt;/code&gt; 컨퍼런스에 가게 되었다.🥰
-부산 살땐 이런 행사 있어도 정말 그림의 떡이였는데, 올라오니 이건 정말 좋은듯.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby 블로그 만드는 법]]></title><description><![CDATA[우여곡절 끝에 드디어 블로그가 완성되었다.😂😂
-개발자가 되고 나서 많은 정보를 얻어가던 곳이 개인이 운영하는 블로그이기도해서 나도 이런 블로그를 운영 해보고 싶다하는 생각이 항상 있었다. 아직…]]></description><link>https://raina94.github.io//2019/2019-03-17-start-gatsby-blog/</link><guid isPermaLink="false">https://raina94.github.io//2019/2019-03-17-start-gatsby-blog/</guid><pubDate>Sat, 16 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://l56spuxk1t14k3seci6s2bja-wpengine.netdna-ssl.com/wp-content/uploads/GIF/2014/12/-Cookie-Monster-Dance-GIF-2015.gif&quot; alt=&quot;dance&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[나 같은 사람을 위한 개발로그]]></title><description><![CDATA[A log about Web development written by raina]]></description><link>https://raina94.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 15 Jul 2019 16:35:49 GMT</lastBuildDate><item><title><![CDATA[모두의 Toy Story Side Project 어디까지 해봤니? 컨퍼런스 요약 및 후기 (2)]]></title><description><![CDATA[요약 2편입니다! 2편 세션 팀 눈누난나의 눈누 옥찬오님의 RosettaStone 김승일님의 모두의 연구소 김석준님의 QWER.GG + 짤봇 팀 눈누난나의 눈누 서비스를 만들고 성장하면서 겪었던 어려움에 대한 이야기 : PM…]]></description><link>https://raina94.github.io//2019/07-15-toy-story-conference-review2/</link><guid isPermaLink="false">https://raina94.github.io//2019/07-15-toy-story-conference-review2/</guid><pubDate>Mon, 15 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;요약 2편입니다!&lt;/p&gt;
+&lt;h2&gt;2편 세션&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;팀 눈누난나의 눈누&lt;/li&gt;
+&lt;li&gt;옥찬오님의 RosettaStone&lt;/li&gt;
+&lt;li&gt;김승일님의 모두의 연구소&lt;/li&gt;
+&lt;li&gt;김석준님의 QWER.GG + 짤봇&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;팀 눈누난나의 눈누&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/29dca077ee61ec06d152457b261d6429/e5cc5/%EB%88%88%EB%88%84.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75.06944444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAFmrGL56w//xAAaEAADAAMBAAAAAAAAAAAAAAAAAgMBERQi/9oACAEBAAEFAuPJSTIbOxylnoU9N//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPwGMr//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPwGtj//EABsQAAEEAwAAAAAAAAAAAAAAAAABEBEhMkKR/9oACAEBAAY/AskLbXhcEof/xAAaEAEAAgMBAAAAAAAAAAAAAAABABEhMWGB/9oACAEBAAE/IW3FpxlJc8irYRhTRwmi4n//2gAMAwEAAgADAAAAEJPf/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAEDAQE/ENSDf//EABcRAAMBAAAAAAAAAAAAAAAAAAABETH/2gAIAQIBAT8Q1RQP/8QAHBABAAMAAwEBAAAAAAAAAAAAAQARITFBUWHx/9oACAEBAAE/EFpcHYTfIqwTvPp8jMkpqpSd0e4yZK6rp/YVKKN4Nn//2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;눈누&quot;
+        title=&quot;&quot;
+        src=&quot;/static/29dca077ee61ec06d152457b261d6429/4b3ab/%EB%88%88%EB%88%84.jpg&quot;
+        srcset=&quot;/static/29dca077ee61ec06d152457b261d6429/f8bb1/%EB%88%88%EB%88%84.jpg 148w,
+/static/29dca077ee61ec06d152457b261d6429/900ac/%EB%88%88%EB%88%84.jpg 295w,
+/static/29dca077ee61ec06d152457b261d6429/4b3ab/%EB%88%88%EB%88%84.jpg 590w,
+/static/29dca077ee61ec06d152457b261d6429/78641/%EB%88%88%EB%88%84.jpg 885w,
+/static/29dca077ee61ec06d152457b261d6429/38a35/%EB%88%88%EB%88%84.jpg 1180w,
+/static/29dca077ee61ec06d152457b261d6429/e5cc5/%EB%88%88%EB%88%84.jpg 1440w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;서비스를 만들고 성장하면서 겪었던 어려움에 대한 이야기 : PM과 개발자의 시점에서&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;눈누는&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;상업적으로 이용가능한 무료 한글폰트를 모아두는 서비스
+흩어진 폰트들을 한곳에 모여두고 사용해보고 하는 서비스&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;초보 PM 겸 디자이너 겸 개발자&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;프로젝트가 성장하며 생기는 문제들&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 오류 대응에 미숙
+    - 갑작스러운 이용자 수 증가
+    - 두명이서 서비스 운영 중이라 (학생신분) → 오류대응이 거의 못함 → 외부에 도움요청
+    - 반복되는 오류, 반복되는 대응 미숙, 반나절 동안 사이트가 다운되어 있기도 함 → 이게 아닌데
+    - 해결방안: 크루 모집 공고 : 능력있는 팀원을 모으자 → 해결! .. 인줄 알았으나
+- 프로젝트가 성장하며 생기는 문제 → 운영비의 발생
+    - 서버비 발생
+    - 시작 할때 멋쟁이사자처럼 AWS 1000 credit을 받음! → 이걸로 버티겠지 했는데 ...
+    - 서비스 런칭 1년도 안되서 증발
+    - 당시 필요한 돈 충당 방법
+        - 비정기적으로 들어오는 소소한 후원금 → 불안정
+        - 비정기적으로 하는 크라우드 펀딩 → 펀딩 실패시 샘플 제작비만 날리고 수익 0원 (오히려 마이너스)
+    - 해결방안: 후원사를 유치 해보자! → 두곳의 후원사 유치성공 (컬쳐랩, 멋쟁이사자처럼)
+    - 엄근진하게 지출관리 시작
+        - 아낄 수 있는 건 아끼고
+            - 과다하게 설정된 용량 줄여서 서버비 절감
+            - 불분명한 지출처 확인해서 불필요하면 없애기
+        - 쓰면 좋은덴 쓰고
+            - 아낀 돈으로 EC2 하나 더 띄워서 Jenkins 사용
+            - GDG TOY STORY에 눈누 홍보용 굿즈 제작
+        - 비용 문제는 미리미리 생각해야한다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;정리하자면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 팀이 서비스를 감당 못할땐 → 신중하고 빠르게 팀원 충원하자
+- 자금 문제는 미리미리 → 안일하다간 밑도 끝도 없는 마이너스&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;개발자 적인 시점 → 기술부채에 대한 이야기&lt;/li&gt;
+&lt;li&gt;기술부채: 기술적 문제를 뒤로 미루고 , 비즈니스 문제 해결 부터 한 것&lt;/li&gt;
+&lt;li&gt;땡겨쓰면 편하지만, 부채에는 이자가 붙습니다&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;빚을 지게 된 원인&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 개발자 숙련도 부족
+    - 코드의 결과를 예상못함
+- 사이드 프로젝트의 한계
+    - 문제에 대해 진지하게 오래 고민하지 못하고 본업으로..
+- 항상 급박한 상황
+    - 우선 빨간 화면 안 보이게 고치고 생각하자!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;빚을 진 결과&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 개발자의 의욕 저하
+    - 해결되지 않은 오류의 늪에 빠짐
+- 서비스가 더 성장하지 못함
+    - 기능이 추가되지 않으면 귀신같이 정체되는 MAU
+- 더이상 해결되지 않는 문제
+    - 여기를 고치니까 이제는 저기가 터지기 시작&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;해결방법 : 눈누 2.0 개발 → 각자 잘하는 or 하고싶은 부분을 만들어보자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 기술 스택 업그레이드
+- 일정 관리도 시작&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;느낀점 : 부채없이 살 순 없다..&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 많이 쓰고 있는 서비스를 갑자기 엎을 수도 없고
+- 돌발상황ㅇ은 빨리 해결하긴 해야하는 현실적 조건
+- 그러나 적절한 상환 계획이 필요함
+- 과도한 부채는 서비스 수명 단축 개발자 수명 단축&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;옥찬오님의 RosettaStone&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f5a56958153a80b3e1997325e299eb96/e5cc5/%EB%A1%9C%EC%82%AC%EC%8A%A4%ED%86%A4.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75.06944444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQL/xAAWAQEBAQAAAAAAAAAAAAAAAAADAQL/2gAMAwEAAhADEAAAAcWnq4hKA2//xAAbEAACAgMBAAAAAAAAAAAAAAABAwIRAAQSFP/aAAgBAQABBQI64uSeQbv0MwsZMNBnP//EABgRAAMBAQAAAAAAAAAAAAAAAAACEQEh/9oACAEDAQE/AUR70mn/xAAXEQADAQAAAAAAAAAAAAAAAAAAAhEB/9oACAECAQE/AWZYXD//xAAaEAACAgMAAAAAAAAAAAAAAAAAEQEyECGh/9oACAEBAAY/ArDbxbhuRn//xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhQVFhkf/aAAgBAQABPyG3B51I5QO2yo6eXpAeh8lAlZ2f/9oADAMBAAIAAwAAABAkD//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQMBAT8QQ2qHY//EABYRAQEBAAAAAAAAAAAAAAAAAAEAQf/aAAgBAgEBPxDAhi//xAAcEAEAAwADAQEAAAAAAAAAAAABABEhMUFhUaH/2gAIAQEAAT8Qo0aEfXyOYirKEB3HfJSUQ0l8RGk9r0/JyAo1nB8lWQxSn//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;로사스톤&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f5a56958153a80b3e1997325e299eb96/4b3ab/%EB%A1%9C%EC%82%AC%EC%8A%A4%ED%86%A4.jpg&quot;
+        srcset=&quot;/static/f5a56958153a80b3e1997325e299eb96/f8bb1/%EB%A1%9C%EC%82%AC%EC%8A%A4%ED%86%A4.jpg 148w,
+/static/f5a56958153a80b3e1997325e299eb96/900ac/%EB%A1%9C%EC%82%AC%EC%8A%A4%ED%86%A4.jpg 295w,
+/static/f5a56958153a80b3e1997325e299eb96/4b3ab/%EB%A1%9C%EC%82%AC%EC%8A%A4%ED%86%A4.jpg 590w,
+/static/f5a56958153a80b3e1997325e299eb96/78641/%EB%A1%9C%EC%82%AC%EC%8A%A4%ED%86%A4.jpg 885w,
+/static/f5a56958153a80b3e1997325e299eb96/38a35/%EB%A1%9C%EC%82%AC%EC%8A%A4%ED%86%A4.jpg 1180w,
+/static/f5a56958153a80b3e1997325e299eb96/e5cc5/%EB%A1%9C%EC%82%AC%EC%8A%A4%ED%86%A4.jpg 1440w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;사이드 프로젝트 소개&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- RosettaStone
+    - 전부 C++17
+    - 오픈소스 프로젝트&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;새로운 팀원을 맞이하기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 프로젝트 규모가 커지면 혼자서 감당하기 어려워짐
+- 그래서 팀원을 구하게된다.
+- 사이드 프로젝트라는게 ... 막상 해보면 너무 깊다
+- 열정으로 들어왔다가 막상 개발 해보려고 하니 구조를 이해하는데 어려움을 겪어 포기하는 경우를 많이 봄
+- 문서화의 중요성을 느낌
+- 팀원 오면 프로젝트 구조를 이해하고 기여할 수 있을 때까지 도와줘야 함
+    - 그걸 위해서는 다음 사항을 준비해주면 좋다
+        - 튜토리얼 문서
+        - 예제 코드
+        - api 문서화
+        - 프로젝트에 기여하는 방법&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;팀원들끼리 프로젝트를 더 좋게 만드려는 목적은 같으나, 어떻게 좋게 만드려는 방법에 대하여는 다르다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 생각의 방향이 달라서 코드 구조가 달라지는 경우가 발생
+- 팀원의 불화로 이어지고 프로젝트 위기 발생
+- 해결방법: 대화. 얘기를 많이 하자
+- 이후 룰을 정해서 대화를 많이 할 수 있는 방법을 만듦&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;프로젝트 관리 기준선&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 사이드 프로젝트가 관리가 잘 되고 있다는 기준은 어떻게 알까?
+    - 프로젝트가 잘 빌드되는가?
+    - 꾸준히 커밋되는가?
+    - 프로젝트의 코드 스타일에 일관성이 이쓴ㄴ가?
+    - 프로젝트 코드 품질은 잘 관리 되고 있느낙?
+    - 프로젝트를 사용하기 위한 문서가 있는가?
+- 방침을 정해서 관리 했다.
+    - 누구나 관심있으면 팀에 들어 올 수 있지만, 
+    - 프로젝트의 관리 기준선을 아주 높게 만들자 (merge 기준선을 높임)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;정리&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 사이드 프로젝트에서 지속성은 가장 중요한 요소
+    - 3일 빠짝 하는 것보단 매일 2시간씩 꾸준히 오래오래 하는 게 좋음
+- 새로운 팀원이 궤도에 잘 오를 수 있도록 조력자가 되어주자
+- 팀원들과 논의할 공간/시간을 만들어야 함 같은 방향을 바라보도록 하는 것이 중요
+- 프로젝트 관리 기준선을 세우는 것이 중요(개인적으론 높을 수록 좋다)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;김승일님의 모두의 연구소&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7b75f8cd2c04deb9a9477238d48e01fe/e5cc5/%EB%AA%A8%EB%91%90%EC%9D%98%EC%97%B0%EA%B5%AC%EC%86%8C.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75.06944444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIEA//EABQBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAZ1fIKItC//EABwQAAICAgMAAAAAAAAAAAAAAAECAAMEERIUIf/aAAgBAQABBQI4xjUlQx97b6e57JyE/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEREv/aAAgBAwEBPwFUyz//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEv/aAAgBAgEBPwFT/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAEhQRAxkf/aAAgBAQAGPwJSS8Vwo0f/xAAaEAEAAwEBAQAAAAAAAAAAAAABABEhMVGh/9oACAEBAAE/IQOOl8gVxfJSyAguoVIJeDMKinfkn//aAAwDAQACAAMAAAAQfD//xAAXEQEAAwAAAAAAAAAAAAAAAAAAARFh/9oACAEDAQE/EIWbP//EABgRAAMBAQAAAAAAAAAAAAAAAAABETFR/9oACAECAQE/EHFpHD//xAAcEAEBAQEAAgMAAAAAAAAAAAABEQAhMVFxsdH/2gAIAQEAAT8QKO4BYOnzhutU6LJ+5piR94kuAUvDSghRPyl+jNj0AMf/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;모두의연구소&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7b75f8cd2c04deb9a9477238d48e01fe/4b3ab/%EB%AA%A8%EB%91%90%EC%9D%98%EC%97%B0%EA%B5%AC%EC%86%8C.jpg&quot;
+        srcset=&quot;/static/7b75f8cd2c04deb9a9477238d48e01fe/f8bb1/%EB%AA%A8%EB%91%90%EC%9D%98%EC%97%B0%EA%B5%AC%EC%86%8C.jpg 148w,
+/static/7b75f8cd2c04deb9a9477238d48e01fe/900ac/%EB%AA%A8%EB%91%90%EC%9D%98%EC%97%B0%EA%B5%AC%EC%86%8C.jpg 295w,
+/static/7b75f8cd2c04deb9a9477238d48e01fe/4b3ab/%EB%AA%A8%EB%91%90%EC%9D%98%EC%97%B0%EA%B5%AC%EC%86%8C.jpg 590w,
+/static/7b75f8cd2c04deb9a9477238d48e01fe/78641/%EB%AA%A8%EB%91%90%EC%9D%98%EC%97%B0%EA%B5%AC%EC%86%8C.jpg 885w,
+/static/7b75f8cd2c04deb9a9477238d48e01fe/38a35/%EB%AA%A8%EB%91%90%EC%9D%98%EC%97%B0%EA%B5%AC%EC%86%8C.jpg 1180w,
+/static/7b75f8cd2c04deb9a9477238d48e01fe/e5cc5/%EB%AA%A8%EB%91%90%EC%9D%98%EC%97%B0%EA%B5%AC%EC%86%8C.jpg 1440w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;모두의 연구소는? 하고싶은 연구 주제가 있다면 누구든지 연구실을 만들고, 참여하는 열린 연구소 프로젝트&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;어떻게 시작되었나&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 개발자 카페를 만들고 싶다는 아이디어에서 시작
+- 하고싶은 프로젝트를 함께 하는 곳을 만들자 → 과연 우리가 그걸 서포트 할 수 있을까?
+    - 테스트 위해 직접 프로젝트 진행 → 드론 프로젝트 진행 (아이디어 검증)
+    - 만들면서 블로그에도 쓰고, 강연도 하고, 책도 쓰고.. 쇼핑몰도 만듦
+- 서비스 만드려고 하니 주변에서 반대함
+- 어차피 망할거 빨리 해보고 빨리 망하고, 빨리 다른거 하라는 친구의 조언
+- 하고싶은 걸 하는 연구소인데 내가 하고싶은걸 안하면서 어떻게 사람들이 서비스를 이용하겠는가
+- 처음 서비스 시작할 땐 3개의 연구실, 15명의 연구원 
+- 첫번째 시련: 공간대여점에서 쫓겨남 → D.CAMP 으로 이전
+- 두번째 시련: 하고싶다 ≠ 할 줄 안다 → 상생하는 문화가 발생(각자 가진 텔런트를 나눠서 상생을 시작함)
+- 세번째 시련: 연구소니까 프로젝트 기반이여야 하는데 스터디모임이 됨 → 못하게 했지만 → 또 스터디함 → 이게 아니구나 → 풀잎스쿨 스터디 만듦
+- 사이드가 아니게 됨 연구소 3개에서 50개, 이용자 수도 400여명으로 커짐
+- 이제는 모두의 연구소가 메인 프로젝트가 되었다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;김석준님의 QWER.GG + 짤봇&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fbda62e4ab6a3c4a7fe57a1701814998/e5cc5/qwer.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75.06944444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAZdKYMB0DOv/xAAcEAACAgIDAAAAAAAAAAAAAAABAgMRABIEEyL/2gAIAQEAAQUCbj0wgOjH0Zrzsdo3Ox//xAAWEQEBAQAAAAAAAAAAAAAAAAABABL/2gAIAQMBAT8BBst//8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAS/9oACAECAQE/AVLZf//EABoQAAMAAwEAAAAAAAAAAAAAAAABEQISIZH/2gAIAQEABj8ClLRnUvDXHiLD/8QAGhAAAwADAQAAAAAAAAAAAAAAAAERIWFxUf/aAAgBAQABPyFkC9IT46HJUkKayzYgzxQ5bo//2gAMAwEAAgADAAAAEAMf/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QRD//xAAWEQEBAQAAAAAAAAAAAAAAAAABECH/2gAIAQIBAT8QDrD/xAAcEAEBAAIDAQEAAAAAAAAAAAABEQAhMUFRobH/2gAIAQEAAT8QRtJ2gGr7gaZ7BP3zHykpF4xFZu3b9yPG9ypMiJXRpyz/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;qwer&quot;
+        title=&quot;&quot;
+        src=&quot;/static/fbda62e4ab6a3c4a7fe57a1701814998/4b3ab/qwer.jpg&quot;
+        srcset=&quot;/static/fbda62e4ab6a3c4a7fe57a1701814998/f8bb1/qwer.jpg 148w,
+/static/fbda62e4ab6a3c4a7fe57a1701814998/900ac/qwer.jpg 295w,
+/static/fbda62e4ab6a3c4a7fe57a1701814998/4b3ab/qwer.jpg 590w,
+/static/fbda62e4ab6a3c4a7fe57a1701814998/78641/qwer.jpg 885w,
+/static/fbda62e4ab6a3c4a7fe57a1701814998/38a35/qwer.jpg 1180w,
+/static/fbda62e4ab6a3c4a7fe57a1701814998/e5cc5/qwer.jpg 1440w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;왜, 어떻게 사이드 프로젝트로 서비스를 만들게 되었나&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;많은 사이드 프로젝트를 만듦 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;원래 개발자가 될 일 없었음 → 앱 열풍이 불때 스타트업에 뛰어듦 → 외주 개발자와 소통 힘듦 → 에이 내가 만들고 말지&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;여기서 얻은 인사이트&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 하드웨어는 하지말자
+    - 부품 구매/배송/관리 비용이 큼
+    - 프로토타입과 제품의 거리가 멈
+- 앱은 하지말자
+    - 개발은 하겠는데 배포가 지옥
+    - 겨우 배포해도 다운로드를 안받음
+- 내가 좋아하고 필요한 걸 하자
+    - 의미있는걸 찾다 보면 현타 심하게 옴 (내가 왜 이걸 하지..)
+    - 돈 될거 같아서 해봐야 아무도 안 옴&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;짤봇&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- giphy의 한국형
+- 짤 가져오는 기능, 추가하고픈 짤이 있을 때 추가, 도움말 기능
+- 어덯게 ㄷ만들ㅁ?
+    - 짤 크롤링
+        - api를 그대로 오픈해두는 곳이 많음
+        - 확장성이 없다는 고민
+    - UI
+        - 슬랙 slash command가 잘되어 있음
+        - 배포는 개발한지 2년만에.
+        - 추가 UI : Web, IOS, 텔레그램
+    - 기타
+        - 설계고 뭐고 일단 되게 하자
+        - 비용이 얼마나 나오겠어
+- 어려웠던 점
+    - 배포 너무 귀찮음
+    - 빌드 자동화 → 젠킨스 쓰기로 함
+- 사용자
+    - 11번가, 아프리카TV, PUBG, 빅스비 등 150여개 에서 사용 중&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;QWER.GG&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사이드 프로젝트는 자신과의 약속&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;LCK 개막이 다가오는데 best.gg가 일을 안함&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;리그 정보가 없어서 어디서 중계하는지도, 언제 하는지도 모르겠다&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;덕질을 못한다 이놈들아 → 내가 만들거임&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;what&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 일정 볼 곳이 없으니까 저장해두자
+- 경기할때 되니까 알려줌
+- 트위치나 유툽 라이브도 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How : 경기 일정과 결과를 어케 넣지 → 어드민을 만들자 → 귗낳다 → 크롤링을 만들자 → api를 찾아봤는데 없다 → 부들부들 → 뒤져서 소스 확보&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;홍보 시작 : 인벤 홍보, 해설자에게 피드백 받기&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;what&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 내 니즈는 다 했는데 이제 뭐하지
+- 경기 데이터 보여주세요
+    - 아이템, 빌드, 룬
+- 국제 리그에 나오는 팀들 뭐하는 사람임?
+    - 전세계 리그를 다 긁어 오자
+- 매치/빌드 데이터 손으로 넣다가 다시 크롤링함
+- 공짜 트래픽을 위한 SSR, SEO (강조)
+- 운영/테스트 해 줄 사람이 없으니 데이터라도 쌓자 (sentry, ga) (강조)
+- log를 slack에 쌓으면 언젠가 보겠지&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;현재&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 데이터 분석을 통해 지표 생선 및 승률 예측 개발 중
+- 라이엇게임즈 api 받음 선수와 나의 성적을 비교하는 기능 추가할 예정
+- LCK 상위권 팀과 데이터 관련 파트너쉽 예정&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;LESSON&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 성공적인 사이드프로젝트를 위한 것은?
+- 짤봇을 방치하다가 1년반만에 다시 잡았는데 → 큰 무리 없이 다시 시작 할 수 있었음 → CI/CD는 바로 하자(jenkins)
+- 디자인 :
+    -  디자인 없으면 서비스 힘듦, 
+    - 디자이너와 협업하자, 
+    - 디자인이 필요없는 UI를 선택하던지(슬랙, 트위치 앱같은거)
+- 주제
+    - 내가 좋아하고 내가 필요하면
+    - 남들도 좋아하고 남들도 필요하다
+    - 가급적이면 크롤링이 가능한 주제로(팁)
+- 팀
+    - 친한 사람들을 꼬시되 큰기대는 ㄴㄴ
+    - 내가 못하는 걸 채워주는 사람이 좋음
+    - 느슨하게 오래가는 팀이 좋음(것 같음)
+    - 서로에게 모티베이션을 줄 수 있는 방향을 찾고 있음
+    - 재밌게 지내도록&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;기술&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 부트업 시간이 짧은 기술을 선택
+- 피쳐 개발이 쉬운 기술을 선택
+    - 기능 하나 개발하는데 디펜던시가 많으면 안됨
+    - RDBMS는 가급적 피하자
+    - 원래 개발하고 설계는 나중에 하는거임
+- 단순한 구조를 최대한 유지
+- 데이터 쌓기&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 개발시간 짧을 수록&amp;gt;&amp;gt;&amp;gt;&amp;gt; 성능
+- 새로운 기술은 적어도 파운더는 고르면 안됨
+    - 아는것만 하고 모르는 건 최대한 뒤로 미루기
+    - 배움이 끝나면 모티베이션이 급격하게 하락할 수 있음&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;워사밸 (워크/사이드프로젝트 밸런스) (ㅋㅋㅋ)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 쉴땐 쉬자
+- 자동화가 핵심&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;저번에 엔드게임 컨퍼런스 참여 하려다 실패하고(피켓팅ㅠㅠ) 한동안 다른 좋은 컨퍼런스 없나 찾아보다 발견하게된 컨퍼런스인데,
+잘 운영되고 있는 사이드 프로젝트 개발자는 어떤 사람일까 궁금해서(ㅋㅋㅋ) 가벼운 마음으로 갔다 온 컨퍼런스이기도 했다. &lt;/p&gt;
+&lt;p&gt;근데 다들 사이드프로젝트인데도 불구하고 가벼운 마음으로 진행하는 분이 없었던 것이 없었던 것이 가장 와닿았다.(+ 자기반성도…)&lt;/p&gt;
+&lt;p&gt;몇몇 발표자분들도 강조했지만 꾸준히 하는게 가장 중요하다고 했던것처럼
+나도 다음에 좋은 아이디어로 사이드 프로젝트를 진행하게 된다면 다시끔 이 요약글을 읽어보며 강조했던 점을 상기시키면서 작업하고싶다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[WebStorm, Git 사용 할 때 .gitignore 에 추가된 .idea/workspace.xml 파일이 자꾸 나타나는 경우]]></title><description><![CDATA[일 하면서, 공부하면서 알게된 소소한 팁을 기록하는 습관을 들이기 위해 이 글을 썼다.😄 부디 누군가에게 도움이 되길! 🙏 가끔 WebStorm 으로 새로운 프로젝트를 설정하고 git…]]></description><link>https://raina94.github.io//2019/07-15-gitignore-webstorm/</link><guid isPermaLink="false">https://raina94.github.io//2019/07-15-gitignore-webstorm/</guid><pubDate>Mon, 15 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;일 하면서, 공부하면서 알게된 소소한 팁을 기록하는 습관을 들이기 위해 이 글을 썼다.😄&lt;/p&gt;
+&lt;p&gt;부디 누군가에게 도움이 되길! 🙏&lt;/p&gt;
+&lt;p&gt;가끔 WebStorm 으로 새로운 프로젝트를 설정하고 git 셋팅까지 하고, &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 파일까지 만들어 둔다음
+나중에 작업 실컷하다가 커밋하려고 보면
+
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cb7a48286a6f35dc7936517e280afec2/bbe87/github.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 71.23745819397993%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACZklEQVQ4y42T22rUUBSG8xaiYNU7RahnECwKPoHgg4hgBVHbUqEq3gk+i7f1RoRStVbbmc4pM5kcZibnZCbJTJLPnUwPWkbqho+9WVl77X9n/VvyXAffcxn0DTrtFpqqYOgqitLBHPQJfBfXsRiYFqZlYdsOum5QqzfodBT6/UEZs2y7zJFUZ4LhpVTVkC8/FdY363ze7rC516NuRKg+6II/x3AUIYtimig8iqLDeJaDtL4z5OPWEMUcIZsJ7X2avRHfawYbuyrfqiq60aOrqqWi8XhCnudkWSbWY+IkYTJOCKMEaaMZ8Wk3wg6EGmuEZo/QBao5pNLS+VXvsrFd4+tOix97Ctu1LlqRd0CZH9EeiD1WhHTpeZP5JZmLz6rcXKkz/7LGlaUaV5frXFsR35ZbXF+VObtYZ05QzKcfVw45Izj1qMLCWoMH72Wkyy9kUaDDrdUG9991WHjT5s6azN3XTW6/anBDHFJw7kllnyrnF4+48LTKnIjde6vw8IOCZAcxfWeIZgZUZYNqS6OlWVjBGGeY4u4TxilBNIsJwwS07iae10Miz8jSCUkcCYt42JZJGBy0Nf8Psmlq3Mb2faSiY1EUE4RD4TO7tEIx94puTlLRyfwEMlJRN/O3qGkm0kRsKlpfeMvzAxzHwXU9fLE+8td0479IC5GJTrMfFgUnxPFUoSMKWY5bzpqmYwjvFSTCZ+UPyHOOjyJWXt7bpKn3kdI0LY06EgqDMCyL+UFYPjPHdcWP9knEDfJDlTOuXCiMu0JhgFSeMOPk4ypmF5uSZtPGyLZ4en9J/wcnjSyfOqJtZ/wGh2UBNzGLYLMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;정말싫음&quot;
+        title=&quot;&quot;
+        src=&quot;/static/cb7a48286a6f35dc7936517e280afec2/6255c/github.png&quot;
+        srcset=&quot;/static/cb7a48286a6f35dc7936517e280afec2/375dc/github.png 148w,
+/static/cb7a48286a6f35dc7936517e280afec2/6b157/github.png 295w,
+/static/cb7a48286a6f35dc7936517e280afec2/6255c/github.png 590w,
+/static/cb7a48286a6f35dc7936517e280afec2/bbe87/github.png 598w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;저렇게 수정한 적도 없는 .idea/workspace.xml 파일이 리스트 되면서 사라지지 않을 때가 있다.(&lt;del&gt;우리집 묵은때처럼&lt;/del&gt;) &lt;/p&gt;
+&lt;p&gt;심지어 .gitignore 에 추가해도 안 사라지는 경우가 있는데,&lt;/p&gt;
+&lt;p&gt;이는 이미 한번 이상 해당 파일을 repo에 &lt;strong&gt;commit&lt;/strong&gt; 했기 때문이다.&lt;/p&gt;
+&lt;p&gt;따라서 이 문제를 해결 하기 위해선 &lt;strong&gt;이미 올라간 파일들을 정리&lt;/strong&gt; 해주어야 .gitignore가 정상적으로 적용 된다.&lt;/p&gt;
+&lt;p&gt;우선 터미널을 켜서 git을 실행시킨다. &lt;/p&gt;
+&lt;p&gt;다음으로 깃으로 올라간 .idea 디렉터리를 삭제한 후&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git rm -r .idea  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다시 커밋해서 정리 해준다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git commit -m &amp;quot;Remove .idea from repo&amp;quot; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 보기싫은 .idea 파일도 안녕!&lt;/p&gt;
+&lt;h1&gt;출처&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/19973506/cannot-ignore-idea-workspace-xml-keeps-popping-up&quot;&gt;https://stackoverflow.com/questions/19973506/cannot-ignore-idea-workspace-xml-keeps-popping-up&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[모두의 Toy Story Side Project 어디까지 해봤니? 컨퍼런스 요약 및 후기 (1)]]></title><description><![CDATA[컨퍼런스 참가 
+GDG Campus Korea…]]></description><link>https://raina94.github.io//2019/07-14-toy-story-conference-review/</link><guid isPermaLink="false">https://raina94.github.io//2019/07-14-toy-story-conference-review/</guid><pubDate>Sun, 14 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;컨퍼런스 참가&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a800d4b662ca85b32b7d6963d2fddcf3/25b7c/%EC%9E%85%EA%B5%AC%EC%95%9E.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEBQL/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAaJp+cqDonSTcyMI1gf/xAAdEAACAgIDAQAAAAAAAAAAAAABAgASAxEQExQh/9oACAEBAAEFAvQkzZrJcy7RtmKmx1NMuwin5doXPH//xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8BdP/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EAB4QAAAGAgMAAAAAAAAAAAAAAAABAhARMSKRMkJh/9oACAEBAAY/Au2hhJCz2FhU+McoscTJrf8A/8QAHBABAAMBAQADAAAAAAAAAAAAAQARMSFBYYGR/9oACAEBAAE/IX50WPUJsPe+FKWnSu5KgGx3ldrJ0uQWPkJ6hgbuJOt/Udw/J//aAAwDAQACAAMAAAAQiwaB/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/ENSVrT//xAAXEQEBAQEAAAAAAAAAAAAAAAABABFB/9oACAECAQE/EAlBs7ILf//EAB4QAQEBAQEAAQUAAAAAAAAAAAERACExsUFhcYHR/9oACAEBAAE/EBWUGIYzukkSjlHf9kbli+s8V4Y9KDtvvMkTRQX4zI0lCx8mXaAs94eOdu2vzuM/e3Q5/kP5kV8Lf//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;입구앞&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a800d4b662ca85b32b7d6963d2fddcf3/4b3ab/%EC%9E%85%EA%B5%AC%EC%95%9E.jpg&quot;
+        srcset=&quot;/static/a800d4b662ca85b32b7d6963d2fddcf3/f8bb1/%EC%9E%85%EA%B5%AC%EC%95%9E.jpg 148w,
+/static/a800d4b662ca85b32b7d6963d2fddcf3/900ac/%EC%9E%85%EA%B5%AC%EC%95%9E.jpg 295w,
+/static/a800d4b662ca85b32b7d6963d2fddcf3/4b3ab/%EC%9E%85%EA%B5%AC%EC%95%9E.jpg 590w,
+/static/a800d4b662ca85b32b7d6963d2fddcf3/78641/%EC%9E%85%EA%B5%AC%EC%95%9E.jpg 885w,
+/static/a800d4b662ca85b32b7d6963d2fddcf3/25b7c/%EC%9E%85%EA%B5%AC%EC%95%9E.jpg 1080w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+GDG Campus Korea에서 개최하는 &lt;code class=&quot;language-text&quot;&gt;모두의 TOY STORY: Side Project 어디까지 가봤니?&lt;/code&gt; 컨퍼런스에 가게 되었다.🥰
+부산 살땐 이런 행사 있어도 정말 그림의 떡이였는데, 올라오니 이건 정말 좋은듯.
+첫번째로 경험했던 개발자 컨퍼런스가 작년 프론트엔드 컨퍼런스 였어서… 그땐 진짜 사람 너무 많고 정신 없고,
+그래서 일찍 갔더니 이번엔 또 너무 빨리 도착해서;;
+엄청 기다리다가 12시 땡 하자마자 입장했다.&lt;/p&gt;
+&lt;p&gt;들어갈때 프론트엔드:엔드게임 때 사용했던 스티커를 나눠준다🥰
+사실 저번에 엔드게임 컨퍼런스는 못가서 많이 아쉬웠는데 여기서라도 받아서 스티커 덕후는 기쁘다😂&lt;/p&gt;
+&lt;h2&gt;발표 내용 요약&lt;/h2&gt;
+&lt;p&gt;혹시나 참가하고 싶었는데 참가 하지못한 사람을 위해 발표 내용 전반을 간단하게 요약해서 정리하였다.
+전체 내용에 대해 상세하게 적을 순 없었지만 대략적으로 이러한 내용의 발표였다~는 정도만 참고하면 좋을 것 같다.&lt;/p&gt;
+&lt;p&gt;발표내용은 전체적으로는 나는 이러저러한 계기로 이러저러한 내용의 사이드 프로젝트 프로젝트를 진행 했었는데,
+해보니까 이러이러한 문제가 발생했고, 저러저러하게 해결했다, 하는 생생한 후기와 사이사이 틈틈히 유머와 꿅팁으로 구성되어 있었다. (+ 구인)&lt;/p&gt;
+&lt;p&gt;무슨 계기로 사이드 프로젝트를 진행하게 되었는가가 궁금했던 사람으로써 매우 긍정적인 참여가 되었던 것 같다. &lt;/p&gt;
+&lt;p&gt;아래부터는 발표 내용 요약인데.. 너무 길어서 읽을 때 주의 해야 할 것 같다😅
+진짜 발표자분들이 다들 너무 유머러스하셔서 ㅋㅋㅋ 정말 컨퍼런스 내내 빵빵터졌는데 (거의 스텐딩코미디 보러 간 느낌)
+그런 내용까지 다 요약할 수 없어서 너무 아쉽다ㅠ&lt;/p&gt;
+&lt;p&gt;주요 발표 내용만 담고 사족이나 구인구직 관련 내용들은 잘라냈다.
+추가로 너무 길어서 1편과 2편으로 분리 시켰다 ㅜㅜ&lt;/p&gt;
+&lt;h2&gt;1편 세션&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;진겸님의 Festa!&lt;/li&gt;
+&lt;li&gt;권태관님의 Daily-devBlog(기술블로그 구독서비스)&lt;/li&gt;
+&lt;li&gt;권순선님의 KLDP&lt;/li&gt;
+&lt;li&gt;신정규님의 BackEnd.AI&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;1. 진겸님의 Festa!&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3b75ed3642f443185ff5be577ac1b90a/e5cc5/%ED%8E%98%EC%8A%A4%ED%83%80.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75.06944444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZ2GowKkV//EABsQAAICAwEAAAAAAAAAAAAAAAECERMAAwQS/9oACAEBAAEFAjzj1RCmZuJyx2XaC7f/xAAWEQEBAQAAAAAAAAAAAAAAAAABABL/2gAIAQMBAT8BBst//8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAS/9oACAECAQE/AVLRf//EABwQAAICAgMAAAAAAAAAAAAAAAABAhEQMSFBkf/aAAgBAQAGPwJpS0KV3jrw3wWf/8QAGxABAAICAwAAAAAAAAAAAAAAAQARITFBcZH/2gAIAQEAAT8h9mWIqQZtlMVK2espuJ1qaHMT/9oADAMBAAIAAwAAABBgz//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAwEBPxBDOl//xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QObDF/8QAHBABAQACAwEBAAAAAAAAAAAAAREAMSFRYUHR/9oACAEBAAE/EIScks6ObOEkHhfi95x7Aolct2Gq/jgH0CaKeBnkwi3vP//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;페스타&quot;
+        title=&quot;&quot;
+        src=&quot;/static/3b75ed3642f443185ff5be577ac1b90a/4b3ab/%ED%8E%98%EC%8A%A4%ED%83%80.jpg&quot;
+        srcset=&quot;/static/3b75ed3642f443185ff5be577ac1b90a/f8bb1/%ED%8E%98%EC%8A%A4%ED%83%80.jpg 148w,
+/static/3b75ed3642f443185ff5be577ac1b90a/900ac/%ED%8E%98%EC%8A%A4%ED%83%80.jpg 295w,
+/static/3b75ed3642f443185ff5be577ac1b90a/4b3ab/%ED%8E%98%EC%8A%A4%ED%83%80.jpg 590w,
+/static/3b75ed3642f443185ff5be577ac1b90a/78641/%ED%8E%98%EC%8A%A4%ED%83%80.jpg 885w,
+/static/3b75ed3642f443185ff5be577ac1b90a/38a35/%ED%8E%98%EC%8A%A4%ED%83%80.jpg 1180w,
+/static/3b75ed3642f443185ff5be577ac1b90a/e5cc5/%ED%8E%98%EC%8A%A4%ED%83%80.jpg 1440w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;우리 서비스를 쓰는 자에게 최고의 경험을 → 목표&lt;/li&gt;
+&lt;li&gt;16년 웹 스터디하려다 무마된 멤버로 17년도 다시 모아서 사이드 프로젝트 해보자고 제안&lt;/li&gt;
+&lt;li&gt;처음 기획은 조직협업용 admin (Jira 같은거 만들어보자!) → festa의 청사진&lt;/li&gt;
+&lt;li&gt;그러다가 GDG 에서 행사 주최하려는데 마땅한 플랫폼이 없더라 → 그래서 시작됨&lt;/li&gt;
+&lt;li&gt;3번의 내용을 Pivot : Jira of Conferences → Ticketing Platform&lt;/li&gt;
+&lt;li&gt;느슨한 프로젝트에서 Deadline이 생김&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EDD : Event(개발용어가 아니고 진짜 이벤트) Driven Development&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;하나 이벤트 있으면 그거 시작전까지 개발하는...(ㅋㅋ)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;결제 관련은 I’mport와 연동&lt;/li&gt;
+&lt;li&gt;디자인도 스케치로 빠짝 → 여기까진 즐겁고 행복&lt;/li&gt;
+&lt;li&gt;갑자기 여행 갔다 왔더니 이슈가 늘어나 있음(체감) TDD나 코드 리뷰를 할 수도 없고&lt;/li&gt;
+&lt;li&gt;일주일동안 고생하다가 서비스 오픈&lt;/li&gt;
+&lt;li&gt;한달동안 구르면서 느낀점: 더이상 못하겠다 (ㅋㅋㅋ) 배운점은 많았다&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;기술적 인사이트&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;회사는 정해진 대로 → 남들이 많이 쓴느게 왜 쓰이는지 알고, 스스로의 부족함을 많이 느끼게 됨
+협업의 어려움 : 분명히 다 뛰어난 사람들인데 협업이 너무 힘듦
+지킬 수 밖에 없는 데드라인= 발전 : 좀 느슨한 성격이라 스스로 데드라인 그어두면 좋음&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2부 : 새로운 본격적인 시작&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;다시 새로 만들기로 결정
+기술 스텍도 변경
+코드 리뷰도 하기 시작했지만- EDD는 못바꿈(ㅋㅋ)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사이드 프로젝트라도 계획을 세워서 데드 라인을 그어야 발전이 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;처음부터 너무 크게 잡으면 이도저도 못하게됨
+Slack + Jira + Github + ??(적느라 못봄)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;본격적으로 시작하니 현실문제도 부딫침&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;사업자 문제
+보증보험
+정산 위한 기초 자본금
+Business Model?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;PM의 어려움 → 각종 슬럼프 + 빠른 번아웃&lt;/li&gt;
+&lt;li&gt;프로젝트를 접어야 할 위기가 올땐 스스로 멘탈관리가 필요함&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사이드 프로젝트의 한계&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;규모가 자꾸 커지면 엄청난 인력/시간 부족
+내 아이디어에 영감을 가져서 시작하는 사람들 → production까지 못가는 걸 수두룩 하게 봄
+가볍게 시작한 프로젝트는 가볍게 끝난다
+원동력을 찾아야 지속성으로 이어진다
+개발과 서비스는 다른 차원이다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이런 문제가 생길 때 대처 방법(자꾸 이슈가 생기고 문제가 생길  때)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;프로젝트 축소
+혹은 시간을 무진장 더 쏟는다(이때부터 사이드가 사이드가 아니게 됨)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;3부 : The Next Step&lt;/li&gt;
+&lt;li&gt;우리 서비스를 쓰는 자에게 최고의 경험을 주는 것이 목표(최고의 사용자경험)&lt;/li&gt;
+&lt;li&gt;현재 수익이 거의 없어서 BM 꾸준히 찾는 중&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 권태관님의 Daily-devBlog&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/97caf12e7c6659eb59efbd78184e5dab/e5cc5/%EB%8D%B0%EC%9D%BC%EB%A6%AC%EB%8D%B0%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75.06944444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQBAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABwlW5qo6Bf//EABoQAQEAAgMAAAAAAAAAAAAAAAIBABMDERL/2gAIAQEAAQUCfCItE1uKLcrnpMPtX//EABYRAQEBAAAAAAAAAAAAAAAAAAABEv/aAAgBAwEBPwGRl//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEv/aAAgBAgEBPwFQt3//xAAZEAADAQEBAAAAAAAAAAAAAAAAARESEDH/2gAIAQEABj8CmjVo6j1k1z//xAAbEAEAAgIDAAAAAAAAAAAAAAABABExcSFB8f/aAAgBAQABPyFJcbgHiQypdRym3C0cHqK41if/2gAMAwEAAgADAAAAEAg//8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAh/9oACAEDAQE/EEcl3//EABYRAQEBAAAAAAAAAAAAAAAAAAEAIf/aAAgBAgEBPxDUYF//xAAcEAEBAAICAwAAAAAAAAAAAAABEQAxIVFBodH/2gAIAQEAAT8Qowdo1L1hmAHmRGpBcXoDqs8EmqGesTIGlPzAciRtz//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;데일리데브블로그&quot;
+        title=&quot;&quot;
+        src=&quot;/static/97caf12e7c6659eb59efbd78184e5dab/4b3ab/%EB%8D%B0%EC%9D%BC%EB%A6%AC%EB%8D%B0%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8.jpg&quot;
+        srcset=&quot;/static/97caf12e7c6659eb59efbd78184e5dab/f8bb1/%EB%8D%B0%EC%9D%BC%EB%A6%AC%EB%8D%B0%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8.jpg 148w,
+/static/97caf12e7c6659eb59efbd78184e5dab/900ac/%EB%8D%B0%EC%9D%BC%EB%A6%AC%EB%8D%B0%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8.jpg 295w,
+/static/97caf12e7c6659eb59efbd78184e5dab/4b3ab/%EB%8D%B0%EC%9D%BC%EB%A6%AC%EB%8D%B0%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8.jpg 590w,
+/static/97caf12e7c6659eb59efbd78184e5dab/78641/%EB%8D%B0%EC%9D%BC%EB%A6%AC%EB%8D%B0%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8.jpg 885w,
+/static/97caf12e7c6659eb59efbd78184e5dab/38a35/%EB%8D%B0%EC%9D%BC%EB%A6%AC%EB%8D%B0%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8.jpg 1180w,
+/static/97caf12e7c6659eb59efbd78184e5dab/e5cc5/%EB%8D%B0%EC%9D%BC%EB%A6%AC%EB%8D%B0%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8.jpg 1440w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;오늘(0714)이 정식 서비스 1년 째!&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사이드 프로젝트란?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;회사에서 하는 업무와 별도로 진행
+개인 또는 팀으로 구성&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;왜 하나?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;내가 필요해서
+번뜩이는 아이디어가 있어서
+새로운 지식을 습득하기 위해서&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;왜 만들었나?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;SNS 챙겨보기 힘들어서 + 보다가 자꾸 딴짓해서
+다른 것에 집중하다보면 중요한 정보나 좋은 글을 놓쳐서
+다른 사람들의 글을 보며 자극 받고 싶어서
+내 블로그 홍보하고 싶어서 (ㅋㅋㅋ)
+RSS 리더 서비스를 직접 만들어 보자!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;기술 블로그 구독 서비스 소개&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;구독자: 이메일 신청
+인증 절차
+DB에 이메일 저장
+매일 정해진 시간에 메일 발송&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;awesome-devblog : 저기 데이터를 보내줌&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;자바, 스프링 개발자 → 파이썬 + 플라스크&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;다들 파이썬 하길래 써봄
+한국인이 일본어 중국어 배우듯이&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;서버는 해로쿠 → 파이썬 에니웨어 → 라즈베리파이 → 결국 AWS (ㅋㅋ)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;일반 물리서버보다 devops 지원이 잘되서&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;겪었던 문제&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 구독자 증가로 메일 발송이 너무 느려짐...
+- 기존엔 크롤링과 메일발송이 같은 서버에서 이루어져서 마지막 메일 받는 사람은 10시에 받는 사태
+    - 크롤링은 미리 하고 메일은 시간에 보내도록 하는 것으로 변경
+- 1000명이 느려지니 또 느려짐
+    - 주어진 환경에서 최대의 성능을 만들어보자(메모리가 적음)
+        - threading을 통하여 해결
+- 메일 본문에는 css, js가 적용이 안된다?
+    - emogrifier(inline-style 바꿔주는 서비스) 이용
+- 열심히 보냈더니 스팸처리됨
+    - 구글 SMTP: 하루 500개 발송 제한
+    - SMTP 서버를 구성해서 보냈더니 스팸처리됨
+    - 가장 깔끔하고 발송관련 모니터링이 가능했던 SES(simple email service) tkdyd&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;모니터링도 하는 중&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;운영 중에 문의사항이 올라옴&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;필터링, 카테고라이징, 태그
+팟캐스트에서 나온 &amp;#39;양질의 글&amp;#39;을 찾는 서비스&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;가지고 있던 데이터에서 새로운 인사이트를 알게 된 경험&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;아카이브 기능도 추가&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;접근성을 용이하게 만들도록 크롬 확장프로그램도 만듬(경험 +1)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;앞으로의 방향성은&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;이제 사비로 서버를 운영해야함..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;하면서 무엇을 느꼈는가&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 강제 학습
+    - 회사와는 별도 진행, 서비스에 대한 책임감
+        - 오전 10시 되면 이젠 몸이 먼저 반응함(메일 잘 갔나?)
+    - 경험으로 부터 나온 인사이트를 팀에서도 적용&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;지금부터 당장 무언가를 만들어 봐라&lt;/li&gt;
+&lt;li&gt;크기는 중요하지 않다!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;권순선님의 KLDP&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4f065a36fbc02b3e2ae50fbab320d44c/e5cc5/kldp.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75.06944444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEAf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAcWgKiLAr//EABsQAQACAgMAAAAAAAAAAAAAAAEDBAISABEx/9oACAEBAAEFAip2SVtTL0syAzSZm7z/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARL/2gAIAQMBAT8BjL//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEv/aAAgBAgEBPwFT/8QAHBAAAQQDAQAAAAAAAAAAAAAAAQAQEaECEjEy/9oACAEBAAY/Agd6XZaBlS9N/8QAGhABAAMAAwAAAAAAAAAAAAAAAQARIUFhof/aAAgBAQABPyEucQhvlGjKgDCFGJoLB1UyMn//2gAMAwEAAgADAAAAEKj/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABEXH/2gAIAQMBAT8QSs2f/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERcf/aAAgBAgEBPxBuGD//xAAcEAEAAgMAAwAAAAAAAAAAAAABABEhMUFhgbH/2gAIAQEAAT8Q48L0T7MGNFoYle4HEHKY3gEGoh4awVTY8TAKEAwz/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;kldp&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4f065a36fbc02b3e2ae50fbab320d44c/4b3ab/kldp.jpg&quot;
+        srcset=&quot;/static/4f065a36fbc02b3e2ae50fbab320d44c/f8bb1/kldp.jpg 148w,
+/static/4f065a36fbc02b3e2ae50fbab320d44c/900ac/kldp.jpg 295w,
+/static/4f065a36fbc02b3e2ae50fbab320d44c/4b3ab/kldp.jpg 590w,
+/static/4f065a36fbc02b3e2ae50fbab320d44c/78641/kldp.jpg 885w,
+/static/4f065a36fbc02b3e2ae50fbab320d44c/38a35/kldp.jpg 1180w,
+/static/4f065a36fbc02b3e2ae50fbab320d44c/e5cc5/kldp.jpg 1440w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;KLDP 소개 : &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;/. + sf.net or SO + Github + Wikipedia
+
+/. : 슬래시닷 옛날에.. (ㅋㅋ) 기술 관련 사이트...
+sf.net:  소스포지 → 깃헙의 전신
+SO: 스택오버플로우&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;계기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;리눅스에 관심 가진 계기 ? 대학생활때 사귀던 여친과 깨짐 → 군대갈까 하다가 정신을 다른 곳에 집중하기 위한 수단&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;역사 : 20년에 걸친 KLDP의 발전과정&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;경력 + 있었던 일 : 전반적 인생 이야기를 해주심 (유명한 개발자들 직접 보고 오신거 짱부럽)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;회고&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 행운: 리눅스 vs 델파이 중 고민 하다 리눅스 선택(탁월한 선택)
+    - 열심히 해야 행운도 따라온다
+        - 4 * 365 * 8 - 4 * 30 * 2 = 11440 → 사이드 프로젝트에 쏟은 시간
+            - 1달은 신입사원 연수기간, 1달은 논산훈련소(병특)
+        - 1만 시간의 법칙은 유효하다고 믿음&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;기술 :이것 저것 하다보면 문제가 생김 → 문제 해결하다 보면 삽질을 함 → 삽잘히다 보면 깊이파고 들어감 → 파다 보면 스스로 해결이 안되는 문제가 생김&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;인연 &amp;#x26; credits : 여러 좋은 사람들에게 많은 도움 받아서 운영&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;QA: 워라벨 → 그런거 없다(ㅋㅋㅋ), 내가 재밌는 일할 땐 워라벨 챙길 이유없다&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;신정규님의 BackEnd.AI&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5a2467ff2438f0c1058996129025642f/e5cc5/%EB%B0%B1%EC%97%94%EB%93%9C.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75.06944444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQC/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAECA//aAAwDAQACEAMQAAABmY0KBejT/8QAHRAAAgIBBQAAAAAAAAAAAAAAAQIDEQAEEhMhIv/aAAgBAQABBQI6fswkK12Zt2cjsj+j/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAS/9oACAEDAQE/AQbLf//EABcRAQADAAAAAAAAAAAAAAAAAAABEiH/2gAIAQIBAT8BxaH/xAAbEAACAgMBAAAAAAAAAAAAAAAAARExAhAhMv/aAAgBAQAGPwL2pL11YkKij//EABoQAQEBAAMBAAAAAAAAAAAAAAERADFRYYH/2gAIAQEAAT8hnPCw5bPNBiTcxHx1CR0CZzem/9oADAMBAAIAAwAAABDUD//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EKQ//8QAFhEBAQEAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EFGw/8QAGhABAAMBAQEAAAAAAAAAAAAAAQARMSFB4f/aAAgBAQABPxBLuhVJXL2FmUvVb7EuEOLFSkfftAtte0ixUWIB6T//2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;백엔드&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5a2467ff2438f0c1058996129025642f/4b3ab/%EB%B0%B1%EC%97%94%EB%93%9C.jpg&quot;
+        srcset=&quot;/static/5a2467ff2438f0c1058996129025642f/f8bb1/%EB%B0%B1%EC%97%94%EB%93%9C.jpg 148w,
+/static/5a2467ff2438f0c1058996129025642f/900ac/%EB%B0%B1%EC%97%94%EB%93%9C.jpg 295w,
+/static/5a2467ff2438f0c1058996129025642f/4b3ab/%EB%B0%B1%EC%97%94%EB%93%9C.jpg 590w,
+/static/5a2467ff2438f0c1058996129025642f/78641/%EB%B0%B1%EC%97%94%EB%93%9C.jpg 885w,
+/static/5a2467ff2438f0c1058996129025642f/38a35/%EB%B0%B1%EC%97%94%EB%93%9C.jpg 1180w,
+/static/5a2467ff2438f0c1058996129025642f/e5cc5/%EB%B0%B1%EC%97%94%EB%93%9C.jpg 1440w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;왜 딥러닝 모델 구현이 어려운가&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 오픈소스 + 클라우드 컴퓨팅 = 다 된건가?
+- 소프트웨어 관리의 복잡성
+- GPU 컴퓨테이션이 강력하고 쉽도록 만들어 보자&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;“언제가 플랜 B를 만들어라. 언젠간 그개 플랜 A 보다 낫다는걸 발견할 때가 있을 겁니다”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;가족 회의 중 계기가 생김 → 과정이 있는데 목표는? 연구와 창업을 위한 오피스 + 함께 살기 위한 집&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TextCube(현 티스토리) 프로젝트 (06~) 시작 → 13년후 이니시계로 돌아옴&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;만들 것 : 거대 샌드박스 기반의 프로그램 코드 + 데이터 실행 서비스&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;코드온웹 (15년도) 공개&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;하지 말아야 할 것들&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 이동형 하드웨어 → as가..
+- 딥러닝 모델 컨설팅, 챗봇 시스템 설계 컨설팅, 뇌 데이터 연구 과제 → 회사의 가치와 멀었다고 판단됨
+- CodeOnWeb 커스터마이즈 공금
+- 공통점: 할수 있는것 + 수익이 나는것
+- 문제점 : 그게 창업의 목표가 아니였다...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;없음의 미학&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- CI 도구: 창업 시작할때 자체 개발
+- 시드 머니가 바닥나갈때
+- 회사에 돈이 떨어지면 알게 되는것들
+    - 엄청난 유혹들이 있다.(좋은 인수조건..)
+    - 동료들의 확신의 정도와
+    - 딸각발이 정신 (+ 자린고비 정신도...)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;진작해야했던것들&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- GUI 개발
+    - 아는 만큼만 보인다
+        - GUI 필요성을 못느낌 (ㅋㅋㅋ)
+    - 올해 GUI 개발시작
+- 해외 컨퍼런스 홍보 및 발표
+    - 기술적으로 우리가 최전선에 있더라 (이미 이정도는 미국은 다되어있더라)
+    - 가치 판단이 국내와 국외가 완전히 다르더라
+        - 쿠버네티스 여부가 국내/국외 반응이 다름 
+        - 국내: 쿠버 쓰면 되지 외않써?, 국외: 와 그걸 안썼어? 지니어스
+- 대규모 클러스터 설치도구 개발 
+    - 메뉴얼 있으니까 다들 잘 하겠지 했음
+    - 현실 : 보통 개발자에겐 설치하기 어려웠다&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;끝마치며&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 현재 행동은 의외로 미래의 나에게 영향을 미친다
+    - 무엇을할지 모른다
+    - 계획대로 가는 삶은 없는 것 같다
+- 만드는 시간 만큼, 사용하는 사람을 만나봅니다.
+    - 개밥 먹는걸로는 같은 개들만 좋아하더라
+    - 고양이도 만나고 돌고래도 만나야...
+- 시작한 후에 끝날 걱정을 미리 하지 맙시다
+    - 기술을 멀리 예측하듯이 삶도 길게 관조하시면 눈앞에 집중할 수 있다.
+    - 일단 질러라. 시작도 안했으면 끝 걱정도 못 했을 것이다&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;나머지 세션은 2편에서 이어집니다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby 블로그 만드는 법]]></title><description><![CDATA[우여곡절 끝에 드디어 블로그가 완성되었다.😂😂
+개발자가 되고 나서 많은 정보를 얻어가던 곳이 개인이 운영하는 블로그이기도해서 나도 이런 블로그를 운영 해보고 싶다하는 생각이 항상 있었다. 아직…]]></description><link>https://raina94.github.io//2019/03-17-start-gatsby-blog/</link><guid isPermaLink="false">https://raina94.github.io//2019/03-17-start-gatsby-blog/</guid><pubDate>Sat, 16 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://l56spuxk1t14k3seci6s2bja-wpengine.netdna-ssl.com/wp-content/uploads/GIF/2014/12/-Cookie-Monster-Dance-GIF-2015.gif&quot; alt=&quot;dance&quot;&gt;&lt;/p&gt;
 &lt;p&gt;우여곡절 끝에 드디어 블로그가 완성되었다.😂😂
 개발자가 되고 나서 많은 정보를 얻어가던 곳이 개인이 운영하는 블로그이기도해서 나도 이런 블로그를 운영 해보고 싶다하는 생각이 항상 있었다.&lt;/p&gt;
 &lt;p&gt;아직 1차로 오픈했을 뿐이고.. 다듬고 추가할 부분도 아직 많이 남아 있지만
