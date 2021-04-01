@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://raina94.github.io/2021/04-01-hash-table-01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://raina94.github.io/2021/03-25-double-linked-list/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://raina94.github.io/2021/03-14-linked-list-02/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://raina94.github.io/2021/03-13-linked-list-01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
