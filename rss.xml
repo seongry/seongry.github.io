@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[코알 데브 로그]]></title><description><![CDATA[A log all about study written by koal]]></description><link>https://raina94.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 08 Apr 2021 14:12:57 GMT</lastBuildDate><item><title><![CDATA[[자료구조] Hash Table 03]]></title><description><![CDATA[Linear Probing 기법  또는  중 하나: 해쉬 테이블 저장공간 안에서 충돌 문제를 해결하는 기법
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[코알 데브 로그]]></title><description><![CDATA[A log all about study written by koal]]></description><link>https://raina94.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 11 Apr 2021 05:45:49 GMT</lastBuildDate><item><title><![CDATA[[자료구조] Tree 01]]></title><description><![CDATA[Tree 자료구조지만 복잡한 로직이 많이 들어감 트리 (Tree) 구조 트리: Node와 Branch를 이용해서, 사이클을 이루지 않도록 구성한 데이터 구조
+ 이라는 것은, Siblings 끼리 연결되지 않는다는 것 (Sibilings…]]></description><link>https://raina94.github.io/2021/04-11-tree-01/</link><guid isPermaLink="false">https://raina94.github.io/2021/04-11-tree-01/</guid><pubDate>Sun, 11 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Tree&lt;/h1&gt;
+&lt;p&gt;자료구조지만 복잡한 로직이 많이 들어감&lt;/p&gt;
+&lt;h2&gt;트리 (Tree) 구조&lt;/h2&gt;
+&lt;p&gt;트리: Node와 Branch를 이용해서, 사이클을 이루지 않도록 구성한 데이터 구조
+&lt;code class=&quot;language-text&quot;&gt;사이클이 없는&lt;/code&gt; 이라는 것은, Siblings 끼리 연결되지 않는다는 것 (Sibilings 끼리 연결되면 Parents - Child - Siblings 사이에 사이클이 생기므로)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;실제로 어디에 많이 사용되나?&lt;/strong&gt;
+트리 중 &lt;code class=&quot;language-text&quot;&gt;이진 트리&lt;/code&gt;(Binary Tree) 형태의 구조로, &lt;code class=&quot;language-text&quot;&gt;탐색(검색) 알고리즘&lt;/code&gt; 구현을 위해 많이 사용됨&lt;/p&gt;
+&lt;h2&gt;알아둘 용어&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Node: 트리에서 데이터를 저장하는 기본 요소 (데이터와 다른 연결된 노드에 대한 Branch 정보 포함)&lt;/li&gt;
+&lt;li&gt;Root Node: 트리 맨 위에 있는 노드&lt;/li&gt;
+&lt;li&gt;Level: 최상위 노드를 Level 0으로 했을 때, 하위 Branch로 연결된 노드의 깊이를 나타냄&lt;/li&gt;
+&lt;li&gt;Parent Node: 어떤 노드의 다음 레벨에 연결된 노드&lt;/li&gt;
+&lt;li&gt;Child Node: 어떤 노드의 상위 레벨에 연결된 노드&lt;/li&gt;
+&lt;li&gt;Leaf Node (Terminal Node): Child Node가 하나도 없는 노드&lt;/li&gt;
+&lt;li&gt;Sibling(Brother Node): 동일한 Parent Node를 가진 노드&lt;/li&gt;
+&lt;li&gt;Depth: 트리에서 Node가 가질 수 있는 최대 Level&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;이진 트리와 이진 탐색 트리 (Bineary Search Tree)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;이진 트리: 노드의 최대 Branch가 2인 트리&lt;/li&gt;
+&lt;li&gt;이진 탐색 트리(Binary Search Tree,&lt;strong&gt;BST&lt;/strong&gt;): 이진 트리에 다음과 같은 추가적인 조건이 있는 트리&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;왼쪽 노드는 해당 노드보다 작은 값, 오른쪽 노드는 해당 노드보다 큰 값을 가지고 있음!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.penjee.com/wp-content/uploads/2015/11/binary-search-tree-insertion-animation.gif&quot; alt=&quot;BST-works&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;자료 구조 이진 탐색 트리(BST)의 장점과 주요 용도&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;주요 용도: 데이터 검색(탐색)&lt;/li&gt;
+&lt;li&gt;장점: 탐색 속도를 개선할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;이진트리와 정렬된 배열간의 탐색 비교&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.penjee.com/wp-content/uploads/2015/11/binary-search-tree-sorted-array-animation.gif&quot; alt=&quot;BST&quot;&gt;&lt;/p&gt;
+&lt;h1&gt;링크드 리스트를 활용해서 BST 구현&lt;/h1&gt;
+&lt;h2&gt;Node 구현&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  value&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  left&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  right&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;left &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;right &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;BST에 데이터 넣기&lt;/h2&gt;
+&lt;p&gt;BST 조건에 부합하게 데이터를 넣어야 함&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;NodeManagement&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; currentNode &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; currentNode&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;currentNode&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          currentNode &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; currentNode&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          currentNode&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;left &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;currentNode&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          currentNode &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; currentNode&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          currentNode&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;right &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;BST&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;NodeManagement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token constant&quot;&gt;BST&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token constant&quot;&gt;BST&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;BST&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[자료구조] Hash Table 03]]></title><description><![CDATA[Linear Probing 기법  또는  중 하나: 해쉬 테이블 저장공간 안에서 충돌 문제를 해결하는 기법
 충돌이 일어나면, 해당 hash address의 다음 address…]]></description><link>https://raina94.github.io/2021/04-08-hash-table-03/</link><guid isPermaLink="false">https://raina94.github.io/2021/04-08-hash-table-03/</guid><pubDate>Thu, 08 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Linear Probing 기법&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;폐쇄 해슁&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;Close Hashing 기법&lt;/code&gt; 중 하나: 해쉬 테이블 저장공간 안에서 충돌 문제를 해결하는 기법
 충돌이 일어나면, 해당 hash address의 다음 address부터 맨 처음 나오는 빈공간에 저장하는 기법
