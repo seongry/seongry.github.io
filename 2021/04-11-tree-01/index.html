@@ -141,7 +141,68 @@ data-styled.g22[id="sc-global-fhHdLG1"]{content:"sc-global-fhHdLG1,"}/*!sc*/
 <span class="token constant">BST</span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token constant">BST</span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">BST</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div></section><div class="Bio__Layout-jxd219-0 dBvAkF"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.833rem;margin-bottom:auto;margin-top:auto;min-width:50px;border-radius:100%"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMEBQL/xAAXAQEBAQEAAAAAAAAAAAAAAAABAgAD/9oADAMBAAIQAxAAAAHUyLkBV5mjS9jUYeX/xAAdEAACAgIDAQAAAAAAAAAAAAACAwESABEUISIx/9oACAEBAAEFAnHUIKFzyFaWWwYEXiqsHrPsK9D/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABEBH/2gAIAQMBAT8BRl//xAAWEQEBAQAAAAAAAAAAAAAAAAAQEUH/2gAIAQIBAT8Bhh//xAAbEAACAwADAAAAAAAAAAAAAAAAAREhQRASIv/aAAgBAQAGPwKVci2rPTgsnNOsN8Mln//EABwQAQADAAMBAQAAAAAAAAAAAAEAESExQVGBwf/aAAgBAQABPyFaV9PIpVh45YENFdxhEVtBEWhn6lG5Th5yKue/ku2g0cS182vU/9oADAMBAAIAAwAAABDYFwP/xAAXEQEBAQEAAAAAAAAAAAAAAAARAAEx/9oACAEDAQE/EAEY5but/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARQf/aAAgBAgEBPxB6thgF/8QAHhABAAICAgMBAAAAAAAAAAAAAREhADFhcVGBscH/2gAIAQEAAT8QJlDAGqSOOWzapIR5v9wRpdDZHG8i1DIUE19w0lSV0xTsimFmj1rNQLhfTGzRstPeHw2AAOCs/9k=" alt="SeongRyeong Kim" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/6a2618febf09a1407f090a6e427b9df2/99438/profile.jpg 1x,
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">BST</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<h2>BST 탐색</h2>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">;</span>
+  left<span class="token punctuation">;</span>
+  right<span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">NodeManagement</span> <span class="token punctuation">{</span>
+  head<span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">head</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>head <span class="token operator">=</span> head<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">insert</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> currentNode <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>head<span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">&lt;</span> currentNode<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>currentNode<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          currentNode <span class="token operator">=</span> currentNode<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          currentNode<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>currentNode<span class="token punctuation">.</span>right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          currentNode <span class="token operator">=</span> currentNode<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          currentNode<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">search</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> currentNode <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>head<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>currentNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>currentNode<span class="token punctuation">.</span>value <span class="token operator">===</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> currentNode<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        currentNode <span class="token operator">=</span>
+          currentNode<span class="token punctuation">.</span>value <span class="token operator">></span> value <span class="token operator">?</span> currentNode<span class="token punctuation">.</span>left <span class="token operator">:</span> currentNode<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">BST</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NodeManagement</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token constant">BST</span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">BST</span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">BST</span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">BST</span><span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div></section><div class="Bio__Layout-jxd219-0 dBvAkF"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.833rem;margin-bottom:auto;margin-top:auto;min-width:50px;border-radius:100%"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMEBQL/xAAXAQEBAQEAAAAAAAAAAAAAAAABAgAD/9oADAMBAAIQAxAAAAHUyLkBV5mjS9jUYeX/xAAdEAACAgIDAQAAAAAAAAAAAAACAwESABEUISIx/9oACAEBAAEFAnHUIKFzyFaWWwYEXiqsHrPsK9D/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABEBH/2gAIAQMBAT8BRl//xAAWEQEBAQAAAAAAAAAAAAAAAAAQEUH/2gAIAQIBAT8Bhh//xAAbEAACAwADAAAAAAAAAAAAAAAAAREhQRASIv/aAAgBAQAGPwKVci2rPTgsnNOsN8Mln//EABwQAQADAAMBAQAAAAAAAAAAAAEAESExQVGBwf/aAAgBAQABPyFaV9PIpVh45YENFdxhEVtBEWhn6lG5Th5yKue/ku2g0cS182vU/9oADAMBAAIAAwAAABDYFwP/xAAXEQEBAQEAAAAAAAAAAAAAAAARAAEx/9oACAEDAQE/EAEY5but/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARQf/aAAgBAgEBPxB6thgF/8QAHhABAAICAgMBAAAAAAAAAAAAAREhADFhcVGBscH/2gAIAQEAAT8QJlDAGqSOOWzapIR5v9wRpdDZHG8i1DIUE19w0lSV0xTsimFmj1rNQLhfTGzRstPeHw2AAOCs/9k=" alt="SeongRyeong Kim" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/6a2618febf09a1407f090a6e427b9df2/99438/profile.jpg 1x,
 /static/6a2618febf09a1407f090a6e427b9df2/aba1d/profile.jpg 1.5x,
 /static/6a2618febf09a1407f090a6e427b9df2/b315d/profile.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/static/6a2618febf09a1407f090a6e427b9df2/99438/profile.jpg 1x,
 /static/6a2618febf09a1407f090a6e427b9df2/aba1d/profile.jpg 1.5x,
