@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[코알 데브 로그]]></title><description><![CDATA[A log all about study written by koal]]></description><link>https://raina94.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 03 May 2021 14:19:30 GMT</lastBuildDate><item><title><![CDATA[[자료구조] Heap 01]]></title><description><![CDATA[힙(Heap) 이란? 데이터에서 최대값과 최소값을 빠르게 찾기 위해 고안된 완전 이진 트리(Complete Binary Tree…]]></description><link>https://raina94.github.io/2021/04-24-heap-01/</link><guid isPermaLink="false">https://raina94.github.io/2021/04-24-heap-01/</guid><pubDate>Sat, 24 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;힙(Heap) 이란?&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[코알 데브 로그]]></title><description><![CDATA[A log all about study written by koal]]></description><link>https://raina94.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 04 May 2021 13:20:30 GMT</lastBuildDate><item><title><![CDATA[[자료구조] Heap 01]]></title><description><![CDATA[힙(Heap) 이란? 데이터에서 최대값과 최소값을 빠르게 찾기 위해 고안된 완전 이진 트리(Complete Binary Tree…]]></description><link>https://raina94.github.io/2021/04-24-heap-01/</link><guid isPermaLink="false">https://raina94.github.io/2021/04-24-heap-01/</guid><pubDate>Sat, 24 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;힙(Heap) 이란?&lt;/h1&gt;
 &lt;p&gt;데이터에서 최대값과 최소값을 빠르게 찾기 위해 고안된 완전 이진 트리(Complete Binary Tree)
 (완전 이진 트리: 노트를 삽입할때 최하단 왼쪽 노드부터 차례대로 삽입하는 트리)&lt;/p&gt;
 &lt;h2&gt;힙을 사용하는 이유&lt;/h2&gt;
@@ -1370,7 +1370,71 @@ B : 0스트라이크 1볼.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; answer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;완전탐색으로 문제를 풀기 위해 가능성이 있는 숫자들(numbers)에서 주어진 조건이 모두 만족하는 경우만 answer에 추가하도록 짰다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 단어 변환(javascript)]]></title><description><![CDATA[문제 설명 두 개의 단어 begin, target과 단어의 집합 words가 있습니다. 아래와 같은 규칙을 이용하여 begin에서 target으로 변환하는 가장 짧은 변환 과정을 찾으려고 합니다. 예를 들어 begin이 hit, target가 cog…]]></description><link>https://raina94.github.io/2019/09-26-algorithm-2/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-26-algorithm-2/</guid><pubDate>Thu, 26 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
+&lt;p&gt;완전탐색으로 문제를 풀기 위해 가능성이 있는 숫자들(numbers)에서 주어진 조건이 모두 만족하는 경우만 answer에 추가하도록 짰다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 네트워크(javascript)]]></title><description><![CDATA[문제 설명 네트워크란 컴퓨터 상호 간에 정보를 교환할 수 있도록 연결된 형태를 의미합니다. 예를 들어, 컴퓨터 A와 컴퓨터 B가 직접적으로 연결되어있고, 컴퓨터 B와 컴퓨터 C가 직접적으로 연결되어 있을 때 컴퓨터 A와 컴퓨터 C…]]></description><link>https://raina94.github.io/2019/09-26-algorithm-1/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-26-algorithm-1/</guid><pubDate>Thu, 26 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
+&lt;p&gt;네트워크란 컴퓨터 상호 간에 정보를 교환할 수 있도록 연결된 형태를 의미합니다. 예를 들어, 컴퓨터 A와 컴퓨터 B가 직접적으로 연결되어있고, 컴퓨터 B와 컴퓨터 C가 직접적으로 연결되어 있을 때 컴퓨터 A와 컴퓨터 C도 간접적으로 연결되어 정보를 교환할 수 있습니다. 따라서 컴퓨터 A, B, C는 모두 같은 네트워크 상에 있다고 할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;컴퓨터의 개수 n, 연결에 대한 정보가 담긴 2차원 배열 computers가 매개변수로 주어질 때, 네트워크의 개수를 return 하도록 solution 함수를 작성하시오.&lt;/p&gt;
+&lt;h2&gt;제한사항&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;컴퓨터의 개수 n은 1 이상 200 이하인 자연수입니다.&lt;/li&gt;
+&lt;li&gt;각 컴퓨터는 0부터 n-1인 정수로 표현합니다.&lt;/li&gt;
+&lt;li&gt;i번 컴퓨터와 j번 컴퓨터가 연결되어 있으면 computers[i][j]를 1로 표현합니다.&lt;/li&gt;
+&lt;li&gt;computer[i][i]는 항상 1입니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;입출력 예&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;n&lt;/th&gt;
+&lt;th&gt;computers&lt;/th&gt;
+&lt;th&gt;return&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;[[1, 1, 0], [1, 1, 0], [0, 0, 1]]&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;[[1, 1, 0], [1, 1, 1], [0, 1, 1]]&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;입출력 예 설명&lt;/h3&gt;
+&lt;p&gt;예제 #1&lt;/p&gt;
+&lt;p&gt;아래와 같이 2개의 네트워크가 있습니다.
+&lt;img src=&quot;https://grepp-programmers.s3.amazonaws.com/files/ybm/5b61d6ca97/cc1e7816-b6d7-4649-98e0-e95ea2007fd7.png&quot; alt=&quot;예제_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;예제 #2&lt;/p&gt;
+&lt;p&gt;아래와 같이 1개의 네트워크가 있습니다.
+&lt;img src=&quot;https://grepp-programmers.s3.amazonaws.com/files/ybm/7554746da2/edb61632-59f4-4799-9154-de9ca98c9e55.png&quot; alt=&quot;예제_2&quot;&gt;&lt;/p&gt;
+&lt;h1&gt;나의 풀이&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;start&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; visited&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  visited&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;start&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//방문한 곳으로 남김&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;visited&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;start&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;//해당 위치에서 다음 네트워크로 갈 수 있는 경우&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; visited&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//다음 네트워크 탐색&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;n&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; answer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    visited &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;visited&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;//첫 방문일 경우&lt;/span&gt;
+      answer&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//네트워크 추가&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; visited&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//해당 부분부터 탐색&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; answer
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;처음에는 for문을 이용해서 비재귀형태로 작성했다가,&lt;/p&gt;
+&lt;p&gt;제대로된 dfs의 탐색으로 풀어보고 싶어서 다른 언어로 작성된 풀이로 어떤 식으로 구현했는지 참고한 뒤 다시 재 작성해보았다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 단어 변환(javascript)]]></title><description><![CDATA[문제 설명 두 개의 단어 begin, target과 단어의 집합 words가 있습니다. 아래와 같은 규칙을 이용하여 begin에서 target으로 변환하는 가장 짧은 변환 과정을 찾으려고 합니다. 예를 들어 begin이 hit, target가 cog…]]></description><link>https://raina94.github.io/2019/09-26-algorithm-2/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-26-algorithm-2/</guid><pubDate>Thu, 26 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
 &lt;p&gt;두 개의 단어 begin, target과 단어의 집합 words가 있습니다. 아래와 같은 규칙을 이용하여 begin에서 target으로 변환하는 가장 짧은 변환 과정을 찾으려고 합니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;1. 한 번에 한 개의 알파벳만 바꿀 수 있습니다.
 2. words에 있는 단어로만 변환할 수 있습니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1459,71 +1523,7 @@ B : 0스트라이크 1볼.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;BFS를 직접 구현해볼 수 있어서 시간은 오래걸렸지만 보람있었다.&lt;/p&gt;
-&lt;p&gt;다만 BFS의 인자가 너무 많아진 건 아쉽다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 네트워크(javascript)]]></title><description><![CDATA[문제 설명 네트워크란 컴퓨터 상호 간에 정보를 교환할 수 있도록 연결된 형태를 의미합니다. 예를 들어, 컴퓨터 A와 컴퓨터 B가 직접적으로 연결되어있고, 컴퓨터 B와 컴퓨터 C가 직접적으로 연결되어 있을 때 컴퓨터 A와 컴퓨터 C…]]></description><link>https://raina94.github.io/2019/09-26-algorithm-1/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-26-algorithm-1/</guid><pubDate>Thu, 26 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
-&lt;p&gt;네트워크란 컴퓨터 상호 간에 정보를 교환할 수 있도록 연결된 형태를 의미합니다. 예를 들어, 컴퓨터 A와 컴퓨터 B가 직접적으로 연결되어있고, 컴퓨터 B와 컴퓨터 C가 직접적으로 연결되어 있을 때 컴퓨터 A와 컴퓨터 C도 간접적으로 연결되어 정보를 교환할 수 있습니다. 따라서 컴퓨터 A, B, C는 모두 같은 네트워크 상에 있다고 할 수 있습니다.&lt;/p&gt;
-&lt;p&gt;컴퓨터의 개수 n, 연결에 대한 정보가 담긴 2차원 배열 computers가 매개변수로 주어질 때, 네트워크의 개수를 return 하도록 solution 함수를 작성하시오.&lt;/p&gt;
-&lt;h2&gt;제한사항&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;컴퓨터의 개수 n은 1 이상 200 이하인 자연수입니다.&lt;/li&gt;
-&lt;li&gt;각 컴퓨터는 0부터 n-1인 정수로 표현합니다.&lt;/li&gt;
-&lt;li&gt;i번 컴퓨터와 j번 컴퓨터가 연결되어 있으면 computers[i][j]를 1로 표현합니다.&lt;/li&gt;
-&lt;li&gt;computer[i][i]는 항상 1입니다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;입출력 예&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;n&lt;/th&gt;
-&lt;th&gt;computers&lt;/th&gt;
-&lt;th&gt;return&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;[[1, 1, 0], [1, 1, 0], [0, 0, 1]]&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;[[1, 1, 0], [1, 1, 1], [0, 1, 1]]&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;입출력 예 설명&lt;/h3&gt;
-&lt;p&gt;예제 #1&lt;/p&gt;
-&lt;p&gt;아래와 같이 2개의 네트워크가 있습니다.
-&lt;img src=&quot;https://grepp-programmers.s3.amazonaws.com/files/ybm/5b61d6ca97/cc1e7816-b6d7-4649-98e0-e95ea2007fd7.png&quot; alt=&quot;예제_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;예제 #2&lt;/p&gt;
-&lt;p&gt;아래와 같이 1개의 네트워크가 있습니다.
-&lt;img src=&quot;https://grepp-programmers.s3.amazonaws.com/files/ybm/7554746da2/edb61632-59f4-4799-9154-de9ca98c9e55.png&quot; alt=&quot;예제_2&quot;&gt;&lt;/p&gt;
-&lt;h1&gt;나의 풀이&lt;/h1&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;start&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; visited&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  visited&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;start&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//방문한 곳으로 남김&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;visited&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;start&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token comment&quot;&gt;//해당 위치에서 다음 네트워크로 갈 수 있는 경우&lt;/span&gt;
-      &lt;span class=&quot;token function&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; visited&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//다음 네트워크 탐색&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;n&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; answer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    visited &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-
-  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;visited&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token comment&quot;&gt;//첫 방문일 경우&lt;/span&gt;
-      answer&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//네트워크 추가&lt;/span&gt;
-      &lt;span class=&quot;token function&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; visited&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//해당 부분부터 탐색&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; answer
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;처음에는 for문을 이용해서 비재귀형태로 작성했다가,&lt;/p&gt;
-&lt;p&gt;제대로된 dfs의 탐색으로 풀어보고 싶어서 다른 언어로 작성된 풀이로 어떤 식으로 구현했는지 참고한 뒤 다시 재 작성해보았다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 올바른 괄호(javascript)]]></title><description><![CDATA[…]]></description><link>https://raina94.github.io/2019/09-26-algorithm-3/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-26-algorithm-3/</guid><pubDate>Thu, 26 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
+&lt;p&gt;다만 BFS의 인자가 너무 많아진 건 아쉽다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 올바른 괄호(javascript)]]></title><description><![CDATA[…]]></description><link>https://raina94.github.io/2019/09-26-algorithm-3/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-26-algorithm-3/</guid><pubDate>Thu, 26 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
 &lt;p&gt;괄호가 바르게 짝지어졌다는 것은 ’(’ 문자로 열렸으면 반드시 짝지어서 ’)’ 문자로 닫혀야 한다는 뜻입니다. 예를 들어&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;()() 또는 (())() 는 올바른 괄호입니다.&lt;/li&gt;
@@ -1678,7 +1678,93 @@ B : 0스트라이크 1볼.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; answer
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 다리를 지나는 트럭(javascript)]]></title><description><![CDATA[문제 설명 트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다. 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다. 트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length…]]></description><link>https://raina94.github.io/2019/09-24-algorithm-1/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-24-algorithm-1/</guid><pubDate>Tue, 24 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 큰 수 만들기(javascript)]]></title><description><![CDATA[문제 설명 어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다. 예를 들어, 숫자 1924에서 수 두 개를 제거하면 19, 12, 14, 92, 94, 24 를 만들 수 있습니다. 이 중 가장 큰 숫자는 9…]]></description><link>https://raina94.github.io/2019/09-24-algorithm-2/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-24-algorithm-2/</guid><pubDate>Tue, 24 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
+&lt;p&gt;어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다.&lt;/p&gt;
+&lt;p&gt;예를 들어, 숫자 1924에서 수 두 개를 제거하면 [19, 12, 14, 92, 94, 24] 를 만들 수 있습니다. 이 중 가장 큰 숫자는 94 입니다.&lt;/p&gt;
+&lt;p&gt;문자열 형식으로 숫자 number와 제거할 수의 개수 k가 solution 함수의 매개변수로 주어집니다. number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 큰 숫자를 문자열 형태로 return 하도록 solution 함수를 완성하세요.&lt;/p&gt;
+&lt;h2&gt;제한 조건&lt;/h2&gt;
+&lt;p&gt;number는 1자리 이상, 1,000,000자리 이하인 숫자입니다.&lt;/p&gt;
+&lt;p&gt;k는 1 이상 number의 자릿수 미만인 자연수입니다.&lt;/p&gt;
+&lt;h2&gt;입출력 예&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;number&lt;/th&gt;
+&lt;th&gt;k&lt;/th&gt;
+&lt;th&gt;return&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1924&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;94&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1231234&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;3234&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4177252841&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;775841&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1&gt;나의 풀이&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;1차 풀이&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;number&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; k&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; array &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//문자를 잘라내기&lt;/span&gt;
+        min &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;temp &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; k&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; remove &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            val&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            index&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; slice &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//배열을 순회하기 위해 복제&lt;/span&gt;
+            slice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//복제한 배열에서 한 글자 제거&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;slice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; remove&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;val&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token comment&quot;&gt;//제거된 결과값이 가장 큰 경우 제거할 변수에 넣기&lt;/span&gt;
+                remove &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    val&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;slice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    index&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; i
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;remove&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;index &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token comment&quot;&gt;//가장 큰 수를 찾아낸 뒤 제거&lt;/span&gt;
+            array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;remove&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        temp&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;처음에는 가장 작은 숫자를 제거 하려다 답이 틀렸다는 것을 깨닫고 탐욕법을 사용 할 수 있도록 변경했다.&lt;/p&gt;
+&lt;p&gt;테스트 케이스는 전부 통과했지만 채점 시엔 반은 맞고.. 반은 틀리고.. 반은 시간 초과.. 타노스인줄&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2차 풀이&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;number&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; k&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;index &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; k&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        number &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    index&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; number
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;앞글자가 뒷글자보다 작은 경우를 먼저 지워나가면 큰 숫자가 만들어 져서 다시 짜본 결과.&lt;/p&gt;
+&lt;p&gt;(배열의 길이가 무수히 길어지면, 배열로 변환할 때 걸리는 시간도 길어진다고 해서 문자열 비교로 변경도 해봤다)&lt;/p&gt;
+&lt;p&gt;대부분의 테스트는 통과했지만 시간 초과되는 한문제를 해결 하지 못했다.ㅜㅠ&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 다리를 지나는 트럭(javascript)]]></title><description><![CDATA[문제 설명 트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다. 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다. 트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length…]]></description><link>https://raina94.github.io/2019/09-24-algorithm-1/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-24-algorithm-1/</guid><pubDate>Tue, 24 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
 &lt;p&gt;트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다. 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다. 트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length이고 다리는 무게 weight까지 견딥니다.&lt;/p&gt;
 &lt;p&gt;※ 트럭이 다리에 완전히 오르지 않은 경우, 이 트럭의 무게는 고려하지 않습니다.&lt;/p&gt;
 &lt;p&gt;예를 들어, 길이가 2이고 10kg 무게를 견디는 다리가 있습니다. 무게가 [7, 4, 5, 6]kg인 트럭이 순서대로 최단 시간 안에 다리를 건너려면 다음과 같이 건너야 합니다.&lt;/p&gt;
@@ -1806,93 +1892,7 @@ B : 0스트라이크 1볼.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Queue를 생각하면서 풀었지만 Queue는 배열로 대체 했다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 큰 수 만들기(javascript)]]></title><description><![CDATA[문제 설명 어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다. 예를 들어, 숫자 1924에서 수 두 개를 제거하면 19, 12, 14, 92, 94, 24 를 만들 수 있습니다. 이 중 가장 큰 숫자는 9…]]></description><link>https://raina94.github.io/2019/09-24-algorithm-2/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-24-algorithm-2/</guid><pubDate>Tue, 24 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
-&lt;p&gt;어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다.&lt;/p&gt;
-&lt;p&gt;예를 들어, 숫자 1924에서 수 두 개를 제거하면 [19, 12, 14, 92, 94, 24] 를 만들 수 있습니다. 이 중 가장 큰 숫자는 94 입니다.&lt;/p&gt;
-&lt;p&gt;문자열 형식으로 숫자 number와 제거할 수의 개수 k가 solution 함수의 매개변수로 주어집니다. number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 큰 숫자를 문자열 형태로 return 하도록 solution 함수를 완성하세요.&lt;/p&gt;
-&lt;h2&gt;제한 조건&lt;/h2&gt;
-&lt;p&gt;number는 1자리 이상, 1,000,000자리 이하인 숫자입니다.&lt;/p&gt;
-&lt;p&gt;k는 1 이상 number의 자릿수 미만인 자연수입니다.&lt;/p&gt;
-&lt;h2&gt;입출력 예&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;number&lt;/th&gt;
-&lt;th&gt;k&lt;/th&gt;
-&lt;th&gt;return&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1924&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;94&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1231234&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;3234&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4177252841&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;775841&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1&gt;나의 풀이&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;1차 풀이&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;number&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; k&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; array &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//문자를 잘라내기&lt;/span&gt;
-        min &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-        temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;temp &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; k&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; remove &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            val&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            index&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; slice &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//배열을 순회하기 위해 복제&lt;/span&gt;
-            slice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//복제한 배열에서 한 글자 제거&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;slice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; remove&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;val&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;token comment&quot;&gt;//제거된 결과값이 가장 큰 경우 제거할 변수에 넣기&lt;/span&gt;
-                remove &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-                    val&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;slice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-                    index&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; i
-                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;remove&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;index &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token comment&quot;&gt;//가장 큰 수를 찾아낸 뒤 제거&lt;/span&gt;
-            array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;remove&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        temp&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;처음에는 가장 작은 숫자를 제거 하려다 답이 틀렸다는 것을 깨닫고 탐욕법을 사용 할 수 있도록 변경했다.&lt;/p&gt;
-&lt;p&gt;테스트 케이스는 전부 통과했지만 채점 시엔 반은 맞고.. 반은 틀리고.. 반은 시간 초과.. 타노스인줄&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2차 풀이&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;number&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; k&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
-
-  &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;index &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; k&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-        number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        number &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;number&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    index&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; number
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;앞글자가 뒷글자보다 작은 경우를 먼저 지워나가면 큰 숫자가 만들어 져서 다시 짜본 결과.&lt;/p&gt;
-&lt;p&gt;(배열의 길이가 무수히 길어지면, 배열로 변환할 때 걸리는 시간도 길어진다고 해서 문자열 비교로 변경도 해봤다)&lt;/p&gt;
-&lt;p&gt;대부분의 테스트는 통과했지만 시간 초과되는 한문제를 해결 하지 못했다.ㅜㅠ&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 조이스틱(javascript)]]></title><description><![CDATA[문제 설명 조이스틱으로 알파벳 이름을 완성하세요. 맨 처음엔 A로만 이루어져 있습니다.
+&lt;p&gt;Queue를 생각하면서 풀었지만 Queue는 배열로 대체 했다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[프로그래머스 조이스틱(javascript)]]></title><description><![CDATA[문제 설명 조이스틱으로 알파벳 이름을 완성하세요. 맨 처음엔 A로만 이루어져 있습니다.
 ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA 조이스틱을 각 방향으로 움직이면 아래와 같습니다. 예를 들어 아래의 방법으로 JAZ…]]></description><link>https://raina94.github.io/2019/09-24-algorithm-3/</link><guid isPermaLink="false">https://raina94.github.io/2019/09-24-algorithm-3/</guid><pubDate>Tue, 24 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제 설명&lt;/h1&gt;
 &lt;p&gt;조이스틱으로 알파벳 이름을 완성하세요. 맨 처음엔 A로만 이루어져 있습니다.
 ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA&lt;/p&gt;
@@ -2224,56 +2224,7 @@ heights는 길이 2 이상 100 이하인 정수 배열입니다.
 &lt;li&gt;&lt;strong&gt;중복의 최소화&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;명료성의 최대화&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;구성요소의 최소화&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[WebStorm, Git 사용 할 때 .gitignore 에 추가된 .idea/workspace.xml 파일이 자꾸 나타나는 경우]]></title><description><![CDATA[일 하면서, 공부하면서 알게된 소소한 팁을 기록하는 습관을 들이기 위해 이 글을 썼다.😄 부디 누군가에게 도움이 되길! 🙏 가끔 WebStorm 으로 새로운 프로젝트를 설정하고 git…]]></description><link>https://raina94.github.io/2019/07-15-gitignore-webstorm/</link><guid isPermaLink="false">https://raina94.github.io/2019/07-15-gitignore-webstorm/</guid><pubDate>Mon, 15 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;일 하면서, 공부하면서 알게된 소소한 팁을 기록하는 습관을 들이기 위해 이 글을 썼다.😄&lt;/p&gt;
-&lt;p&gt;부디 누군가에게 도움이 되길! 🙏&lt;/p&gt;
-&lt;p&gt;가끔 WebStorm 으로 새로운 프로젝트를 설정하고 git 셋팅까지 하고, &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 파일까지 만들어 둔다음
-나중에 작업 실컷하다가 커밋하려고 보면
-
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/cb7a48286a6f35dc7936517e280afec2/0c69d/github.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 70.94594594594594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACZklEQVQ4y42T22rUUBSG8xaiYNU7RahnECwKPoHgg4hgBVHbUqEq3gk+i7f1RoRStVbbmc4pM5kcZibnZCbJTJLPnUwPWkbqho+9WVl77X9n/VvyXAffcxn0DTrtFpqqYOgqitLBHPQJfBfXsRiYFqZlYdsOum5QqzfodBT6/UEZs2y7zJFUZ4LhpVTVkC8/FdY363ze7rC516NuRKg+6II/x3AUIYtimig8iqLDeJaDtL4z5OPWEMUcIZsJ7X2avRHfawYbuyrfqiq60aOrqqWi8XhCnudkWSbWY+IkYTJOCKMEaaMZ8Wk3wg6EGmuEZo/QBao5pNLS+VXvsrFd4+tOix97Ctu1LlqRd0CZH9EeiD1WhHTpeZP5JZmLz6rcXKkz/7LGlaUaV5frXFsR35ZbXF+VObtYZ05QzKcfVw45Izj1qMLCWoMH72Wkyy9kUaDDrdUG9991WHjT5s6azN3XTW6/anBDHFJw7kllnyrnF4+48LTKnIjde6vw8IOCZAcxfWeIZgZUZYNqS6OlWVjBGGeY4u4TxilBNIsJwwS07iae10Miz8jSCUkcCYt42JZJGBy0Nf8Psmlq3Mb2faSiY1EUE4RD4TO7tEIx94puTlLRyfwEMlJRN/O3qGkm0kRsKlpfeMvzAxzHwXU9fLE+8td0479IC5GJTrMfFgUnxPFUoSMKWY5bzpqmYwjvFSTCZ+UPyHOOjyJWXt7bpKn3kdI0LY06EgqDMCyL+UFYPjPHdcWP9knEDfJDlTOuXCiMu0JhgFSeMOPk4ypmF5uSZtPGyLZ4en9J/wcnjSyfOqJtZ/wGh2UBNzGLYLMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;정말싫음&quot;
-        title=&quot;&quot;
-        src=&quot;/static/cb7a48286a6f35dc7936517e280afec2/fcda8/github.png&quot;
-        srcset=&quot;/static/cb7a48286a6f35dc7936517e280afec2/12f09/github.png 148w,
-/static/cb7a48286a6f35dc7936517e280afec2/e4a3f/github.png 295w,
-/static/cb7a48286a6f35dc7936517e280afec2/fcda8/github.png 590w,
-/static/cb7a48286a6f35dc7936517e280afec2/0c69d/github.png 598w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;저렇게 수정한 적도 없는 .idea/workspace.xml 파일이 리스트 되면서 사라지지 않을 때가 있다.(&lt;del&gt;우리집 묵은때처럼&lt;/del&gt;) &lt;/p&gt;
-&lt;p&gt;심지어 .gitignore 에 추가해도 안 사라지는 경우가 있는데,&lt;/p&gt;
-&lt;p&gt;이는 이미 한번 이상 해당 파일을 repo에 &lt;strong&gt;commit&lt;/strong&gt; 했기 때문이다.&lt;/p&gt;
-&lt;p&gt;따라서 이 문제를 해결 하기 위해선 &lt;strong&gt;이미 올라간 파일들을 정리&lt;/strong&gt; 해주어야 .gitignore가 정상적으로 적용 된다.&lt;/p&gt;
-&lt;p&gt;우선 터미널을 켜서 git을 실행시킨다. &lt;/p&gt;
-&lt;p&gt;다음으로 깃으로 올라간 .idea 디렉터리를 삭제한 후&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git rm -r .idea  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;다시 커밋해서 정리 해준다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git commit -m &amp;quot;Remove .idea from repo&amp;quot; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이제 보기싫은 .idea 파일도 안녕!&lt;/p&gt;
-&lt;h1&gt;출처&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/19973506/cannot-ignore-idea-workspace-xml-keeps-popping-up&quot;&gt;https://stackoverflow.com/questions/19973506/cannot-ignore-idea-workspace-xml-keeps-popping-up&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[모두의 Toy Story Side Project 어디까지 해봤니? 컨퍼런스 요약 및 후기 (2)]]></title><description><![CDATA[요약 2편입니다! 2편 세션 팀 눈누난나의 눈누 옥찬오님의 RosettaStone 김승일님의 모두의 연구소 김석준님의 QWER.GG + 짤봇 팀 눈누난나의 눈누  서비스를 만들고 성장하면서 겪었던 어려움에 대한 이야기 : PM…]]></description><link>https://raina94.github.io/2019/07-15-toy-story-conference-review2/</link><guid isPermaLink="false">https://raina94.github.io/2019/07-15-toy-story-conference-review2/</guid><pubDate>Mon, 15 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;요약 2편입니다!&lt;/p&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[모두의 Toy Story Side Project 어디까지 해봤니? 컨퍼런스 요약 및 후기 (2)]]></title><description><![CDATA[요약 2편입니다! 2편 세션 팀 눈누난나의 눈누 옥찬오님의 RosettaStone 김승일님의 모두의 연구소 김석준님의 QWER.GG + 짤봇 팀 눈누난나의 눈누  서비스를 만들고 성장하면서 겪었던 어려움에 대한 이야기 : PM…]]></description><link>https://raina94.github.io/2019/07-15-toy-story-conference-review2/</link><guid isPermaLink="false">https://raina94.github.io/2019/07-15-toy-story-conference-review2/</guid><pubDate>Mon, 15 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;요약 2편입니다!&lt;/p&gt;
 &lt;h2&gt;2편 세션&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;팀 눈누난나의 눈누&lt;/li&gt;
@@ -2674,7 +2625,56 @@ heights는 길이 2 이상 100 이하인 정수 배열입니다.
 잘 운영되고 있는 사이드 프로젝트 개발자는 어떤 사람일까 궁금해서(ㅋㅋㅋ) 가벼운 마음으로 갔다 온 컨퍼런스이기도 했다. &lt;/p&gt;
 &lt;p&gt;근데 다들 사이드프로젝트인데도 불구하고 가벼운 마음으로 진행하는 분이 없었던 것이 없었던 것이 가장 와닿았다.(+ 자기반성도…)&lt;/p&gt;
 &lt;p&gt;몇몇 발표자분들도 강조했지만 꾸준히 하는게 가장 중요하다고 했던것처럼
-나도 다음에 좋은 아이디어로 사이드 프로젝트를 진행하게 된다면 다시끔 이 요약글을 읽어보며 강조했던 점을 상기시키면서 작업하고싶다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[모두의 Toy Story Side Project 어디까지 해봤니? 컨퍼런스 요약 및 후기 (1)]]></title><description><![CDATA[컨퍼런스 참가 
+나도 다음에 좋은 아이디어로 사이드 프로젝트를 진행하게 된다면 다시끔 이 요약글을 읽어보며 강조했던 점을 상기시키면서 작업하고싶다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[WebStorm, Git 사용 할 때 .gitignore 에 추가된 .idea/workspace.xml 파일이 자꾸 나타나는 경우]]></title><description><![CDATA[일 하면서, 공부하면서 알게된 소소한 팁을 기록하는 습관을 들이기 위해 이 글을 썼다.😄 부디 누군가에게 도움이 되길! 🙏 가끔 WebStorm 으로 새로운 프로젝트를 설정하고 git…]]></description><link>https://raina94.github.io/2019/07-15-gitignore-webstorm/</link><guid isPermaLink="false">https://raina94.github.io/2019/07-15-gitignore-webstorm/</guid><pubDate>Mon, 15 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;일 하면서, 공부하면서 알게된 소소한 팁을 기록하는 습관을 들이기 위해 이 글을 썼다.😄&lt;/p&gt;
+&lt;p&gt;부디 누군가에게 도움이 되길! 🙏&lt;/p&gt;
+&lt;p&gt;가끔 WebStorm 으로 새로운 프로젝트를 설정하고 git 셋팅까지 하고, &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 파일까지 만들어 둔다음
+나중에 작업 실컷하다가 커밋하려고 보면
+
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cb7a48286a6f35dc7936517e280afec2/0c69d/github.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 70.94594594594594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACZklEQVQ4y42T22rUUBSG8xaiYNU7RahnECwKPoHgg4hgBVHbUqEq3gk+i7f1RoRStVbbmc4pM5kcZibnZCbJTJLPnUwPWkbqho+9WVl77X9n/VvyXAffcxn0DTrtFpqqYOgqitLBHPQJfBfXsRiYFqZlYdsOum5QqzfodBT6/UEZs2y7zJFUZ4LhpVTVkC8/FdY363ze7rC516NuRKg+6II/x3AUIYtimig8iqLDeJaDtL4z5OPWEMUcIZsJ7X2avRHfawYbuyrfqiq60aOrqqWi8XhCnudkWSbWY+IkYTJOCKMEaaMZ8Wk3wg6EGmuEZo/QBao5pNLS+VXvsrFd4+tOix97Ctu1LlqRd0CZH9EeiD1WhHTpeZP5JZmLz6rcXKkz/7LGlaUaV5frXFsR35ZbXF+VObtYZ05QzKcfVw45Izj1qMLCWoMH72Wkyy9kUaDDrdUG9991WHjT5s6azN3XTW6/anBDHFJw7kllnyrnF4+48LTKnIjde6vw8IOCZAcxfWeIZgZUZYNqS6OlWVjBGGeY4u4TxilBNIsJwwS07iae10Miz8jSCUkcCYt42JZJGBy0Nf8Psmlq3Mb2faSiY1EUE4RD4TO7tEIx94puTlLRyfwEMlJRN/O3qGkm0kRsKlpfeMvzAxzHwXU9fLE+8td0479IC5GJTrMfFgUnxPFUoSMKWY5bzpqmYwjvFSTCZ+UPyHOOjyJWXt7bpKn3kdI0LY06EgqDMCyL+UFYPjPHdcWP9knEDfJDlTOuXCiMu0JhgFSeMOPk4ypmF5uSZtPGyLZ4en9J/wcnjSyfOqJtZ/wGh2UBNzGLYLMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;정말싫음&quot;
+        title=&quot;&quot;
+        src=&quot;/static/cb7a48286a6f35dc7936517e280afec2/fcda8/github.png&quot;
+        srcset=&quot;/static/cb7a48286a6f35dc7936517e280afec2/12f09/github.png 148w,
+/static/cb7a48286a6f35dc7936517e280afec2/e4a3f/github.png 295w,
+/static/cb7a48286a6f35dc7936517e280afec2/fcda8/github.png 590w,
+/static/cb7a48286a6f35dc7936517e280afec2/0c69d/github.png 598w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;저렇게 수정한 적도 없는 .idea/workspace.xml 파일이 리스트 되면서 사라지지 않을 때가 있다.(&lt;del&gt;우리집 묵은때처럼&lt;/del&gt;) &lt;/p&gt;
+&lt;p&gt;심지어 .gitignore 에 추가해도 안 사라지는 경우가 있는데,&lt;/p&gt;
+&lt;p&gt;이는 이미 한번 이상 해당 파일을 repo에 &lt;strong&gt;commit&lt;/strong&gt; 했기 때문이다.&lt;/p&gt;
+&lt;p&gt;따라서 이 문제를 해결 하기 위해선 &lt;strong&gt;이미 올라간 파일들을 정리&lt;/strong&gt; 해주어야 .gitignore가 정상적으로 적용 된다.&lt;/p&gt;
+&lt;p&gt;우선 터미널을 켜서 git을 실행시킨다. &lt;/p&gt;
+&lt;p&gt;다음으로 깃으로 올라간 .idea 디렉터리를 삭제한 후&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git rm -r .idea  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다시 커밋해서 정리 해준다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git commit -m &amp;quot;Remove .idea from repo&amp;quot; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 보기싫은 .idea 파일도 안녕!&lt;/p&gt;
+&lt;h1&gt;출처&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/19973506/cannot-ignore-idea-workspace-xml-keeps-popping-up&quot;&gt;https://stackoverflow.com/questions/19973506/cannot-ignore-idea-workspace-xml-keeps-popping-up&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[모두의 Toy Story Side Project 어디까지 해봤니? 컨퍼런스 요약 및 후기 (1)]]></title><description><![CDATA[컨퍼런스 참가 
 GDG Campus Korea…]]></description><link>https://raina94.github.io/2019/07-14-toy-story-conference-review/</link><guid isPermaLink="false">https://raina94.github.io/2019/07-14-toy-story-conference-review/</guid><pubDate>Sun, 14 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;컨퍼런스 참가&lt;/h2&gt;
 &lt;p&gt;
   &lt;a
