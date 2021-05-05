@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: http://raina94.github.io/sitemap.xml
-Host: raina94.github.io
+Sitemap: http://seongry.github.io/sitemap.xml
+Host: seongry.github.io
