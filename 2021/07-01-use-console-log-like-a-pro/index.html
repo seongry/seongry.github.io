@@ -1,0 +1,558 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.666 'IBMPlexSansKR-Regular';box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'IBMPlexSansKR-Regular';font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:inherit;font-family:'IBMPlexSansKR-Regular';font-weight:bold;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:inherit;font-family:'IBMPlexSansKR-Regular';font-weight:bold;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:inherit;font-family:'IBMPlexSansKR-Regular';font-weight:bold;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:inherit;font-family:'IBMPlexSansKR-Regular';font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:inherit;font-family:'IBMPlexSansKR-Regular';font-weight:bold;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:inherit;font-family:'IBMPlexSansKR-Regular';font-weight:bold;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:1.666rem;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><style data-href="/styles.493e6315ef3a09bc2f74.css">code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><meta name="generator" content="Gatsby 2.21.12"/><style data-styled="" data-styled-version="5.1.0">.hvfdfU{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;padding:0.833rem 1.2rem;position:-webkit-sticky;position:sticky;top:0;background:#ffffff;z-index:99;border-bottom:1px solid #dddddd;}/*!sc*/
+.hvfdfU a:hover{color:#9332fd;}/*!sc*/
+data-styled.g1[id="Header__StyledHeader-tblo6l-0"]{content:"hvfdfU,"}/*!sc*/
+.kDWDlv{width:100%;max-width:40rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;font-family:"IBMPlexSansKR-Bold";font-size:20px;}/*!sc*/
+data-styled.g2[id="Header__HeaderContents-tblo6l-1"]{content:"kDWDlv,"}/*!sc*/
+@font-face{font-family:"IBMPlexSansKR-Regular";src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff") format("woff");font-weight:normal;font-style:normal;}/*!sc*/
+@font-face{font-family:"IBMPlexSansKR-Bold";src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Bold.woff") format("woff");font-weight:normal;font-style:normal;}/*!sc*/
+.jWvNsA{height:100%;}/*!sc*/
+data-styled.g3[id="Layout__StyledLayout-mlc7jk-0"]{content:"jWvNsA,"}/*!sc*/
+.cpAPBL{font-family:"IBMPlexSansKR-Regular";width:100%;max-width:40rem;margin:0 auto;}/*!sc*/
+@media screen and (max-width:768px){.cpAPBL{padding:0 0.8rem 0 0.8rem;}}/*!sc*/
+data-styled.g4[id="Layout__Main-mlc7jk-1"]{content:"cpAPBL,"}/*!sc*/
+.eXEfjy{text-align:center;padding:1.5rem;}/*!sc*/
+data-styled.g5[id="Layout__Footer-mlc7jk-2"]{content:"eXEfjy,"}/*!sc*/
+.dBvAkF{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:2.5rem 16px;}/*!sc*/
+data-styled.g6[id="Bio__Layout-jxd219-0"]{content:"dBvAkF,"}/*!sc*/
+.ceswXg{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}/*!sc*/
+data-styled.g7[id="Bio__Description-jxd219-1"]{content:"ceswXg,"}/*!sc*/
+.dRiyZA{display:inline;margin:0;font-weight:900;font-size:1.3rem;}/*!sc*/
+data-styled.g9[id="Bio__Nickname-jxd219-3"]{content:"dRiyZA,"}/*!sc*/
+.dxkDNd{margin:0;}/*!sc*/
+data-styled.g10[id="Bio__SelfProduce-jxd219-4"]{content:"dxkDNd,"}/*!sc*/
+.fTHUxA{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;list-style:none;padding:5rem 0 2.5rem 0;margin:0;}/*!sc*/
+@media screen and (max-width:768px){.fTHUxA{padding:4rem 0.8rem 0.8rem 0.8rem;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}}/*!sc*/
+data-styled.g11[id="Pagination__PaginationList-cvnv4h-0"]{content:"fTHUxA,"}/*!sc*/
+.bHLhmL{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-radius:4em;padding:0.4rem 1.5rem;border:solid transparent;background:linear-gradient(135deg,#b55af3 10%,#9c68f9 100%);box-shadow:inset 0 0 0 100px white;}/*!sc*/
+.bHLhmL:hover{box-shadow:none;}/*!sc*/
+.bHLhmL:hover span{color:#ffffff;}/*!sc*/
+data-styled.g12[id="Pagination__PaginationLink-cvnv4h-1"]{content:"bHLhmL,"}/*!sc*/
+.jgEqGQ{max-width:20rem;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;}/*!sc*/
+data-styled.g13[id="Pagination__Title-cvnv4h-2"]{content:"jgEqGQ,"}/*!sc*/
+.jSHUOj{background-color:#e9ecef;border-radius:4px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:8px;margin-top:8px;}/*!sc*/
+data-styled.g14[id="TagList__TagLayout-sc-1ah9113-0"]{content:"jSHUOj,"}/*!sc*/
+.dJlHZU{color:#191919;padding:2px 8px;font-size:12px;}/*!sc*/
+.dJlHZU:hover{cursor:pointer;color:#9332fd;}/*!sc*/
+data-styled.g15[id="TagList__Tag-sc-1ah9113-1"]{content:"dJlHZU,"}/*!sc*/
+.cIKfCX{font-size:20px;}/*!sc*/
+data-styled.g16[id="TagList__TagIcon-sc-1ah9113-2"]{content:"cIKfCX,"}/*!sc*/
+.esKHCG{font-family:"IBMPlexSansKR-Bold";margin-top:2.5rem;}/*!sc*/
+data-styled.g17[id="BlogPost__Title-g9sani-0"]{content:"esKHCG,"}/*!sc*/
+.ixgRHH span + span{margin-left:4px;}/*!sc*/
+data-styled.g18[id="BlogPost__SubTitle-g9sani-1"]{content:"ixgRHH,"}/*!sc*/
+.cbRWpm{line-height:1.8;}/*!sc*/
+.cbRWpm a{color:#9332fd !important;}/*!sc*/
+.cbRWpm .token.operator,.cbRWpm .token.entity,.cbRWpm .token.url,.cbRWpm .language-css .token.string,.cbRWpm .style .token.string{background:#f5f2f0;}/*!sc*/
+.cbRWpm .language-text{color:#eb5757;padding:0.2em 0.4em;font-size:85%;}/*!sc*/
+.cbRWpm blockquote{border-left:5px solid #9332fd;margin:0 0 1.666rem 0;padding:0 1.666rem;}/*!sc*/
+data-styled.g19[id="BlogPost__Post-g9sani-2"]{content:"cbRWpm,"}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+html,body,#___gatsby{width:100%;height:100%;}/*!sc*/
+html div[role="group"],body div[role="group"],#___gatsby div[role="group"]{height:100%;}/*!sc*/
+a:not(.gatsby-resp-image-link){-webkit-text-decoration:none;text-decoration:none;color:#343a40;}/*!sc*/
+a:not(.gatsby-resp-image-link):hover{color:#9332fd;}/*!sc*/
+::-moz-selection{background:#9332fd;color:#fff;}/*!sc*/
+::selection{background:#9332fd;color:#fff;}/*!sc*/
+data-styled.g28[id="sc-global-fhHdLG1"]{content:"sc-global-fhHdLG1,"}/*!sc*/
+</style><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#748ffc"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=2ccfdfa52a499a37f3599832151a0e4c"/><title data-react-helmet="true">Use console.log() like a pro | 코알 데브 로그</title><meta data-react-helmet="true" name="description" content="원문 https://markodenic.com/use-console-log-like-a-pro…"/><meta data-react-helmet="true" property="og:title" content="Use console.log() like a pro"/><meta data-react-helmet="true" property="og:description" content="원문 https://markodenic.com/use-console-log-like-a-pro…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="SeongRyeong Kim"/><meta data-react-helmet="true" name="twitter:title" content="Use console.log() like a pro"/><meta data-react-helmet="true" name="twitter:description" content="원문 https://markodenic.com/use-console-log-like-a-pro…"/><link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:300,400,500,700" rel="stylesheet"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-00a5d2584ff929ef78bc.js"/><link as="script" rel="preload" href="/framework-5dd3c501fd049989ea3a.js"/><link as="script" rel="preload" href="/styles-37d63a57eaf6d055b3bc.js"/><link as="script" rel="preload" href="/app-75c2a2cd644e89d3fb3f.js"/><link as="script" rel="preload" href="/a9a7754c-3434c4a4ea1fadaf7a20.js"/><link as="script" rel="preload" href="/d998dc19ab7c943a74f741de898adcfd6c484ab3-2f1769651f2e556cd53b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-59771f57fae71fc0706c.js"/><link as="fetch" rel="preload" href="/page-data/2021/07-01-use-console-log-like-a-pro/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Layout__StyledLayout-mlc7jk-0 jWvNsA"><header class="Header__StyledHeader-tblo6l-0 hvfdfU"><div class="Header__HeaderContents-tblo6l-1 kDWDlv"><a style="box-shadow:none;text-decoration:none" href="/">코알 데브 로그</a><a href="https://github.com/seongry" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github-alt" class="svg-inline--fa fa-github-alt fa-w-15 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path fill="currentColor" d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg></a></div></header><main class="Layout__Main-mlc7jk-1 cpAPBL"><h1 class="BlogPost__Title-g9sani-0 esKHCG">Use console.log() like a pro</h1><div style="font-size:0.87055rem;line-height:1.666rem;margin-bottom:1.666rem;margin-top:-1.666rem" class="BlogPost__SubTitle-g9sani-1 ixgRHH"><span class="material-icons" style="font-size:0.87055rem;line-height:1.666rem">calendar_today</span><span>July 01, 2021</span><div class="TagList__TagLayout-sc-1ah9113-0 jSHUOj"><span class="TagList__TagIcon-sc-1ah9113-2 cIKfCX material-icons">local_offer</span><span class="TagList__Tag-sc-1ah9113-1 dJlHZU">#<!-- -->javascript</span><span class="TagList__Tag-sc-1ah9113-1 dJlHZU">#<!-- -->번역</span></div></div><section style="margin-bottom:1.666rem" class="BlogPost__Post-g9sani-2 cbRWpm"><p>원문 <a href="https://markodenic.com/use-console-log-like-a-pro/">https://markodenic.com/use-console-log-like-a-pro/</a></p>
+<hr>
+<p>자바스크립트 디버깅에 <code class="language-text">console.log()</code>를 사용하는 것은 개발자 사이에서 가장 흔한 방법입니다. 다만, 그것 말고도 더 있습니다…</p>
+<p><code class="language-text">console</code> 객체는 브라우저의 디버깅 콘솔에 접근을 제공합니다. 브라우저별로 세부적인 동작 방식은 다르지만, 일반적으로 제공되는 <em>사실상의</em> 기능 세트가 있습니다.</p>
+<h2>* 가장 흔한 콘솔 메서드들:</h2>
+<p><code class="language-text">console.log()</code> - 로깅 정보의 일반적인 출력
+<code class="language-text">console.info()</code> - 정보 표시를 가지는 로깅(*역주: 파이어폭스에서만 “i” 표시가 나타납니다.)
+<code class="language-text">console.debug()</code> - 로그 수준이 <code class="language-text">debug</code> 인 메세지를 콘솔에 출력
+<code class="language-text">console.warn()</code> - 경고 메세지를 출력
+<code class="language-text">console.error()</code> - 에러 메세지를 출력</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/36fd9feb6a1f24846566ec2280b51ff7/7fee5/console-methods.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 61.48648648648649%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABq0lEQVQoz52SWY+bMBRG+f+/qY9tRyO1o6pLJgGyEJYJGAixMWY/NbwnisbSMdKV79G1+RzX9YjjBNf11+/hcCIXGT9Phi8bzdup4VfYESSC3XZHEIR4nk+W5RbB0n8+h+z3B5LkAyeOY4qiREpFVd24XitqpaibHql7TNvTdgNd11HXtUWvZ5rGYEy79i11pWpba3CCICAvcoZxsAW9NpqmhXniM8upteImNOWhR4UTSfVBVMVEqcGLJIlo2MeKrNRorZlnmKbpLo4dhfY2InYtt+NIUJxx860VSXZnRXCpV6EfKdJC2Ru0jydctkWY/jNU/sheHNiIv0RZxeYk8cJFLHkP7LSZpDVmnfKhsG8mZDJQpyNFXSJ0xk01JLnhUhjyql25ytb+iEU438VZtuVtoihCCEGapivTNMKDxrtCZSOyxCaKYivKrDRf87hEYlnTepCnsVeebFyUFQaI7GLDGXI8+jaThdWNNj29PTg8jdPKrzTVdxudF1T5iipeqbJvdPVvGFzmbsvcP4+jf7wg/7yhk4Dae0cHPvrkYc57htK+pSqZZPE0/wFrWZnF2yb3EwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-methods"
+        title=""
+        src="/static/36fd9feb6a1f24846566ec2280b51ff7/fcda8/console-methods.png"
+        srcset="/static/36fd9feb6a1f24846566ec2280b51ff7/12f09/console-methods.png 148w,
+/static/36fd9feb6a1f24846566ec2280b51ff7/e4a3f/console-methods.png 295w,
+/static/36fd9feb6a1f24846566ec2280b51ff7/fcda8/console-methods.png 590w,
+/static/36fd9feb6a1f24846566ec2280b51ff7/7fee5/console-methods.png 781w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* 커스텀 CSS 스타일을 입힌 console.log()</h2>
+<p><code class="language-text">console.log()</code> 출력물은 CSS 서식 지정자를 사용해 DevTool에서 스타일을 줄 수 있습니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/bcee49fee2067adb00939300a08b8b06/8dd93/styled.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 42.567567567567565%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAAA30lEQVQoz62OTW6DMBSEff9zdNFFF71Cr9BFpKSbKAJsfoxIDMZg5K+vtEpTiVWTJ3/SG3k8HmVMQV1qsrLj/TRwrAO6bDDGUNcNtrHr3rat6JqqqmhtS9OIRxusteR5gS40pSlRfgQn+AhyWBJM88IY5pUYF8IUf7jd4+rrzo68MGS5ppAPVNi9MuyfuHw80x9e8NkbTtIvw0znJoI8ckPk3H/rzs3rnfPzun95+1E8fsGHKA3tnmAP0J+EI8kb6ZmupJT+6E3SL2rTktK/UbfpV+4YdU+b7YYPnocHfgJqyMDRHYaMxAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="styled"
+        title=""
+        src="/static/bcee49fee2067adb00939300a08b8b06/fcda8/styled.png"
+        srcset="/static/bcee49fee2067adb00939300a08b8b06/12f09/styled.png 148w,
+/static/bcee49fee2067adb00939300a08b8b06/e4a3f/styled.png 295w,
+/static/bcee49fee2067adb00939300a08b8b06/fcda8/styled.png 590w,
+/static/bcee49fee2067adb00939300a08b8b06/efc66/styled.png 885w,
+/static/bcee49fee2067adb00939300a08b8b06/c83ae/styled.png 1180w,
+/static/bcee49fee2067adb00939300a08b8b06/8dd93/styled.png 1369w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* 문자열 변수 대체</h2>
+<p>문자열을 허용하는 <code class="language-text">console</code> 객체의 메서드 중 하나에(<code class="language-text">log()</code> 같은) 문자열을 넘기고 싶을때는 다음 변수 대체 문자열을 사용할 수 있습니다:</p>
+<p><code class="language-text">%s</code> - <code class="language-text">stirng</code></p>
+<p><code class="language-text">%i</code> or <code class="language-text">%d</code> - <code class="language-text">integer</code></p>
+<p><code class="language-text">%o</code> or <code class="language-text">%O</code> - <code class="language-text">object</code></p>
+<p><code class="language-text">%f</code> - float</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/0e4df9b3d1c953f01348cd7c0f111acf/d6a46/string-substitutions.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 47.2972972972973%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABbElEQVQoz31R226sMAzk//+qn9C308eGXS5LEiD3K1Mnqx5VVVtLI8MY7LFnYGzEPC+43e6YpwkLP/Hy5vDKPP5NHozdcL9PYOMNcj8wUh7He+ek3PH+zjBNc8dO9YExBqUVtNU41QHvPIALtdaOUjJijMQ75JyRU0IMgbhAzxmFuPbuvUei2sA5h+UGfvNQwmM7TghhoE4HrS1ciEilIuWKkErPDTG1gVfnciEBpQ2vGJqK7DMCr/CqgBuJbQ9QNsMS37J2DQVSJRyGoCPEGalRBT9Cr3sb4VzAcF0X3UbCOE1ZUMHB0Ams0TiOA0qd9KGFFIJWTvga7d/vMVQil2UB56IfXEiJdX1g2ziZNfdaOzYbR1ga1uJ536s3bPkrusLH49Edm8jlfd+p2YZ229ZsXdeutA1zzv1X9huGUgqZIAiyN7HW0prkun6ufJ4KxtDKpLy53bb8VPgThmZ3g3NP2/+K54qfzeqP+AC7tbgq7A7O3wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="string-substitutions"
+        title=""
+        src="/static/0e4df9b3d1c953f01348cd7c0f111acf/fcda8/string-substitutions.png"
+        srcset="/static/0e4df9b3d1c953f01348cd7c0f111acf/12f09/string-substitutions.png 148w,
+/static/0e4df9b3d1c953f01348cd7c0f111acf/e4a3f/string-substitutions.png 295w,
+/static/0e4df9b3d1c953f01348cd7c0f111acf/fcda8/string-substitutions.png 590w,
+/static/0e4df9b3d1c953f01348cd7c0f111acf/efc66/string-substitutions.png 885w,
+/static/0e4df9b3d1c953f01348cd7c0f111acf/d6a46/string-substitutions.png 1008w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.assert()</h2>
+<p>첫 번째 매개변수가 <code class="language-text">false</code>면 콘솔에 메세지와 스택 추적(stack trace)을 남깁니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/bffa7d4dc523f0782bf4b2ba8d3eae2a/40601/console-assert.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABqElEQVQoz6VS247bIBT0//9gpZWaeEOMY2IwmDvYnh6cbrer9qlFGnkY8OFcpmPsDs7HE2p+op8C3ngEVwUPIcEHfkKpBeP4wEBciOeJ9s/jMZ1nTW/oGGNw1sH5gNU51Fqx7QfqvqNuO/ENuRaUumFvWjvfXryh8Y99+3beeWTu4EVAPxcMS4HSEQMLYNxS1hmCJ4jZYacHfl/HcXzhDd25KTscKxB9xnd1Bxsl+m8UcFghZw81EL9O0F4jbRFLXJBS/BLoV8Cd0gwxwC3xhA4KMSaktZVH5ZaMlAtssnDZI5YIkwwiBWwJ/hGwJS2XBfxBjTcLLLXgf1aX365YLzeoyzvMbYC/c3hpaMIBVgeIZ4CSFnF1p6akh1n8qc9zIN60AEnINlLJKUOSHXj/DkkWMM+Zelqxt6kSjp/44Hv51I6/3OkqeU2PEwQboCcBNyuUkMhCBSlS71yFp32hh9eTF8TQ9EJWe3HvX9hyRVduHObKIC89DAW1VHbSFgsNKKw0gDYs45Gshya+6k+9cU/cGgLx4qjkioOGoak/02nsTMb919UG/AOZh1LqoKNDhAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-assert"
+        title=""
+        src="/static/bffa7d4dc523f0782bf4b2ba8d3eae2a/fcda8/console-assert.png"
+        srcset="/static/bffa7d4dc523f0782bf4b2ba8d3eae2a/12f09/console-assert.png 148w,
+/static/bffa7d4dc523f0782bf4b2ba8d3eae2a/e4a3f/console-assert.png 295w,
+/static/bffa7d4dc523f0782bf4b2ba8d3eae2a/fcda8/console-assert.png 590w,
+/static/bffa7d4dc523f0782bf4b2ba8d3eae2a/efc66/console-assert.png 885w,
+/static/bffa7d4dc523f0782bf4b2ba8d3eae2a/40601/console-assert.png 945w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.clear()</h2>
+<p>콘솔을 클리어 합니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/69313f933532133128150a4d9e6431a9/d72eb/console-clear.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 587px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAAA+klEQVQoz61RUW6EIBTk/qfpNfrV9gBaFau7IKvgqkiUWXi7bdOYpjZxkmEeBIZ5wLIsR12fkKbvpJx/QEmBN27x9DLgNehzOgV14JVAnmUoCh72laTjOCHPC2Kcs2jSNE0wq0mFkDBaQ5kZST1CXy2UtriODu3lgqqqwj71uLzEPM84nwWklLTGkiRBxDCMsNbCOUf1Fh57wIwx6LoObdtC63utQ8IustPo+x6r91jXyHVD73+uszhwzsMb5NRuWZZkKoSgWil1zxcO7iGzdqZElCoYTdO0bXanGRnGX/qO/Xtbuw2XZflKcQTYf1v6M+FnskMTHonDDW8fLKtKYVD+WQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-clear"
+        title=""
+        src="/static/69313f933532133128150a4d9e6431a9/d72eb/console-clear.png"
+        srcset="/static/69313f933532133128150a4d9e6431a9/12f09/console-clear.png 148w,
+/static/69313f933532133128150a4d9e6431a9/e4a3f/console-clear.png 295w,
+/static/69313f933532133128150a4d9e6431a9/d72eb/console-clear.png 587w"
+        sizes="(max-width: 587px) 100vw, 587px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.count()</h2>
+<p>주어진 라벨과 함께 호출된 횟수만큼 로그를 기록합니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/3a7dfd72437f879bd2f453456f0dd098/3d84d/console-count.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 62.83783783783784%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABX0lEQVQ4y61Sy1LDIBTN//+RH+DGhRvHcVGtSRPSNo8GSHgGcgTsQqcda63MHC4D95x7gJtVFUFEWVYBBCSsm57j7lnifiXxWCg8vGuQhmH99ppyimKTOMNAkecFCKkTP+5nXdej2TeIsW3aFIWQKDuNjmqwyYALCzFNiRhFdrs99oEjpUTbtjgchsSLyDblBm7xmISAtgZKClij8NeR8YbCDwZ6Eph7iX5y2FGPbhCQfAYnMw7NCDpOUIMDIwZDz8BHDuccvPffkFmloVuL9kWArQxISH7q1ih2FWg/wnJASwupDazw0MzBaAttNJZlOXVowjXnOVSygJsDwmS8gvNzIPiLV4yiX5GJ8HZlWaKuCRhnUOr4fssx2S8npJ+QBPM8T6KU0vRz5yr/WjA6ij0UWyIKxgI3CUZHdb3Fdrv9L4eheRnDOI4pWmvTwWcbLFcj42q5+HNXOfRnNm8ZHyEF9fVSfg6uAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-count"
+        title=""
+        src="/static/3a7dfd72437f879bd2f453456f0dd098/fcda8/console-count.png"
+        srcset="/static/3a7dfd72437f879bd2f453456f0dd098/12f09/console-count.png 148w,
+/static/3a7dfd72437f879bd2f453456f0dd098/e4a3f/console-count.png 295w,
+/static/3a7dfd72437f879bd2f453456f0dd098/fcda8/console-count.png 590w,
+/static/3a7dfd72437f879bd2f453456f0dd098/3d84d/console-count.png 628w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.dir()</h2>
+<p>지정된 자바스크립트 객체의 속성의 리스트를 보여줍니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/bdcdfeadd2a09a1fea8349c65131c910/39c09/console-dir.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 70.27027027027026%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABuklEQVQ4y51T2W7bMBDU/39PfqJAn5KiaWpYtmVdviiK9z2lGMQtXNQxSmDABbk73GNYrdc12rZD1/Vomj32+xZj36M9STw9K3zdanypNV56j64fUdeb4rPd7nA+EwzDWOKbpsVu16Dq+yFfXHA6nXHJ+2ITMkEqg4EYMGkLjA2g01T85nnG4XAA5xyMMVBKSwwhBNVqtcov7hFThNAyBxpoJeGcw/tKBSklPLIqzjjoTGEuCugslEjo5gClDYxWv0kzYYzxBn+fVd57+OABn/DWveLH8Q090fhWU6xbCm09pA5wPj6W4YdhnUUnOmxoDe0khrPBdhR5V2iPCoSZUnZpQEr/RPXRG2PMp68/0sYroWURdGfBszxGNuBI8jSbAEZFGdhnmV0zXMhC7uFSEhMB3iW46PNZQMx2cB7RB6SQHif02Vm7iN0U8P0YMYuc0VbBvTLEViNsJMLR/FF6uj+UkAdoXECXp/tz5JDnGdPLAbrnEFJkkUssaliyXoA75VeLg88lzVmPM53ybyDggoMrARcchMiE4l3oCxbiu4TLdLVS5QuVr5SxCPS2tEf6dyW01t7II/03fgGXAUPPqeZj5AAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-dir"
+        title=""
+        src="/static/bdcdfeadd2a09a1fea8349c65131c910/fcda8/console-dir.png"
+        srcset="/static/bdcdfeadd2a09a1fea8349c65131c910/12f09/console-dir.png 148w,
+/static/bdcdfeadd2a09a1fea8349c65131c910/e4a3f/console-dir.png 295w,
+/static/bdcdfeadd2a09a1fea8349c65131c910/fcda8/console-dir.png 590w,
+/static/bdcdfeadd2a09a1fea8349c65131c910/39c09/console-dir.png 624w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.group() 과 console.groupEnd()</h2>
+<p>모든 다음의 출력물을 다른 수준으로 들여쓰기해서 새로운 인라인 그룹을 만듭니다. 한 단계 뒤로 가려면 <code class="language-text">groupEnd()</code>를 호출하세요.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/8fd1f11b7982b6aef7cf0cbf6b303e91/d0e73/console-group.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 63.51351351351351%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAAB1UlEQVQ4y42TiXKjMBBE+f+vc3btSrgM5kbcGHNDp6XEqexuNrGqppBkzZuew1ocx/B9H67rQggBeT4cDjgejzidTuouTVNYlqXeeJ6Ppq6RxCGcsw3bMniukCQJHMeBJjdhGCpolmUKYNs2HDpLQFEU6i4IAr6L6BhD5DVeXIGjGeI3LRQt8rxAFEXQTNNkVA+6rit10lEqGoYB3fWKmmqaplF7GbCqKjw9/YJunlE3HYIoxbXrsa4btm2D1nWdckoIyammKEoIOmaMWLctpnnGOE0Y799xRH+7Yeh77gcG7jHxbnr/TQNXVTcwTBsXP0AUJ7AcFylL0NBWQpeyxMKAU3fDShXfrXcga6KbChiwToZ1RhyEaFiTjRksTHkpC4xMe14W5bjv+5f2BqxqPBPoXnylUJdAdlOwri3rOxc5ZjZmoI3j9DOwaa+wbAdhFCugBD8bJk4vBuJUYOPDz2v/6/xHyguLXbJzEnIHekxXfkdV7Fl1b9/euvg/ZR8K5Xg0LLzjeqxfTGii1AaEf07tEZgCzlS4ritnreXoCKqtOTK52kuFj0D+AcpZzLIcZ+cCj532/FCplGl/14AvgfeBlAc51BIiRKb+SjLthWNyT/kRewXi5+L10avEsQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-group"
+        title=""
+        src="/static/8fd1f11b7982b6aef7cf0cbf6b303e91/fcda8/console-group.png"
+        srcset="/static/8fd1f11b7982b6aef7cf0cbf6b303e91/12f09/console-group.png 148w,
+/static/8fd1f11b7982b6aef7cf0cbf6b303e91/e4a3f/console-group.png 295w,
+/static/8fd1f11b7982b6aef7cf0cbf6b303e91/fcda8/console-group.png 590w,
+/static/8fd1f11b7982b6aef7cf0cbf6b303e91/d0e73/console-group.png 671w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* 콘솔 안에 HTML 요소</h2>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/8c8c86a17633bf25e3a3cc576095ef93/9d76a/console-html.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 56.75675675675676%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABhUlEQVQoz41R2XLbMAzU//9aX6tp5DhNJMq6ooPmKYmitiAdu07ih2BmBwCH2MWRlGWJoihwPB4R4jzPYx5Q13V8Y4xyVuKFdTjmLfJ6hNIWQghIKWGMiT7kSdd1VNjgz9MTskOGLMvwTORpmhJ5gbcgwBiqqgKfRhitIpxz2LYt+msckOz7jnGc0FXvkEKBizMmzjGdzxBKYSASTR0E8/Q3/A9+8x7+AZLwcV1W8JIKW1JWDt6R2rxhVSvlK/zmI9EVwB4FLvFnSy7KHmM3Qpw4ZNvixASGVkBUE3g+YvfbrSBwED/2W77fiINPrsliFnBGhM0E1dcYuMXhZPH7TSPNDX4dJMUGL7VF+lfi8KpQNRpWWZhBUyMSbnGXDoOZXuNccMzCwlkJZVaU/QL2vuC1mfFM5Hk7g9NK3LzCTgaGcL+K2KGnyyhafl/1GJqBxtn+z4Z74Ev8eeQb4bxs0NpgXizsbOPp97trRvgP3Bf7D3zr8PuhHl7vp5aEEb6qPBrlp/gHihFWNtESJuwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-html"
+        title=""
+        src="/static/8c8c86a17633bf25e3a3cc576095ef93/fcda8/console-html.png"
+        srcset="/static/8c8c86a17633bf25e3a3cc576095ef93/12f09/console-html.png 148w,
+/static/8c8c86a17633bf25e3a3cc576095ef93/e4a3f/console-html.png 295w,
+/static/8c8c86a17633bf25e3a3cc576095ef93/fcda8/console-html.png 590w,
+/static/8c8c86a17633bf25e3a3cc576095ef93/9d76a/console-html.png 829w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.memory</h2>
+<p><code class="language-text">memory</code> 속성은 힙 사이즈 상태를 확인하는데 사용할 수 있습니다.</p>
+<p>Note: 메모리는 메서드가 아니라 속성입니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/0c8a038093217b0d924a7e4a7beae27e/37048/console-memory.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABGElEQVQoz62O2W6DMBBF/f/f1qc+VWpLAsTgBYfFhCUBTg1Zqkp9aZWxj2fm+soeIaUkyyRGK/I8o7CWNE1CrXiPUjJlw53GuQIdPFopXFGQJglK5Uh52PpDmmKNQSilSWROpi1l7fGnbkMXDuNqmtPAME704+VB2w1o61CmoKw8Tds9EEc/8LHXRAGpKnLjiZIq1ANxekG7AVXUZLbGHHt2yUhuR0zZhv6Eq/vgPbOPR5KgCz8uNLrFvVmqyOEyz+uLp7RntliWcMw3lm1f83Rl1TfPQjvMiKafw/g9Ju85yIrP2BHLjrqbWe/W/IPftJvX+gkxzQtz+OE+w1qva9X/yhwQ3OM2Nnyn/4RY1omeiODJ8fQHvwBhSAqccDuIjQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-memory"
+        title=""
+        src="/static/0c8a038093217b0d924a7e4a7beae27e/fcda8/console-memory.png"
+        srcset="/static/0c8a038093217b0d924a7e4a7beae27e/12f09/console-memory.png 148w,
+/static/0c8a038093217b0d924a7e4a7beae27e/e4a3f/console-memory.png 295w,
+/static/0c8a038093217b0d924a7e4a7beae27e/fcda8/console-memory.png 590w,
+/static/0c8a038093217b0d924a7e4a7beae27e/efc66/console-memory.png 885w,
+/static/0c8a038093217b0d924a7e4a7beae27e/c83ae/console-memory.png 1180w,
+/static/0c8a038093217b0d924a7e4a7beae27e/37048/console-memory.png 1352w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.table()</h2>
+<p>테이블 형식 데이터를 표로 표시합니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/66df0c702f1adeb58a78028e2dc262bb/33e10/console-table2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 68.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAACUElEQVQ4y3VUa4/aMBDk//+vfkOVKvV6uis9IAmEJOTtV/zIdGyOtrRXSwthNjveWY/Z7HY/kGU53t72OByOaNsWn74rbPcS384L8nOD4/HIyFBVNS6XCkJIGLNAawOlNF5eXlEUJzTNFZs8LyClShFf1FojrIDnRwhIKxYr4stiYa0jvmJdV3gf0nPEnfPcsMLmRObYVTd0qK8Nhr7DNPaYpxGC0THnvQOCY1EktKmrSBJXJL4vKSU2dU0Z5wuqrMR5X+BSDSjOVxRlg/xyxSErMAqNspO49txECPT9kIojWQj3uMnZLMuSfqw7BZNNeGozbMtnnPoZTxWwLTxOg0UtVgjtSBJ+dRQJ/45NTJAObl7gKOVqarSmgqXETq9oxSPJn0QfrU2Eg/Ukc2AtVkuE3SxzgGNHUnPgHP4kmVcWwfuH2f3TYYLJJPcCny/sqpphvo4ovxhcXiZsX6+oOoXXfMIu73ni5kOpD5KjTyxJRxUgneazhhk8zOQxcRTz7KDZ3SQtTDzd/8hNkpmFVSvGo4coLYqqRNv3UJ1LhG6m/H7F1Cja52aVxQXMykOaAGVcijmObHnvcGgELdNADgtEbbFwdp6zimZO3hxHztHTe9GLLKaC57cz3rIaw6TRjRrNoNELeyMc5cjEQDkGxpp0WzRnJQZ67tSSQNywd1zzVk15y/zETQwWYvHbMhKhcSZ5MfA0Y2cxAq0SreQbHgLWR5wSXalSzR2/RyKU5naHo8njKcZYLC9/LyEP7Jx/AuY9F9/RUkNlI4z6jd9zPwH9VTy96DqDEwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-table2"
+        title=""
+        src="/static/66df0c702f1adeb58a78028e2dc262bb/fcda8/console-table2.png"
+        srcset="/static/66df0c702f1adeb58a78028e2dc262bb/12f09/console-table2.png 148w,
+/static/66df0c702f1adeb58a78028e2dc262bb/e4a3f/console-table2.png 295w,
+/static/66df0c702f1adeb58a78028e2dc262bb/fcda8/console-table2.png 590w,
+/static/66df0c702f1adeb58a78028e2dc262bb/33e10/console-table2.png 844w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.time() 와 console.timeEnd()</h2>
+<p><code class="language-text">console.time()</code> - 입력 매개 변수로 받은 이름을 가진 타이머를 시작합니다. 주어진 페이지에서 최대 10,000개의 타이머를 동시에 실행할 수 있습니다.
+<code class="language-text">console.timeEnd()</code> - 지정한 타이머를 멈추고 시작한 시간부터 걸린 경과 시간을 로그로 남깁니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/e39f2eaa3974d9b2d40fe1e5ba8fbe87/d8f62/console-timer.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 73.64864864864865%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAACP0lEQVQ4y41TW5KbMBD0/e+Rm+Qj8ffGxoDB2DwsJECAeBq7MyPHW9klqURVUzMI0dPTtDZRdMbh4ELrGrvdHmVZQQgJkUu0tcY2HPFla/Cd8vY04qs/IlA3eO4BSZIiy67Ic0VZoOt6bBjweAxQ1w32ewfXq7ANwjBCqSSycsI3t4WsBlxkj7PoMQwzAXq4XGIEQWi/e3v7gbY12Agh4Ps+Hg+g7/nwgGVZMN9uGMcR9/sC4EHv75SfsSyc1+tBIJs0TYnRwW6YrkXXG6LeoWspTEeA9/fDHAzOi/fXQYDGGEgpMRR36POM5rzAND0uJkKqE+iGNEtbiLLHtegRXQ0q0vtGEzDAZ9DN7ddo+nSD3I9QF/64g5cp0kxTPeGUdTicG4SZgRM1kKqwgH9am1dRxzOUO6IMKCoDrwjhU7jKJ2YafmJwTFpkqod7qaHKljTvPshhNXwVVThBOsQwfjI8ZiUiWSIUColsLbMgNcTWEGCLXaipUYemaT7o/A5osgU6XFDT6E0z4FSf4RQu5QhF3RFQb7VkHfcEHosarD+DrRjypq6oI5mzrhoI8qIqyNimged7iOOYdJ6stewffqztsgKsqgpJSn+VbgdbSUlFDGh0/4goijBNo/Un+3SeJnqerG85c6O1hgyYEKB+AgqRk/NbeJ5PtyGwQKwXX4I8z8EXwnEcW798aQG5AzNhPfglAyqyxTzPq7H+tj6M/KLOXuQbMgzP/DTu3Y7J8axfsfwWn4zNYvNo/+r8v/ETUO6AfnMphOwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-timer"
+        title=""
+        src="/static/e39f2eaa3974d9b2d40fe1e5ba8fbe87/fcda8/console-timer.png"
+        srcset="/static/e39f2eaa3974d9b2d40fe1e5ba8fbe87/12f09/console-timer.png 148w,
+/static/e39f2eaa3974d9b2d40fe1e5ba8fbe87/e4a3f/console-timer.png 295w,
+/static/e39f2eaa3974d9b2d40fe1e5ba8fbe87/fcda8/console-timer.png 590w,
+/static/e39f2eaa3974d9b2d40fe1e5ba8fbe87/d8f62/console-timer.png 601w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>* console.trace()</h2>
+<p>스택 추적을 출력합니다.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/39b958fc8d83ffbd4d1d747bd4adc865/a1792/console-trace.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 72.2972972972973%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABxUlEQVQ4y61TXZObMAzk//+1vrWdae9KSCBHDnAAf9sYm60gyfTaJtd7qGcExkjrlbTKqqrC+dyjbVr0/YCuY1BSgokJzeihzATtZjpTaNsOnAs05Ku1gSS/NXYcxy1Wkk+23+/BGENMEWZy8PME5yyAhMtarvaxlQkh6FaO0DmEUiO+Ggwy4DAk7M8JxzGiInvpOKTgWJYFMUaklO5atj5WdktImEoL+6Shjx55b/C9Ezgwi5NIaAYFo9W/Gd42hA+nJxgW4ccE7QUG28FaTRn/Snll+J5ly8ULYZ5RyxmNW9C6hI7KOCqPFOc/gN4H3RimJcFID6eIWT/DyQgrIpQwdFF4CHI3ZfqF2SfIOkKfCPCV9hV1vF0vcRQYH1TrIcMFKVB61F1WD+gbDvbCIQa5ha0d74XftChNgPWRSjHBTukiqL9qeKV+Hhh+5M/Idzme8yccDgWdCXzecXz61qNsDHa1wuls8aXgqMdw69JvKiXZXD75yFEUBcqyRFUdSdwOzgfkBPKVAJrebWCMexQnBW7mu13PponoW7eJWylFI6XflOnNlNz21/cGkO7UcAXz3mMm2YSwWng4BR+x7DZG/2v9BCykRK+DhVVUAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="console-trace"
+        title=""
+        src="/static/39b958fc8d83ffbd4d1d747bd4adc865/fcda8/console-trace.png"
+        srcset="/static/39b958fc8d83ffbd4d1d747bd4adc865/12f09/console-trace.png 148w,
+/static/39b958fc8d83ffbd4d1d747bd4adc865/e4a3f/console-trace.png 295w,
+/static/39b958fc8d83ffbd4d1d747bd4adc865/fcda8/console-trace.png 590w,
+/static/39b958fc8d83ffbd4d1d747bd4adc865/a1792/console-trace.png 780w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p></section><div class="Bio__Layout-jxd219-0 dBvAkF"><div class="Bio__Description-jxd219-1 ceswXg"><div class="Bio__Author-jxd219-2 fKbfcs"><p class="Bio__Nickname-jxd219-3 dRiyZA">KOAL</p> (<!-- -->SeongRyeong Kim<!-- -->)</div><p class="Bio__SelfProduce-jxd219-4 dxkDNd">좋은 글 쓰고 싶고 꾸준히 성장하고 싶은 Frontend 개발자 입니다</p></div></div><ul class="Pagination__PaginationList-cvnv4h-0 fTHUxA"><li><a rel="prev" class="Pagination__PaginationLink-cvnv4h-1 bHLhmL" href="/2021/06-20-common-mistakes-with-rty/"><span class="material-icons">navigate_before</span><span class="Pagination__Title-cvnv4h-2 jgEqGQ">Common mistakes with React Testing Library</span></a></li><li></li></ul><div></div></main><footer class="Layout__Footer-mlc7jk-2 eXEfjy">©koal, Built with Gatsby-blog-starter</footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-136750933-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2021/07-01-use-console-log-like-a-pro/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-75c2a2cd644e89d3fb3f.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-01b3f85b4acdf44ec1f7.js"],"component---src-pages-404-js":["/component---src-pages-404-js-a911ab7c81998cbf9643.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-59771f57fae71fc0706c.js"],"component---src-templates-post-list-js":["/component---src-templates-post-list-js-b9a0ecafe906c1b7496a.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-59771f57fae71fc0706c.js" async=""></script><script src="/d998dc19ab7c943a74f741de898adcfd6c484ab3-2f1769651f2e556cd53b.js" async=""></script><script src="/a9a7754c-3434c4a4ea1fadaf7a20.js" async=""></script><script src="/app-75c2a2cd644e89d3fb3f.js" async=""></script><script src="/styles-37d63a57eaf6d055b3bc.js" async=""></script><script src="/framework-5dd3c501fd049989ea3a.js" async=""></script><script src="/webpack-runtime-00a5d2584ff929ef78bc.js" async=""></script></body></html>
