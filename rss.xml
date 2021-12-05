@@ -1,4 +1,212 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[코알 데브 로그]]></title><description><![CDATA[A log all about study written by koal]]></description><link>https://seongry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Jul 2021 23:52:48 GMT</lastBuildDate><item><title><![CDATA[Use console.log() like a pro]]></title><description><![CDATA[원문 https://markodenic.com/use-console-log-like-a-pro…]]></description><link>https://seongry.github.io/2021/07-01-use-console-log-like-a-pro/</link><guid isPermaLink="false">https://seongry.github.io/2021/07-01-use-console-log-like-a-pro/</guid><pubDate>Thu, 01 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;원문 &lt;a href=&quot;https://markodenic.com/use-console-log-like-a-pro/&quot;&gt;https://markodenic.com/use-console-log-like-a-pro/&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[코알 데브 로그]]></title><description><![CDATA[A log all about study written by koal]]></description><link>https://seongry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Dec 2021 12:40:18 GMT</lastBuildDate><item><title><![CDATA[테스트 환경에 MSW 도입]]></title><description><![CDATA[회사에서 도입해보고 괜찮았던 라이브러리 사용 후기.
+사내에서 공유하려고 작성했던 글인데 블로그에도 올려본다 😊 MSW란? MSW(Mocking Service Worker)는 서비스 워커 API를 이용해서 실제 리퀘스트를 인터셉트하는 API…]]></description><link>https://seongry.github.io/2021/12-05-try-to-use-msw-on-testing/</link><guid isPermaLink="false">https://seongry.github.io/2021/12-05-try-to-use-msw-on-testing/</guid><pubDate>Mon, 06 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;회사에서 도입해보고 괜찮았던 라이브러리 사용 후기.
+사내에서 공유하려고 작성했던 글인데 블로그에도 올려본다 😊&lt;/p&gt;
+&lt;h1&gt;MSW란?&lt;/h1&gt;
+&lt;p&gt;MSW(Mocking Service Worker)는 서비스 워커 API를 이용해서 실제 리퀘스트를 인터셉트하는 API 모킹 라이브러리다.&lt;/p&gt;
+&lt;h2&gt;사용했을때 이점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;실제 API가 개발되기 전에 API를 모킹해서 없는 API를 가지고 미리 개발을 진행할 수 있어서 시간을 절약할 수 있다.&lt;/li&gt;
+&lt;li&gt;테스트코드 작성시 api통신을 회피하기위한 테스트코드를 작성하지 않아도 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;axios-mock-adapter 와의 차이점은?&lt;/h2&gt;
+&lt;p&gt;결과물 자체는 동일할지 모르나 MSW는 &lt;code class=&quot;language-text&quot;&gt;서비스워커&lt;/code&gt;의 존재로 인해 차이점이 생긴다.
+MSW에서 서비스워커는 네트워크 레벨에서 요청을 가로채도록 설계되어 있기때문에 다른 mocking 라이브러리에 비해 여러가지 이점을 가진다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mocking의 여부와 상관없이 동일한 애플리케이션의 동작을 보장한다.&lt;/li&gt;
+&lt;li&gt;좀 더 유저가 사용하는 방식처럼 테스트를 할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;테스트 환경에 MSW 세팅하기&lt;/h1&gt;
+&lt;h3&gt;패키지 설치&lt;/h3&gt;
+&lt;p&gt;가장 먼저 패키지를 설치한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;yarn add msw &lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;handler만들기&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// mocks/handlers.ts&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; rest &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;msw&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; mockData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	foo&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;bar&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; handlers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  rest&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/test&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;req&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; res&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ctx&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;req&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;body&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;somthing &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; bad&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockData&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;MMT는 rest api를 사용하니 rest api의 handler를 만들어준다.&lt;/p&gt;
+&lt;p&gt;이제 “/test”라는 POST 요청을 하게되면 {foo: ‘bar’}라는 응답이 돌아오게 될 것이다.&lt;/p&gt;
+&lt;h3&gt;server 만들기&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// mocks/server.ts&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; setupServer &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;msw/node&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; handlers &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./handlers&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; server &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setupServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;handlers&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;서비스워커는 브라우저용이라 테스트 환경에는 &lt;code class=&quot;language-text&quot;&gt;worker&lt;/code&gt;를 셋업하지 않는다. 대신 node 기반인 테스트환경에서 사용할 수 있는 &lt;code class=&quot;language-text&quot;&gt;server&lt;/code&gt; 를 만들어준다.&lt;/p&gt;
+&lt;h3&gt;fixture 추가 (Optional)&lt;/h3&gt;
+&lt;p&gt;다음으로 모든 테스트가 모킹이 필요한 것은 아니니 msw가 필요한 테스트에서만 사용할 수 있도록 fixture를 만들어둔다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// helper/fixture.tsx&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; server &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;../../mocks/server&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;prepareMsw&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;beforeAll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; server&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;afterEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; server&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resetHandlers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;afterAll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; server&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 &lt;code class=&quot;language-text&quot;&gt;prepareMsw&lt;/code&gt;를 나중에 필요한 테스트코드 실행전에 붙여두면 MSW가 api를 모킹해준다!&lt;/p&gt;
+&lt;p&gt;이러면 이제 msw를 사용할 준비가 끝났다 :)&lt;/p&gt;
+&lt;h1&gt;실제 테스트에 적용하기&lt;/h1&gt;
+&lt;p&gt;적용법은 매우 간단하다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token function&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Custom Dialog test&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;prepareMsw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// (1)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; bad&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; good &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mockEPassData&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;should return value, when pass valid data&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; getByTestId&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; getByRole &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;renderWithClient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Dialog&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    userEvent&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByTestId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;A&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; good&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+
+    userEvent&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByRole&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;button&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;/등록/i&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// (2)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;waitFor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getByTestId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;success&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByTestId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;success&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeVisible&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;handler에 등록된 api를 호출하는 테스트코드에 (1)처럼 아까 만들어둔 &lt;code class=&quot;language-text&quot;&gt;prepareMsw&lt;/code&gt; 함수를 실행시키도록 하면 된다.&lt;/p&gt;
+&lt;p&gt;테스트코드를 실행해보면 실제 유저가 행동하는 것처럼 submit 버튼을 클릭하면 실제 컴포넌트에서 POST 호출을 하게될 것이고, MSW가 그 요청을 가로채서 준비해둔 값을 return 해준다.&lt;/p&gt;
+&lt;p&gt;따로 jest 모킹이나 스파이 코드 없이도 테스트코드가 터지지 않는다.(이 부분이 생산성 향상을 크게 느낀 부분이다)&lt;/p&gt;
+&lt;h1&gt;사용 후 느낀점&lt;/h1&gt;
+&lt;p&gt;테스트코드를 작성하면서 가장 답답하게 느꼈던 요소 중 하나가, 실제 작성한 컴포넌트/훅 의 기능을 테스트하려고 코드를 짰을때 앱의 기능과 관련없는 부분을 회피하기 위해 적지않은 양의 리소스를 들여야 하는 부분이 크게 느껴졌는데 이런 부분을 해소해줘서 좋았다.&lt;/p&gt;
+&lt;p&gt;덕분에 코드 작업량이 줄어들고 테스트코드가 좀 더 본래 하려던 테스트에 집중할 수 있게되고 코드 가독성도 좋아져서 만족했다.&lt;/p&gt;
+&lt;p&gt;아직 브라우저에는 적용하지 않았지만 브라우저에도 셋팅하면 백엔드 개발자를 기다릴 필요 없이 병행해서 일을 할 수 있어서 시간 절약에도 많은 도움이 될 것 같다.&lt;/p&gt;
+&lt;h1&gt;Referance&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://mswjs.io/&quot;&gt;https://mswjs.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=v77fjkKQTH0&quot;&gt;https://www.youtube.com/watch?v=v77fjkKQTH0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Functional-ish JavaScript]]></title><description><![CDATA[원문 함수형 프로그래밍은 자바스크립트를 작성할 때 배우고 적용할 수 있는 훌륭한 학문입니다. 무상태의(stateless), 멱등성의(idempotent), 사이드 이펙트가 없는(side-effect free…]]></description><link>https://seongry.github.io/2021/08-09-functional-ish-javascript/</link><guid isPermaLink="false">https://seongry.github.io/2021/08-09-functional-ish-javascript/</guid><pubDate>Mon, 09 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://bluepnume.medium.com/functional-ish-javascript-205c05d0ed08&quot;&gt;원문&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;함수형 프로그래밍은 자바스크립트를 작성할 때 배우고 적용할 수 있는 훌륭한 학문입니다. 무상태의(stateless), 멱등성의(idempotent), 사이드 이펙트가 없는(side-effect free) 코드를 작성하면 실제로 많은 문제가 해결됩니다:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;테스트하기 쉬워짐&lt;/li&gt;
+&lt;li&gt;디버깅하기 쉬워짐&lt;/li&gt;
+&lt;li&gt;이슈를 재현하기 쉬워짐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;하지만 커뮤니티에서는 함수형 프로그래밍은 모아니면 도라는 인식이 커지고 있습니다. 흔히 이런 말들을 듣습니다:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;제 전체 코드베이스/앱은 스테이트풀(stateful)하고 사이드 이펙트로 가득해요. 근데 왜 굳이 함수형으로 만들어야 하나요?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;저는 펑터(functors)나 모나드(monads), 커링(currying)이 뭔지(&lt;em&gt;역주: 함수형 프로그래밍의 기초 개념들입니다.&lt;/em&gt;) 배울 시간이 없어요. 언젠가 할거긴 한데, 그때가서 함수형 코드들을 짤 것 같아요.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;저는 클래스 기반이나 객체 지향 코드가 좋아요. 그래서 함수형 코드는 저랑 안 맞는거 같아요.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;하지만 함수형 프로그래밍은 모 아니면 도일 필요가 없습니다. 필자의 생각엔 좀 더 실용적이게 되는것이 좋을 것 같아요. 즉 말하자면, 다른 할일이 없으면 &lt;strong&gt;함수형-스러운(functional-ish)&lt;/strong&gt; 코드를 작성해 보세요.&lt;/p&gt;
+&lt;p&gt;이게 무슨 의미 일까요? 필자는 요점을 설명하기 위한 일련의 법칙들을 생각해냈습니다.&lt;/p&gt;
+&lt;h1&gt;순수하지 못하더라도 예측가능하도록&lt;/h1&gt;
+&lt;p&gt;함수는 사이드 이펙트가 없을 경우 기능적으로 “순수”하다고 합니다. 순수 함수는 일련의 입력을 받고, 해당 입력을 기반으로 정확하고 확실하게 출력을 제공합니다. 다른 이펙트가 없고, 직접 입력한 입력외에는 다른 상태를 사용하지 않고, 입력값을 수정하지 않으며, 주어진 입력에 대해 출력은 항상 동일합니다.&lt;/p&gt;
+&lt;p&gt;가능한 순수함수를 작성하는 것이 좋습니다. 순수 함수는 테스트하기 쉽고, 문서화하기 쉽고, 리펙터링하기 쉽습니다.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7a5f349506b019015b6833eb5b77f24f/f4b77/functional-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 40.54054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAABK0lEQVQY02P4CwZ//vz5////lSvXFixdtWzlhpUr1q9evWH1GhS0dt3Gt2/fAZUBFUN0MUConz9/AkU7OvscFdTjvc2N/Uzl1XXl5HXkFXXkFHXklXTlweS5cxeByn7//o1Fc0/fZDV5TWtLS10Lcw1dM01NM3UNE01tMyDS0DTV0jG/cOESTs1dPRNVFAzsTD1MdO1M9e30bKzNXZ219M11jS1NLRyBms+fx625u2eSnKyWhbGjs5mHq5mnra2rlYOrmZmjua2zrr4VSPMFvJoVlfV09C11dSz1da10tS00tcy0dSz0DW3UNUHux6e5q3uCqLiymoaxgrIeEAENUlTRByFlPSUVfWVVA+zOhkTV/fsPdu/Zf/Dg0QMHj4DQARQSKP7x4yfkqAIAtAQtDodYKCAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;pure-function&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7a5f349506b019015b6833eb5b77f24f/fcda8/functional-1.png&quot;
+        srcset=&quot;/static/7a5f349506b019015b6833eb5b77f24f/12f09/functional-1.png 148w,
+/static/7a5f349506b019015b6833eb5b77f24f/e4a3f/functional-1.png 295w,
+/static/7a5f349506b019015b6833eb5b77f24f/fcda8/functional-1.png 590w,
+/static/7a5f349506b019015b6833eb5b77f24f/f4b77/functional-1.png 770w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;그런데 만약 당신의 함수가 순수 할 수 없다면(실제로 시간이 많이 걸려서) 첫번째로 당신이 해야할 일은 예측가능하게 만드는 것입니다:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;함수가 특정 사이드 이펙트를 트리거해야하는 경우, 동일한 입력이 주어질땐 해당 이펙트들이 항상 동일해야합니다. 서로 다른 입력이 서로 다른 사이드 이펙트를 트리거한다면, 그러한 이펙트들은 굉장히 예측 가능해야합니다.&lt;/li&gt;
+&lt;li&gt;함수가 다른 스코프(클로저 스코프나, 모듈 스코프 혹은 글로벌 스코프처럼)의 데이터나 상태를 소비해야 하는 경우, 앱의 미래 상태를 기반으로 시간이 지남에 따라 상태가 변경되거나 완전히 존재하지 않도록 복원해야 합니다.&lt;/li&gt;
+&lt;li&gt;함수는 전달된 파라메터가 객체나 배열같은 가변 데이터 구조일지라도 거의 변경하지 않아야 합니다. 이 규칙의 예외는 특정 목적을 가진 함수가 객체를 예측가능한 방식으로 변경하는 것일 겁니다; 사이드 이펙트가 명확한 &lt;code class=&quot;language-text&quot;&gt;arrayRemove&lt;/code&gt; 처럼요.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;여기에 의구심이 든다면, 당신이 작성하는 함수에 &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%86%80%EB%9E%8C_%EC%B5%9C%EC%86%8C%ED%99%94_%EC%9B%90%EC%B9%99&quot;&gt;놀람 최소화 원칙(Principle of Least Astonishment)&lt;/a&gt;를 따르세요.&lt;/p&gt;
+&lt;h1&gt;상태 사용에 보수적이 되어라&lt;/h1&gt;
+&lt;p&gt;순수함수는 외부 상태에 의존하지 않습니다. 이는 변수나 데이터가 함수의 내부나 외부에서 바뀌고, 이를 함수가 의존한다면 그 함수는 순수하지 않다는 뜻입니다.&lt;/p&gt;
+&lt;p&gt;현실에서, 코드에 어떤 종류든 상태를 사용하는 것은 피할 수 없습니다. 그렇긴해도 최소한 그 상태가 스테이트풀이 되어야 할지 신중히 고려할 수는 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;필요한 데이터가 다른 입력이나 가지고있는 기존 상태를 기반으로 파생되어야 하나요? 만일 그렇다면, 상태로 저장하지 않는 것이 제일 좋습니다.&lt;/li&gt;
+&lt;li&gt;데이터가 한번쓰이고 버려지는 데이터인가요? 만일 그렇다면, 그 데이터의 유용성보다 오래 지속될 상태나 스코프 안에 지속되게 하지 마세요.&lt;/li&gt;
+&lt;li&gt;나중에 필요한 데이터, 혹은 앱의 생명주기(lifecycle) 내에서 점진적인 변경이 일어날 것이라 예상되는 데이터인가요? 드디어 당신은 데이터를 상태 안에 저장할 수 있는 좋은 이유가 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/0940f/functional-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 37.83783783783784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAABS0lEQVQY02XRy07CQBSAYV7CmFKQq7TUOtMWSu1Mpy0XoaWKGrfqQqByEfACYaUvgYkJDwkb3EGwiUShJv9mkvNlcnICq9VqvV5/TqbjQW8wHj60n/9qPW0/W52Xhtsfjt4Wiy+PLJfLwA+u37rKEcPlxHCUP/AV2xSJHVM0K0jabDbfwU23n04qUkaHWBMxkQwdiEjO5gFELCenuZwXxyspNoNJZT7fxW5zABkFZQtQQpBggDDIYUHVgIz4jAIUFSqYh2riUFDxqR/XG71kQlClvGFWrcvron1RqNTyds20alrZKZxdmSVH0y0gIA/P/uNIHEARK2pRN6q64RBiZVFZNs9l3cniiigSotsnaokYtn/nmzt3bz8RjYNgiKXoFEUzVIihQ0yQ3kSH03SY9Wa8z/148jG9r3c73dft2rt1Hofe8Ubj999TfQPsO9U1M86IFAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;logUserIn&quot;
+        title=&quot;&quot;
+        src=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/fcda8/functional-2.png&quot;
+        srcset=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/12f09/functional-2.png 148w,
+/static/055056b0fa4bf0b19f78d0d1ee3fbb04/e4a3f/functional-2.png 295w,
+/static/055056b0fa4bf0b19f78d0d1ee3fbb04/fcda8/functional-2.png 590w,
+/static/055056b0fa4bf0b19f78d0d1ee3fbb04/efc66/functional-2.png 885w,
+/static/055056b0fa4bf0b19f78d0d1ee3fbb04/0940f/functional-2.png 1154w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h1&gt;스코프를 유리하게 사용하라&lt;/h1&gt;
+&lt;p&gt;일단 당신이 실제로 상태가 &lt;em&gt;필요하다고&lt;/em&gt; 정했다고해도, 아직 모든 계산이 끝난게 아닙니다. 어떤 상태는 함수 호출 기간보다 더 오래 존재해야하지만, 그래도 여전히 그 상태가 얼마나 오래 존재해야 하는지는 신중히 고려해야합니다.&lt;/p&gt;
+&lt;p&gt;다양한 스코프를 활용해서 상태를 필요한 만큼만 유지할 수 있도록 할 수 있습니다:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;현재 로직에만 필요하다면, &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 나 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;을 사용해서 현재의 블록 스코프에 저장하세요.&lt;/li&gt;
+&lt;li&gt;함수가 호출되는 전체 기간 동안 필요하다면, 함수 내부의 맨 위쪽단에 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 나 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수로 선언해서 그 안에 저장하세요.&lt;/li&gt;
+&lt;li&gt;만약 더 오래 존재해야 한다면 - 비동기 함수 호출이 끝날때까지 - 클로저 스코프 안에 저장하세요.&lt;/li&gt;
+&lt;li&gt;리엑트를 사용한다면 상태를 실제로 필요한 컴포넌트에 최대한 가깝게 두고, 컴포넌트 체인에 너무 높게 끌어올리지(hoist) 마세요.&lt;/li&gt;
+&lt;li&gt;여러 함수 호출에 걸쳐 뭔가 추적해야 할 경우 부모 함수의 스코프 안에 유지하거나, 혹은 모듈 스코프에 저장할 수도 있습니다.&lt;/li&gt;
+&lt;li&gt;상태가 여러 페이지에 걸쳐 유지되야한다면 임시로 서버 스토어나(세션처럼) 로컬스토리지에 저장 합니다.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Use console.log() like a pro]]></title><description><![CDATA[원문 https://markodenic.com/use-console-log-like-a-pro…]]></description><link>https://seongry.github.io/2021/07-01-use-console-log-like-a-pro/</link><guid isPermaLink="false">https://seongry.github.io/2021/07-01-use-console-log-like-a-pro/</guid><pubDate>Thu, 01 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;원문 &lt;a href=&quot;https://markodenic.com/use-console-log-like-a-pro/&quot;&gt;https://markodenic.com/use-console-log-like-a-pro/&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;자바스크립트 디버깅에 &lt;code class=&quot;language-text&quot;&gt;console.log()&lt;/code&gt;를 사용하는 것은 개발자 사이에서 가장 흔한 방법입니다. 다만, 그것 말고도 더 있습니다…&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;console&lt;/code&gt; 객체는 브라우저의 디버깅 콘솔에 접근을 제공합니다. 브라우저별로 세부적인 동작 방식은 다르지만, 일반적으로 제공되는 &lt;em&gt;사실상의&lt;/em&gt; 기능 세트가 있습니다.&lt;/p&gt;
