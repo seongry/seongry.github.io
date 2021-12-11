@@ -1,4 +1,538 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[코알 데브 로그]]></title><description><![CDATA[A log all about study written by koal]]></description><link>https://seongry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Dec 2021 14:48:14 GMT</lastBuildDate><item><title><![CDATA[테스트 환경에 MSW 도입]]></title><description><![CDATA[회사에서 도입해보고 괜찮았던 라이브러리 사용 후기.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[코알 데브 로그]]></title><description><![CDATA[A log all about study written by koal]]></description><link>https://seongry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 11 Dec 2021 11:26:14 GMT</lastBuildDate><item><title><![CDATA[Functional-ish JavaScript]]></title><description><![CDATA[원문 번역하기 난해한 부분은 생략하거나 의역한 부분도 있을 수 있습니다 😅 제가 번역하는 모든 글은 원작자의 허락 하에 업로드 됩니다 🕺💃 8월에 포스팅 처음 알게되고 가볍게 읽어볼겸 번역 시작했다가, FP…]]></description><link>https://seongry.github.io/2021/08-09-functional-ish-javascript/</link><guid isPermaLink="false">https://seongry.github.io/2021/08-09-functional-ish-javascript/</guid><pubDate>Mon, 06 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://bluepnume.medium.com/functional-ish-javascript-205c05d0ed08&quot;&gt;원문&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;번역하기 난해한 부분은 생략하거나 의역한 부분도 있을 수 있습니다 😅&lt;/p&gt;
+&lt;p&gt;제가 번역하는 모든 글은 원작자의 허락 하에 업로드 됩니다 🕺💃&lt;/p&gt;
+&lt;p&gt;8월에 포스팅 처음 알게되고 가볍게 읽어볼겸 번역 시작했다가, FP에 무지한 상태로 번역을 하니 잘 와닿지 않아서 결국엔 놔버렸는데…
+최근에 다시 FP에 관심이 생겨서 책도 보고 했더니 이 글이 예전보다 잘 이해가 되어서 12월에 마무리를 짓습니다 😂&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;함수형 프로그래밍은 자바스크립트를 작성할 때 배우고 적용할 수 있는 훌륭한 학문입니다. 무상태의(stateless), 멱등성의(idempotent), 부수효과가 없는(side-effect free) 코드를 작성하면 실제로 많은 문제가 해결됩니다:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;테스트하기 쉬워짐&lt;/li&gt;
+&lt;li&gt;디버깅하기 쉬워짐&lt;/li&gt;
+&lt;li&gt;이슈를 재현하기 쉬워짐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;하지만 커뮤니티에서는 함수형 프로그래밍은 모아니면 도라는 인식이 커지고 있습니다. 흔히 이런 말들을 듣습니다:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;제 전체 코드베이스/앱은 스테이트풀(stateful)하고 부수효과로 가득해요. 근데 왜 굳이 함수형으로 만들어야 하나요?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;저는 펑터(functors)나 모나드(monads), 커링(currying)이 뭔지(&lt;em&gt;역주: 함수형 프로그래밍의 기초 개념들입니다.&lt;/em&gt;) 배울 시간이 없어요. 언젠가 할거긴 한데, 그때가서 함수형 코드들을 짤 것 같아요.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;저는 클래스 기반이나 객체 지향 코드가 좋아요. 그래서 함수형 코드는 저랑 안 맞는거 같아요.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;하지만 함수형 프로그래밍은 모 아니면 도일 필요가 없습니다. 필자의 생각엔 좀 더 실용적이게 되는것이 좋을 것 같아요. 즉 말하자면, 다른 할일이 없으면 &lt;strong&gt;함수형-스러운(functional-ish)&lt;/strong&gt; 코드를 작성해 보세요.&lt;/p&gt;
+&lt;p&gt;이게 무슨 의미 일까요? 필자는 요점을 설명하기 위한 일련의 법칙들을 생각해냈습니다.&lt;/p&gt;
+&lt;h1&gt;순수하지 못하더라도 예측가능하도록 하세요&lt;/h1&gt;
+&lt;p&gt;함수는 부수효과가 없을 경우 기능적으로 “순수”하다고 합니다. 순수 함수는 일련의 입력을 받고, 해당 입력을 기반으로 정확하고 확실하게 출력을 제공합니다. 다른 이펙트가 없고, 직접 입력한 입력외에는 다른 상태를 사용하지 않고, 입력값을 수정하지 않으며, 주어진 입력에 대해 출력은 항상 동일합니다.&lt;/p&gt;
+&lt;p&gt;가능한 순수함수를 작성하는 것이 좋습니다. 순수 함수는 테스트하기 쉽고, 문서화하기 쉽고, 리펙터링하기 쉽습니다.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7a5f349506b019015b6833eb5b77f24f/f4b77/functional-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 40.54054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAABK0lEQVQY02P4CwZ//vz5////lSvXFixdtWzlhpUr1q9evWH1GhS0dt3Gt2/fAZUBFUN0MUConz9/AkU7OvscFdTjvc2N/Uzl1XXl5HXkFXXkFHXklXTlweS5cxeByn7//o1Fc0/fZDV5TWtLS10Lcw1dM01NM3UNE01tMyDS0DTV0jG/cOESTs1dPRNVFAzsTD1MdO1M9e30bKzNXZ219M11jS1NLRyBms+fx625u2eSnKyWhbGjs5mHq5mnra2rlYOrmZmjua2zrr4VSPMFvJoVlfV09C11dSz1da10tS00tcy0dSz0DW3UNUHux6e5q3uCqLiymoaxgrIeEAENUlTRByFlPSUVfWVVA+zOhkTV/fsPdu/Zf/Dg0QMHj4DQARQSKP7x4yfkqAIAtAQtDodYKCAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;pure-function&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7a5f349506b019015b6833eb5b77f24f/fcda8/functional-1.png&quot;
+        srcset=&quot;/static/7a5f349506b019015b6833eb5b77f24f/12f09/functional-1.png 148w,
+/static/7a5f349506b019015b6833eb5b77f24f/e4a3f/functional-1.png 295w,
+/static/7a5f349506b019015b6833eb5b77f24f/fcda8/functional-1.png 590w,
+/static/7a5f349506b019015b6833eb5b77f24f/f4b77/functional-1.png 770w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;그런데 만약 당신의 함수가 순수 할 수 없다면(실제로 시간이 많이 걸려서) 첫번째로 당신이 해야할 일은 예측가능하게 만드는 것입니다:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;함수가 특정 부수효과를 트리거해야하는 경우, 동일한 입력이 주어질땐 해당 효과들이 항상 동일해야합니다. 서로 다른 입력이 서로 다른 부수효과를 트리거한다면, 그러한 효과들은 굉장히 예측 가능해야합니다.&lt;/li&gt;
+&lt;li&gt;함수가 다른 스코프(클로저 스코프나, 모듈 스코프 혹은 글로벌 스코프처럼)의 데이터나 상태를 소비해야 하는 경우, 앱의 미래 상태를 기반으로 시간이 지남에 따라 상태가 변경되거나 완전히 존재하지 않도록 복원해야 합니다.&lt;/li&gt;
+&lt;li&gt;함수는 전달된 파라메터가 객체나 배열같은 가변 데이터 구조일지라도 거의 변경하지 않아야 합니다. 이 규칙의 예외는 특정 목적을 가진 함수가 객체를 예측가능한 방식으로 변경하는 것일 겁니다; 부수효과가 명확한 &lt;code class=&quot;language-text&quot;&gt;arrayRemove&lt;/code&gt; 처럼요.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;여기에 의구심이 든다면, 당신이 작성하는 함수에 &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%86%80%EB%9E%8C_%EC%B5%9C%EC%86%8C%ED%99%94_%EC%9B%90%EC%B9%99&quot;&gt;놀람 최소화 원칙(Principle of Least Astonishment)&lt;/a&gt;를 따르세요.&lt;/p&gt;
+&lt;h1&gt;상태 사용에 보수적이 되세요&lt;/h1&gt;
+&lt;p&gt;순수함수는 외부 상태에 의존하지 않습니다. 이는 변수나 데이터가 함수의 내부나 외부에서 바뀌고, 이를 함수가 의존한다면 그 함수는 순수하지 않다는 뜻입니다.&lt;/p&gt;
+&lt;p&gt;현실에서, 코드에 어떤 종류든 상태를 사용하는 것은 피할 수 없습니다. 그렇긴해도 최소한 그 상태가 스테이트풀이 되어야 할지 신중히 고려할 수는 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;필요한 데이터가 다른 입력이나 가지고있는 기존 상태를 기반으로 파생되어야 하나요? 만일 그렇다면, 상태로 저장하지 않는 것이 제일 좋습니다.&lt;/li&gt;
+&lt;li&gt;데이터가 한번쓰이고 버려지는 데이터인가요? 만일 그렇다면, 그 데이터의 유용성보다 오래 지속될 상태나 스코프 안에 지속되게 하지 마세요.&lt;/li&gt;
+&lt;li&gt;나중에 필요한 데이터, 혹은 앱의 생명주기(lifecycle) 내에서 점진적인 변경이 일어날 것이라 예상되는 데이터인가요? 드디어 당신은 데이터를 상태 안에 저장할 수 있는 좋은 이유가 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/0940f/functional-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 37.83783783783784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAABS0lEQVQY02XRy07CQBSAYV7CmFKQq7TUOtMWSu1Mpy0XoaWKGrfqQqByEfACYaUvgYkJDwkb3EGwiUShJv9mkvNlcnICq9VqvV5/TqbjQW8wHj60n/9qPW0/W52Xhtsfjt4Wiy+PLJfLwA+u37rKEcPlxHCUP/AV2xSJHVM0K0jabDbfwU23n04qUkaHWBMxkQwdiEjO5gFELCenuZwXxyspNoNJZT7fxW5zABkFZQtQQpBggDDIYUHVgIz4jAIUFSqYh2riUFDxqR/XG71kQlClvGFWrcvron1RqNTyds20alrZKZxdmSVH0y0gIA/P/uNIHEARK2pRN6q64RBiZVFZNs9l3cniiigSotsnaokYtn/nmzt3bz8RjYNgiKXoFEUzVIihQ0yQ3kSH03SY9Wa8z/148jG9r3c73dft2rt1Hofe8Ubj999TfQPsO9U1M86IFAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;logUserIn&quot;
+        title=&quot;&quot;
+        src=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/fcda8/functional-2.png&quot;
+        srcset=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/12f09/functional-2.png 148w,
+/static/055056b0fa4bf0b19f78d0d1ee3fbb04/e4a3f/functional-2.png 295w,
+/static/055056b0fa4bf0b19f78d0d1ee3fbb04/fcda8/functional-2.png 590w,
+/static/055056b0fa4bf0b19f78d0d1ee3fbb04/efc66/functional-2.png 885w,
+/static/055056b0fa4bf0b19f78d0d1ee3fbb04/0940f/functional-2.png 1154w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h1&gt;범위를 유리하게 사용하세요&lt;/h1&gt;
+&lt;p&gt;일단 당신이 실제로 상태가 &lt;em&gt;필요하다고&lt;/em&gt; 정했다고해도, 아직 모든 계산이 끝난게 아닙니다. 어떤 상태는 함수 호출 기간보다 더 오래 존재해야하지만, 그래도 여전히 그 상태가 얼마나 오래 존재해야 하는지는 신중히 고려해야합니다.&lt;/p&gt;
+&lt;p&gt;다양한 범위를 활용해서 상태를 필요한 만큼만 유지할 수 있도록 할 수 있습니다:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;현재 로직에만 필요하다면, &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 나 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;을 사용해서 현재의 블록 스코프에 저장하세요.&lt;/li&gt;
+&lt;li&gt;함수가 호출되는 전체 기간 동안 필요하다면, 함수 내부의 맨 위쪽단에 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 나 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수로 선언해서 그 안에 저장하세요.&lt;/li&gt;
+&lt;li&gt;만약 더 오래 존재해야 한다면 - 비동기 함수 호출이 끝날때까지 - 클로저 스코프 안에 저장하세요.&lt;/li&gt;
+&lt;li&gt;리액트를 사용한다면 상태를 실제로 필요한 컴포넌트에 최대한 가깝게 두고, 컴포넌트 체인에 너무 높게 끌어올리지(hoist) 마세요.&lt;/li&gt;
+&lt;li&gt;여러 함수 호출에 걸쳐 뭔가 추적해야 할 경우 부모 함수의 스코프 안에 유지하거나, 혹은 모듈 스코프에 저장할 수도 있습니다.&lt;/li&gt;
+&lt;li&gt;상태가 여러 페이지에 걸쳐 유지되야한다면 임시로 서버 스토어나(세션처럼) 로컬스토리지에 저장 합니다.&lt;/li&gt;
+&lt;li&gt;아주 장시간 동안 존재해아 한다면 데이터베이스나 파일시스템 안에 저장하세요.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;상태가 꼭 필요한 만큼만 유지되도록 범위를 선택하도록 노력하세요.&lt;/p&gt;
+&lt;h1&gt;상태를 캡슐화 하세요&lt;/h1&gt;
+&lt;p&gt;꽤 자주 스테이트풀한 데이터는 캡슐화될 수 있습니다.&lt;/p&gt;
+&lt;p&gt;예를 들어, 돌리기 위해 고비용을 치뤄야하는 함수가 있다면 - cpu 사이클이 많이 걸리거나, 비동기적으로 데이터를 가져와서 반환하는데 상당한 시간을 쓴다던지 - 몇개의 선택지가 있습니다:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;수동으로 상태 변수를 생성해서 결과를 저장하고, 변수가 채워지지 않은 경우에만 함수를 재호출 하기.&lt;/li&gt;
+&lt;li&gt;아니면, 재사용가능한 &lt;code class=&quot;language-text&quot;&gt;memoize&lt;/code&gt; 함수 안에 상태를 추상화할 수 있습니다:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c6248ed7773a586003f6eec8db256673/51800/functional-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 82.43243243243244%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsSAAALEgHS3X78AAACZElEQVQoz22T604UMRSAeQOjMcptkb3Pre10Zjozvc3sLrcFgR+o4C+jj2GERSPrO2hUFiI+gUZNWAReQuNPfBA8s4uILMk3J22Tr+05PTN0enr688evw273+/Hx/sHRfrfHwQX6K93DPt2Doy9f909OfoM4BN/z9ZcKG0iwfNEtlHoUCcRij0I5o1imfaomu3Ez/377w5nc2nxlFfxYNPw0cSNFQ02VploToYhU1FcukRaKTDsEEOa3R8qdnb0zeb3VzuUswRrEl1gI7HPP18jlhs1MFBoWMy0GsWoGFTOwUXxJ3hoZN7jfEF6DUk1THcg0iFLkcYS4F6S2KwHHldRThMpbw6XOzseLchVhEboppQpzSWKJuXIYJ1RFYtrxNGZ1P57icsZntQF5rOpgbtuR4DOpaEayGdeXRWM5rN0VyXxjajFJ53XaZFHdD5Lh0XKns/efjIiAqhAkKJLU1x5LvSChnoajwrgBY8MKIHNnoGCZDJXwiaaQWyhsNyauCqJ6dhRLAcuJYAvIwsHx1bLks2m6IOtzQs2mtYXm/IrWzZhPT00vgQYgwgdO3tgahYIR7mEVYB307gkPU656FcPvAxeGCIuX5Y3N9sSkg11pWqFlh3BDwOi9bR/ojfM4ILfaYznTdiLY+BzD/Cdn0340B+TWZtvIe0zU3awrEy9JXKFcmbUnDmQY1lXShESwL5AnGKtN3LF3dv++89NnL8ZzJrReoeLmy7hQIfkygDOKGP6QUoVCzJfIZAlDIa5dn3j7bvdMfv1me3FpdXXt8f0Hj67kXo/+eO3hk7nmyqfP30D8AwvISykjZ6xDAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;memoize&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c6248ed7773a586003f6eec8db256673/fcda8/functional-3.png&quot;
+        srcset=&quot;/static/c6248ed7773a586003f6eec8db256673/12f09/functional-3.png 148w,
+/static/c6248ed7773a586003f6eec8db256673/e4a3f/functional-3.png 295w,
+/static/c6248ed7773a586003f6eec8db256673/fcda8/functional-3.png 590w,
+/static/c6248ed7773a586003f6eec8db256673/efc66/functional-3.png 885w,
+/static/c6248ed7773a586003f6eec8db256673/c83ae/functional-3.png 1180w,
+/static/c6248ed7773a586003f6eec8db256673/51800/functional-3.png 1196w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;memoize&lt;/code&gt;는 스테이트풀한 함수입니다. - 우리는 반환된 메모이제이션된 함수가 존재할 동안 &lt;code class=&quot;language-text&quot;&gt;results&lt;/code&gt; 배열을 클로저 스코프 안에 저장합니다. 하지만 이렇게 함으로서, 단일 공간에 상태를 캡슐화하고, 메모이제이션하려는 다른 함수들이 자체 상태를 유지할 필요가 없도록 하며, 매번 잠재적인 새로운 버그를 발생시키는 것에 대해 걱정할 필요가 없게합니다.&lt;/p&gt;
+&lt;p&gt;상태의 특징은: &lt;em&gt;모든 코드&lt;/em&gt; 는 궁극적으로 특정 레벨에서는 스테이트풀하다는 것입니다. 순수함수적인 코드라도 부수효과와 상태가 있습니다; 메모리는 여전히 수정 중이고, 명령이 cpu로 전송되고 있으며, 컴퓨터의 온도는 상승중입니다.&lt;/p&gt;
+&lt;p&gt;중요한 것은: 이런 부수효과들과 상태가 상태와 관련된 버그가 발생하지 않을 정도로 충분히 잘 캡슐화되어 있냐는 것입니다. 스테이트풀한 로직에서 과하지않고 적합한 수준의 추상화를 찾는 것이 중요합니다.&lt;/p&gt;
+&lt;h1&gt;예외에 너무 많은 걱정을 하지마세요&lt;/h1&gt;
+&lt;p&gt;엄격하게 따지면 예외는 일반적으로 “함수형스럽지 않다”고 간주됩니다. 예외를 던지는 것은 올바르게 다루지 않을 경우 프로그램을 부술 수도 있는 부수효과를 낳습니다.&lt;/p&gt;
+&lt;p&gt;하지만 실제로는, 저는 예외를 또다른 반환 값의 종류로 간주합니다. 다음 코드를 봐주세요:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6963054232132e60a313cd489ae5f904/69476/functional-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 85.8108108108108%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAAsSAAALEgHS3X78AAACrklEQVQ4y4VSW2sTQRjNXxB6pekm2abZzO7O7M7uzuz9ms2FoC8K+qJt9MFSRB+atmAakNYnsdgUrD7pi29eEN8K/jm/TYraUhEOwzcfnO+cOd+Uzs9/7j8bHh69GI7GO8ODnd3/Y3d//OTp3ucv30vHryb2arXdNQSKyyuovCpfQEBlQV6tKFPI5b8g1NQb89Wd4ah0MnlXETRTz0wcqqaLHY8wX7N9YvgqcSXEJMSRUkBWbQXbcEK/JpKD8cvSm5O3awKOeTvmnSzq5e1+3OqnN295vGUYQdJKozTRjYDonoQsmNWUmYIdoaqMRodAPptfqmPNg5Gp1U1om1mpb+Wh3fHDTpz24izJu3mUpI4XZHnm+iE1oyayns/Ii8vrhhVJMji0kMIk2UQyayIGVqUmqJkK4QoG2Fizp+adqohHo6PC9sJyneqBQ1NLD4nuU9pSicfdjOoh4ymzUyDMPMMJtuEqVNWCPDl9DwGq2KHE17CnqA6G5LADXiAYaoDJEKRmtBn+kMF2RVBARJZ5EzOFOrLGZWJLktVomoB6wwBAsS4ZV5WB3KjqqdPrsL7jt3gv43nG08wKUsVwCIiboe22TBZzpwWPAvOXyHNLItE8pkcKstFUFmFOHE81XIJdkyVB1LN46vod2NlVZUibaoFpRHHc5yzRdB9eLss2BN5A1tQ5/adtIOtGCISQ5b6ZwRTuZCBIzWC6PI5UDhworgmsIJuhJFv1ZjEbRCTQmaYFzYsOYtekfTI5W1ppGHoYWblrptSIOevpNPTDbpT0KQ1drw21Rv2ZOAA2V6nh0cFR6fXx6dyCuFbXRVGD715bA2hVkYh1TVzX4SfBFWroV2rqDFDPL4q7e+PS128/bt+5P3i0/WBz6xI2HhcoiqLe2Nz6jcHD7bv3Bh8+fvoFPuX6sJsshJcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code-with-no-exception&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6963054232132e60a313cd489ae5f904/fcda8/functional-4.png&quot;
+        srcset=&quot;/static/6963054232132e60a313cd489ae5f904/12f09/functional-4.png 148w,
+/static/6963054232132e60a313cd489ae5f904/e4a3f/functional-4.png 295w,
+/static/6963054232132e60a313cd489ae5f904/fcda8/functional-4.png 590w,
+/static/6963054232132e60a313cd489ae5f904/efc66/functional-4.png 885w,
+/static/6963054232132e60a313cd489ae5f904/69476/functional-4.png 926w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;이 두개의 함수는 모두 순수 함수입니다. 이 함수들은 전달된 입력에 기반한 값만 반환하고, 절대 어느 예외도 던지지 않습니다.&lt;/p&gt;
+&lt;p&gt;여기 예외를 사용한 동일한 코드가 있습니다:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7fcdbc2abf767e3c9fb0555d28af2780/a1dd2/functional-5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 77.02702702702703%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAAsSAAALEgHS3X78AAACWklEQVQoz42SXU/UQBSG9x8YLxVYVnb7NdPOtJ12ZtrpB213CywhRI1XxgsjLCbGr5gYTRSICfBH1ETFRUEv/BUaf5GHrUpALkyenJyk857z7nu29f3Hz60Xr/Z29rZ3dl9u7fwPm9u7T59tvn7zvvX23ThuG9cKF/fp5bY1Nd1gTs38qf/Q7uALF9s3b623xgdHmuZ7XkpI7JAIUYFdabsRptJxFXakhbmJBLIlsgV2hE0kcePOHNm4+6i1P/6M9LDgCzmrVViJqpRVFfVrPqikLB0nIp6kfoRsbiFhWGFXYzBuuo3WRw+ON890MLYFdWIQr6qrVbBYJcv9anVeLQpRLgz7128Ms6JI8ypSeZSkAU9h81ojbndsh8Y2jWwshJszmgYkZX4m4soP5v0gVmnGZRLKRIA0z0ORdXve2uj+b7FNIkC3mAaYTLcCqD3d06E3A81gmhFMmqB3yvb4aPaKA2HEXpmwKvTzolz2aKLSBZXUJgoBC58CYpuZnYg/jg9hIXIkwhxsIyQgc8MKIGfw0ojPAJtOxL2u61IFmYEfi3BEBNwJKryb2AbPDMadI94fH2I4lVgc8GFfLAWDebVSxyt1qAqwHYqShTmXJfXUX/2JuDmViUMImZEUUWnzCLkcWxBtHSe1VIMsH8KIc8QHB0edOQd+Z+QXMSt9N02zJXhNqQp5AeLG+SQ23gBxwD90tPGw9WH/U7fnwjdscQdJwwzg5sRVusFgA7jVDB/o6YDXALMuTem379xrffn6zWMZbBBRxaPquMoSkHG/6aE5AzyGBY+fPP8FBUHfOfRlQfsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code-with-exception&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7fcdbc2abf767e3c9fb0555d28af2780/fcda8/functional-5.png&quot;
+        srcset=&quot;/static/7fcdbc2abf767e3c9fb0555d28af2780/12f09/functional-5.png 148w,
+/static/7fcdbc2abf767e3c9fb0555d28af2780/e4a3f/functional-5.png 295w,
+/static/7fcdbc2abf767e3c9fb0555d28af2780/fcda8/functional-5.png 590w,
+/static/7fcdbc2abf767e3c9fb0555d28af2780/a1dd2/functional-5.png 838w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;이 코드는 정확하게 같은 목적을 달성합니다; 모든 에러 전파가 암시적이고, 자바스크립트 엔진에 의해서 다뤄진다는 것을 빼고요.&lt;/p&gt;
+&lt;p&gt;네, 현실에서 두번째 코드 스니펫은 예외가 처리되지 않으면 내 프로그램을 부숴버릴지도 모릅니다. 그렇지만 프로그램 시작점에 단일 try/catch문 하나만 추가해서 잡히지 않은 예외를 처리하게 하면 쉽게 해결됩니다.&lt;/p&gt;
+&lt;p&gt;첫번째 코드 스니펫은 좀 더 명시적입니다; 그러나 훨씬 더 장황하고, 프로그래머가 발생시키는 오류를 만들 여지가 많습니다. 각각의 호출 시점에서 오류를 처리할 것인지, 호출자에게 에러를 전파할 것인지 수동으로 결정해야합니다; 현실에서는 대부분의 경우 전파하고 싶습니다.&lt;/p&gt;
+&lt;p&gt;제 취향은: 예외를 함수 호출의 예상 결과로 간주하고, 이 예외가 자동으로 콜 스택으로 전파될 것이라는 사실을 설명하는 겁니다. 저한텐 이 정도면 충분히 함수형-스럽습니다.&lt;/p&gt;
+&lt;h1&gt;콜백을 통해 프로미스나 async/await를 사용하세요&lt;/h1&gt;
+&lt;p&gt;아직 읽어보시지 않으셨다면, &lt;a href=&quot;https://blog.jcoglan.com/2013/03/30/callbacks-are-imperative-promises-are-functional-nodes-biggest-missed-opportunity/&quot;&gt;Callbacks are imperative, promises are functional.&lt;/a&gt; 라는 훌륭한 글을 읽어보기를 추천드립니다.&lt;/p&gt;
+&lt;p&gt;프로미스(와 async/await)를 사용하면 비동기 데이터를 피할 수 없는 작업이 아닌 값으로 다룰 수 있게 해줍니다. 이러한 값들은 다른 비동기 값들과 맵핑되고 합칠 수 있습니다. 그 예로:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5075f7fd23a3ce18f40bd224639d58b6/2cefc/functional-6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 56.75675675675676%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABu0lEQVQoz32R227TQBRF/SNIhTaO7bEnnvuMPTff4pikJNBSCYnPpGlL36oifotJowbRB6SlrfOyz9mzJ5qGLQY8X8iUcIBFwVXBVIp4vKBBL2J89gG+P1+cz8oTFzF6dwaGcRd1444Co+ue9E75vu5H48e23yjTU+Eod1J1XLYp4CeyXAT/enMTtcttlnCKLaoNNhYqjYjTdpL1ilQNlQ2mPocyydiJ4A/3P66/Rt2wTTNGkMGlRswWzEHalNQjZCExBW8BMvEcz1OapOygb8wg5QTbUmlcW1LbhdAF1aLqjR2k9LJqsGhyonIqIaryXP5jzoCgyCKsETeI25IZyHxJHVeWCc2lgbhOC5FBAaAEuTi+eVpfR91yCxKOmcOmYdqrblBuqKrB+kmYsTYrbVbOTZiERQ2Xh/Io87Cs15c3Ub/chQwQa0Y8p742Y9NthGhN8DRr46ZKD0r1oJDHnl/bDrGvo6a/TGJCFrokoWeLqQ06m+MQ7KgH5jhOyCzwMoTawuevpqvo0+dvZakZC5HaV7qw4i3kL4S6AqovV9+jp6dfP/YP+7vH/d3PwO0Ld/eP/+d2//D8/PsPAAirC07fsKUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;canUserAccessPage&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5075f7fd23a3ce18f40bd224639d58b6/fcda8/functional-6.png&quot;
+        srcset=&quot;/static/5075f7fd23a3ce18f40bd224639d58b6/12f09/functional-6.png 148w,
+/static/5075f7fd23a3ce18f40bd224639d58b6/e4a3f/functional-6.png 295w,
+/static/5075f7fd23a3ce18f40bd224639d58b6/fcda8/functional-6.png 590w,
+/static/5075f7fd23a3ce18f40bd224639d58b6/efc66/functional-6.png 885w,
+/static/5075f7fd23a3ce18f40bd224639d58b6/c83ae/functional-6.png 1180w,
+/static/5075f7fd23a3ce18f40bd224639d58b6/2cefc/functional-6.png 1400w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;각 단계에서, 비동기 값을 가져와서 다른 비동기 값과 맵핑합니다. 데이터가 &lt;em&gt;언제&lt;/em&gt; 이용가능해지는지는 특별히 신경쓰지 않습니다; 그저 값들이 어떻게 맵핑되는지만 신경씁니다.&lt;/p&gt;
+&lt;p&gt;콜백에서는 값보다는, “이 작업이 완료되면, 부수효과를 수행하라”에 더 중점을 둡니다. 그렇기에 저는 콜백이 특히 함수형스럽지 않다고 주장합니다.&lt;/p&gt;
+&lt;p&gt;반면에 프로미스는 캐싱될 수 있고, 메모라이즈 될 수도 있으며, 값으로써 다른 함수에 전달될 수 있고, 자바스크립트에서 다른 값들처럼 사용할 수 있습니다. (사용하기전에 랩핑을 풀어야한다는 주의사항이 있지만요)&lt;/p&gt;
+&lt;p&gt;네, 프로미스는 스테이트풀합니다. 결의되지 않거나(unresolved), 결의됐거나(resolved), 거부된(rejected) 상태를 가질 수 있습니다. 그렇지만 &lt;code class=&quot;language-text&quot;&gt;memoize&lt;/code&gt; 예제에서처럼, 나머지 코드들이 함수형스러울 수 있을 정도로 충분히 캡슐화되어있습니다.&lt;/p&gt;
+&lt;h1&gt;목적에 맞다면 클래스를 사용하세요&lt;/h1&gt;
+&lt;p&gt;클래스와 객체지향 프로그래밍(OOP)은 함수형 프로그래밍의 정반대가 아닙니다.&lt;/p&gt;
+&lt;p&gt;우선 클래스는 특별히 스테이트풀할 필요가 없습니다:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/becff37570073863022ed07afe227116/1c1a4/functional-7.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 51.35135135135135%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABjUlEQVQoz42R207bQBCG/R4Ix85x7T3Y3pPXJj4EEyc2pWrUqr1pC02CCgoCJJCQ4I4X6EXF+7J2UCr1Cum7+PXP/DPaWePvn5f7y8vN3c3yfLNcvYvV+ur07OLx6dlY/vitXABVsG9BswNNC3UsZLZ07EZ3tsLGO6wu2dt30rw21ufXaBipaMpnBVUT7B9AL0SBwlS5uBENREGkXBRugVgNAZtVn43letPveTSeqkkdJjUfz1lWyHnJ8wmP8nE1S0/qQKQ6DFyxxYGyPwzK+cL4tdqYNtKWxGnGpzSpVP2N5x95kE3LT4vF9zSpgCN2yf/D+g3EiwHgjsNHuowVgNJFEpEIe5HuHrV+U3K4xnHFv7C+QXBQBnHJklqkFWMJhBK4LSh02kFuK5qhuLnFYER3mzFhCfXTRM44z1WcKj/3aUbkIctPiMhFGCueCS/zVMGyYxofISKb8M+zC9OCI8DsHun2iN3gdfv+G4OWvtfy5vQGgf7ISfHBuLl98OlYxUdhVLwT3cxE9uXr6StLFokuYX3CwQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;name&quot;
+        title=&quot;&quot;
+        src=&quot;/static/becff37570073863022ed07afe227116/fcda8/functional-7.png&quot;
+        srcset=&quot;/static/becff37570073863022ed07afe227116/12f09/functional-7.png 148w,
+/static/becff37570073863022ed07afe227116/e4a3f/functional-7.png 295w,
+/static/becff37570073863022ed07afe227116/fcda8/functional-7.png 590w,
+/static/becff37570073863022ed07afe227116/efc66/functional-7.png 885w,
+/static/becff37570073863022ed07afe227116/1c1a4/functional-7.png 1046w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;이 클래스는 일반적인 자바스크립트 객체보다 스테이트풀하지 않습니다. 유일한 목적은 적합한 방법으로 어떤 데이터를 함께 묶어두려는 것 뿐입니다. 상태는 시간이 지나도 변하지 않습니다; 이것이 함수형스러운 클래스를 만듭니다.&lt;/p&gt;
+&lt;p&gt;물론 클래스는 시간이 지나면서 변하는 상태를 저장하기 위해 사용할 수 있습니다. 그러나 그것 자체로는 다른 스테이트풀한 패턴들에 비해 덜 함수형스럽습니다.&lt;/p&gt;
+&lt;p&gt;그 예시로 아래 코드를 보세요:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/55c7934a256eb78c7d0448ea1f21f1d0/3f3b9/functional-8.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 92.56756756756756%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAACVUlEQVQ4y4WU204TURSGeQBjjFdCgZaGdvbMPsw+zezOeaYg5dBqVERiUk18DvEG5EIeQVHBRG8kUgQTn0PjHfExDC2Cu3gKgu3kz76YrG/P+tfKPwPffz+Hh4e7ex/X1zc3Nt+83Hh9Vvr902cb+/tfj4+PdbFGBn5iR0dH3w7ai407DWxVZ1me4dwQyI2auZG/Gi2gCxdzb7daGj44aJ+C2+32wsJ9BDiXPrQVRAoSBbGy0C9h2x8etVqtDxrWxf/Ct+abwgpjp0bjlE9VaZZyN0FYmdApmwLiyuCwsd3a+w98uzlWJLZMRVavxHMqa4h41k9mOY8Q8rHtDeZ6wPPN/BgmzDehW6GpSxPqXaVBzSaBIycJDfrDNguAKcfLtKRl8LLBDVMa/dvuwgjxiIUzIqnLrMFl3L0LOobl9IcLRYyIB4kfqZqvppxkTqZ1bocOz7hMrwyV+7TNeAiAAAbvnlABpKftWlDpS/t6RphFiMcWC6EeMq5A6AKruyq96qFh0GtVGiZOxsOZpHozmrih4mknnNZubRLaLOo/bcoC0xQMehR5WCbYySBUlEaUa7i35yLGxNMmS0CUTGEAUQbcsORJ227vtu/lC8hWE071mozrQdZw3FTwGJiOhSuYhT1h/eUCIizQpZ6YSN2apFEkJgWLaTjtJnMjefhue/d8ePHuAz1Y6aaE+pBUIPHQyanzpL3YLNSp3Hl/Xqp0RBvXF3Xo9MzOVXGcXrqc39raOZXnP3+S5y9eLT1aWVldW155claPV9ceLi1/+vxFw51ORyM/AE8DVVRghYb6AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;counter-class&quot;
+        title=&quot;&quot;
+        src=&quot;/static/55c7934a256eb78c7d0448ea1f21f1d0/fcda8/functional-8.png&quot;
+        srcset=&quot;/static/55c7934a256eb78c7d0448ea1f21f1d0/12f09/functional-8.png 148w,
+/static/55c7934a256eb78c7d0448ea1f21f1d0/e4a3f/functional-8.png 295w,
+/static/55c7934a256eb78c7d0448ea1f21f1d0/fcda8/functional-8.png 590w,
+/static/55c7934a256eb78c7d0448ea1f21f1d0/3f3b9/functional-8.png 870w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;위 코드는 아래와 기능적으로 동일합니다:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0aef72cd01b1aaad480d24f1725ee5ce/42d54/functional-9.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 85.13513513513513%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAAsSAAALEgHS3X78AAACJElEQVQ4y42Ty27TQBSGu0ZsEEiFpHGTouB4xnfPeHyJL03i0ihqVYlGpVSUIjW9cKctG+AdYMUGsUAKi2RBHwAWSJV4JCQ7IeGkEYhGDWT0r8b+zvn1nzNTP3+fbrf75eu35qd2q3Xcan0eUbt93Gy2Tk6+9/t9+HOITA2xfq/3I443VtZXVLG8RLK6wmUQl8Pc7ECZLM5dly9d5ja39gBOks4ZuNfrxXFye21LEjSdOkhhCDEBm0hiSDSRyCTFgRI7e88A7nTOgeN6/Z6OXJ9Evh5prkcX540gYHaZ0BD4NCc0dp6cDydJcqt+NzsnUdU31UDxilrgqapLzQhILFnpzHg4PoVnc5IsO0T1FNEWJYsXDL5g8AKZBN4EWFNcl5Rtp0r8qurcNKyKormy6qRmCo3dp//qDLYL2MwjwssWsSuVWj0Ia6YWUrM8w6H/2AYYQpYU24CQJAtCFiUbbmS1OBGMsCmIluZVSVBzF+tuacmkoab76UlsD8YrMoSprNhFb8EwfBEzQkuZWTyRbSzbLKzJVhnTUDE8CKyAaCoDnSeABcwAoywKveUii9ziQilazvP6duPx+CVZhTmLMFJRtiXZKvCGBFUwg4ETM4RP423H8dr6fShP2TyEDMKyBYHjU0E5Livu7o/f7Wpt9cr03HQqP9TVgW4MBet14eK1Oxvbo6/qz3t+8/bdg0dHB0evnh++HNHhi9f7Dw/ef/j4d+dfk3wxSJp9MJUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;counter-function&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0aef72cd01b1aaad480d24f1725ee5ce/fcda8/functional-9.png&quot;
+        srcset=&quot;/static/0aef72cd01b1aaad480d24f1725ee5ce/12f09/functional-9.png 148w,
+/static/0aef72cd01b1aaad480d24f1725ee5ce/e4a3f/functional-9.png 295w,
+/static/0aef72cd01b1aaad480d24f1725ee5ce/fcda8/functional-9.png 590w,
+/static/0aef72cd01b1aaad480d24f1725ee5ce/42d54/functional-9.png 858w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;이 두 예제에서 중요한 점은 - 그리고 이 코드들을 함수형-스럽게 만드는 점은:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;상태를 어떻게 잘 캡슐화하는가.&lt;/li&gt;
+&lt;li&gt;상태를 얼마나 길게 유지했는가.&lt;/li&gt;
+&lt;li&gt;코드에 부수효과가 얼마나 있는가.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;두 예제는 이러한 점에서 완전히 동일합니다. (특히 상태를 숨기는 프라이빗 필드를 도입한다면 더욱.)&lt;/p&gt;
+&lt;h1&gt;타입을 사용하세요&lt;/h1&gt;
+&lt;p&gt;이 부분은 논란의 여지가 있을 수도, 없을 수도 있습니다. 그러나 저는 자바스크립트나 함수형-스러운 코드를 작성할땐 &lt;a href=&quot;https://flow.org/&quot;&gt;Flow&lt;/a&gt;나 &lt;a href=&quot;https://www.typescriptlang.org/&quot;&gt;Typescript&lt;/a&gt;를 사용하길 추천합니다.&lt;/p&gt;
+&lt;p&gt;매개 변수 및 반환 유형에 대해 선언된 인터페이스와 함께, 명확하고 자체 문서화된 함수를 사용하면 보다 함수형-스러운 사고방식으로 생각할 수 있으며, 입력 매개 변수와 출력 값 사이에 명확한 관계를 가진 함수를 작성할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4cb913d4b2209c0cd6afb3b26c309674/35a31/functional-10.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 59.45945945945946%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAAsSAAALEgHS3X78AAAB80lEQVQoz4WRy27TQBSG/RSg0Cax49jx+DoeX8f2jC9JHDu3VoKirmBBGpVFy6IrJFhBLhVKeADYsAaJV2RI2NJKn47+ozn/OXNmuF8/f9+8Wd69v1u8vV0sbhZXj3O1vH31+vrDx8/c6tM9agl+hk5FtdnWWjxDbwsPIYjG04aUF1Nutd0rZpSQCaE1QtSyE6AH6oPoZihKcDy94NabXbOl4P7M7889LxuOzhNaAc1XVO9/qLoviGY1fs5t7r82TnpmWGhOihDJi5kFY7nnKIDVubLi9IDLDCwyfYS15jsH83q7F3gD6lgDHrA8SUPA8FQYACsAWmA7VDcx0DzDiiw7hnYC7dgwcadrHcybncRbaTSO4rHXHyRVhbMhLvOgSMMoq8ZnNKtjUhWDeZqzmjKKShsRUbar+mB+0uhqrJ+XFcNyNKoJLQilWZ7lgzwtKI4y5KZsPtuiK6OuhGTgtgXj7+TVZsd21o1AUZyYkGJY5P3cDxP2ARbCtsNuG5p2oFsBS00YQgcjN5aBXU/Yg233J01wWAlDFPkhCTBhIiKp6ydekLD0qMOIOl4cxjQmmW66k9kFt1p/eXYqyYrbA46iOoIIGaJk8x2r04XHVBD/6WNkp2zesDznvn3/kaT1dH5ZT14w2Nc/ymT2clCeLa/f/QHQ2q0G4Cm3RAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getUser&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4cb913d4b2209c0cd6afb3b26c309674/fcda8/functional-10.png&quot;
+        srcset=&quot;/static/4cb913d4b2209c0cd6afb3b26c309674/12f09/functional-10.png 148w,
+/static/4cb913d4b2209c0cd6afb3b26c309674/e4a3f/functional-10.png 295w,
+/static/4cb913d4b2209c0cd6afb3b26c309674/fcda8/functional-10.png 590w,
+/static/4cb913d4b2209c0cd6afb3b26c309674/efc66/functional-10.png 885w,
+/static/4cb913d4b2209c0cd6afb3b26c309674/35a31/functional-10.png 1028w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;게다가 정적 타입 시스템을 사용하면 어떤 상태라도 엄격한 타입을 가질 것이고, 이는 공용 상태를 공유하고 있을 경우 코드 조각이 예기치않게 다른 조각을 깨뜨릴 기회가 줄어들게 된다는 뜻입니다.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/420b33dcc1717f14840215880665a9dc/252a4/functional-11.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 57.432432432432435%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABrElEQVQoz42S227TQBCG/RREldrGqe31cU92HK+962OcolAJHgEVqY3KRWippQoabniwkKSFFwAV8TYMTW8QqCB9Wv2zmtHo0652Mb+ydIQCphtUPyDAwPgHhsV6O+bL4zOt6xaeLbLDF6pq86LGNHX90eP4WPQH+HT2RrvsrvcMTEcNwcoPEtsd2m7seI/hBcm+HpyczmHzB8cIY1bgUUqlDEVOaOoFo/8avuwWyOJKPQ3VhI2kLCuRFXGioAP6XP+Bvw+/7a53+x7UtjMEkDM0UWjZkWWHoICcB+51tvn3zbv7Hg9VnI7JsI4iWY8nRdWosg1ISrlgYUp44uMEUwElYQKk9nR/u3nRNxnmuRskyIkwzdrD53k5rZqjTE0y2ah83LTPyvpIqolKqno8FVlrO/HJbK5dvf+IiBTFNC2nLG7CSIGzkGUUyyRpCZNeIAKSwRP6OPV/5ZRxaVh8dnaunV+8e9IzoSmMK8fPLMRtF2xBm8MMmMOvODDpwKBwbjER7+1Yx69ea3fffyyXm/Xm82p1s1rfrtcQbiGs7gPc/8nm5svy0+brt7ufv06sDRcPHG8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;updateAge&quot;
+        title=&quot;&quot;
+        src=&quot;/static/420b33dcc1717f14840215880665a9dc/fcda8/functional-11.png&quot;
+        srcset=&quot;/static/420b33dcc1717f14840215880665a9dc/12f09/functional-11.png 148w,
+/static/420b33dcc1717f14840215880665a9dc/e4a3f/functional-11.png 295w,
+/static/420b33dcc1717f14840215880665a9dc/fcda8/functional-11.png 590w,
+/static/420b33dcc1717f14840215880665a9dc/efc66/functional-11.png 885w,
+/static/420b33dcc1717f14840215880665a9dc/c83ae/functional-11.png 1180w,
+/static/420b33dcc1717f14840215880665a9dc/252a4/functional-11.png 1314w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h1&gt;가능하면 변경 불가능하게 행동하세요&lt;/h1&gt;
+&lt;p&gt;가능하면 데이터나 상태를 변경 불가능한 방법으로 업데이트 하세요:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e7942f5d2251e76eb803589106483a3d/3534c/functional-12.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 64.1891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsSAAALEgHS3X78AAABv0lEQVQoz2P4////v3//gOSNm7dXb9i6YdOuLRt3btu+Cxlt37F70+ZtFy5chiuGAAYg/vPnD5BsbelyV9OJ8LEw8DJTVNVXVNZXUgGSekCkomYgKq6UkVUIVvwXi+b29l4tJW0rSytdU3MNTVNNLVMNLVNNbTMg0tGzkJXXzskrBSr7+xeb5pa2HjUlYzMjJz0rKwM7G319KwMDW3VNU3VNE21dCxk5rZxc3Jpb23sV5HUMjWzNPANMnb2NjK3cPNwcnB2NTCy1tM0JaG5r75WS1dDVt/L2izSzcLEw8zIwtNbVN9fSMdPSIaS5ta1HQ8sEqBnoQ6A/tbQtIG4G+lxblwjNCkq6RiZ2kEACawPpJEpzS2u3jp6lp3eIuYmDlaWLqbkTyAgNYyACO1uDgJ8lpNSAGgwtXaxs3b19Qp1dfHWNbHWN7XX1LBUU9fFpbu/oU1M3MgCGtpO/npGtuaWzvYOXmZ2nsb2XiaGdiqpxXn4ZTs0Nje1ikioKSnoyMuqy8lrSsppSMhrSshoyshrySroCQnIpaXlYUhjEsAMHjzQ1d3X3TAKiru6J3T0TwWwQo6dnEjBENm3ejpa2AfdiwppLq7i/AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;immutable&quot;
+        title=&quot;&quot;
+        src=&quot;/static/e7942f5d2251e76eb803589106483a3d/fcda8/functional-12.png&quot;
+        srcset=&quot;/static/e7942f5d2251e76eb803589106483a3d/12f09/functional-12.png 148w,
+/static/e7942f5d2251e76eb803589106483a3d/e4a3f/functional-12.png 295w,
+/static/e7942f5d2251e76eb803589106483a3d/fcda8/functional-12.png 590w,
+/static/e7942f5d2251e76eb803589106483a3d/3534c/functional-12.png 808w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;이 패턴은 동일한 데이터를 사용하는 다른 코드나 함수에게 실수로 영향을 끼치지 않을 것이라고 강력하게 보장합니다. 변경 가능한(mutable) 객체를 인자로 전달했을 때 더더욱 그렇습니다; (‘예측 가능하게 하라’ 원칙으로 돌아가게 하는 )함수의 명확한 목적이 아닌이상, 호출자가 넘겨준 객체들이 바뀔거라 기대하지는 않았을 것 같습니다.&lt;/p&gt;
+&lt;p&gt;즉, 때때로 변경 불가능하다는 것은 데이터나 상태를 전파하기 위해 더 많은 후프를 통과해야한다는 것을 의미합니다. 가끔은 객체나 배열 혹은 다른 데이터 구조가 변경 가능하도록 명시해도 괜찮아요. 그런 경우엔 일관적이고, 명확하고, 예측가능하게하며, 객체에 정적 타입을 부여해서 객체가 어떻게 변이되고 변이되지 않을 수 있는지 명확하게 합니다.&lt;/p&gt;
+&lt;h1&gt;함수형-스러운 테스트를 작성하세요&lt;/h1&gt;
+&lt;p&gt;작성하는 테스트의 종류와 상관없이, 유닛 테스트, 통합테스트, E2E 테스트든 모든 것을, 정말로 모든것을, 함수처럼 다루세요.&lt;/p&gt;
+&lt;p&gt;무엇을 테스트 하든 - 함수든, 클래스든, 리액트 컴포넌트든, 웹 앱이든 뭐든지요 - 어떤 입력을 가질 것이고, 어떤 출력을 가질 것이고, 상태를 가질 수도 있을 겁니다.&lt;/p&gt;
+&lt;p&gt;당신의 테스트는 테스트하려는 것과 다른 입력에도 이상적으로 통과해야하고, 당신이 기대했던 출력인지 아닌지 테스트해야 합니다. 테스트할 항목의 구현 세부정보를 직접 테스트하지 말고, 상태가 있을 경우 상태를 직접 테스트하지마세요. - 출력과 부작용만 테스트합니다.&lt;/p&gt;
+&lt;p&gt;스스로 질문하세요: 테스트 중인 것의 사용자는 누구인가?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;개발자가 통합할 수 있도록 설계됐나요? 그럼 테스트가 그 개발자인 것처럼 행동해야합니다.&lt;/li&gt;
+&lt;li&gt;엔드 유저를 위해 설계되었나요? 그럼 (가능한) 테스트가 엔드 유저인 것처럼 행동해야합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이런 식으로, 함수형-스러운 테스트를 작성해야합니다. 입력과 출력에만 신경쓰고, 나머지엔 신경쓰지 마세요.&lt;/p&gt;
+&lt;h1&gt;실용적인 사람이 되세요&lt;/h1&gt;
+&lt;p&gt;물론 순수한 함수형 프로그래밍은 더 예측가능하고, 에러가 없으며 테스트 하기 쉬우며 그 외 여러 가지 장점이 있습니다.&lt;/p&gt;
+&lt;p&gt;그러나 실제 세상에서 코드를 짜는 한, 함수형-스러운 코드를 짜는 게 좋은 방법이라고 할 수 있습니다. 여러분이 트리거하는 부수효과가 무엇인지, 만드는 상태가 무엇인지, 그 상태가 얼마나 살아있어야 하는지에 대해 끊임없이 고민하고 있다면, 완전히 순수하지 않더라도 질 좋은 코드를 작성할 가능성이 훨씬 높아질 것입니다.&lt;/p&gt;
+&lt;p&gt;— Daniel Brain, PayPal Checkout Team&lt;/p&gt;</content:encoded></item><item><title><![CDATA[테스트 환경에 MSW 도입]]></title><description><![CDATA[회사에서 도입해보고 괜찮았던 라이브러리 사용 후기.
 사내에서 공유하려고 작성했던 글인데 블로그에도 올려본다 😊 MSW란? MSW(Mocking Service Worker)는 서비스 워커 API를 이용해서 실제 리퀘스트를 인터셉트하는 API…]]></description><link>https://seongry.github.io/2021/12-05-try-to-use-msw-on-testing/</link><guid isPermaLink="false">https://seongry.github.io/2021/12-05-try-to-use-msw-on-testing/</guid><pubDate>Sun, 05 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;회사에서 도입해보고 괜찮았던 라이브러리 사용 후기.
 사내에서 공유하려고 작성했던 글인데 블로그에도 올려본다 😊&lt;/p&gt;
 &lt;h1&gt;MSW란?&lt;/h1&gt;
@@ -89,174 +623,7 @@ MSW에서 서비스워커는 네트워크 레벨에서 요청을 가로채도록
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://mswjs.io/&quot;&gt;https://mswjs.io/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=v77fjkKQTH0&quot;&gt;https://www.youtube.com/watch?v=v77fjkKQTH0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Functional-ish JavaScript]]></title><description><![CDATA[원문 번역하기 난해한 부분은 생략하거나 의역한 부분도 있을 수 있습니다 😅 함수형 프로그래밍은 자바스크립트를 작성할 때 배우고 적용할 수 있는 훌륭한 학문입니다. 무상태의(stateless), 멱등성의(idempotent), 부수효과가 없는(side…]]></description><link>https://seongry.github.io/2021/08-09-functional-ish-javascript/</link><guid isPermaLink="false">https://seongry.github.io/2021/08-09-functional-ish-javascript/</guid><pubDate>Mon, 09 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://bluepnume.medium.com/functional-ish-javascript-205c05d0ed08&quot;&gt;원문&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;번역하기 난해한 부분은 생략하거나 의역한 부분도 있을 수 있습니다 😅&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;함수형 프로그래밍은 자바스크립트를 작성할 때 배우고 적용할 수 있는 훌륭한 학문입니다. 무상태의(stateless), 멱등성의(idempotent), 부수효과가 없는(side-effect free) 코드를 작성하면 실제로 많은 문제가 해결됩니다:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;테스트하기 쉬워짐&lt;/li&gt;
-&lt;li&gt;디버깅하기 쉬워짐&lt;/li&gt;
-&lt;li&gt;이슈를 재현하기 쉬워짐&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;하지만 커뮤니티에서는 함수형 프로그래밍은 모아니면 도라는 인식이 커지고 있습니다. 흔히 이런 말들을 듣습니다:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;제 전체 코드베이스/앱은 스테이트풀(stateful)하고 부수효과로 가득해요. 근데 왜 굳이 함수형으로 만들어야 하나요?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;저는 펑터(functors)나 모나드(monads), 커링(currying)이 뭔지(&lt;em&gt;역주: 함수형 프로그래밍의 기초 개념들입니다.&lt;/em&gt;) 배울 시간이 없어요. 언젠가 할거긴 한데, 그때가서 함수형 코드들을 짤 것 같아요.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;저는 클래스 기반이나 객체 지향 코드가 좋아요. 그래서 함수형 코드는 저랑 안 맞는거 같아요.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;하지만 함수형 프로그래밍은 모 아니면 도일 필요가 없습니다. 필자의 생각엔 좀 더 실용적이게 되는것이 좋을 것 같아요. 즉 말하자면, 다른 할일이 없으면 &lt;strong&gt;함수형-스러운(functional-ish)&lt;/strong&gt; 코드를 작성해 보세요.&lt;/p&gt;
-&lt;p&gt;이게 무슨 의미 일까요? 필자는 요점을 설명하기 위한 일련의 법칙들을 생각해냈습니다.&lt;/p&gt;
-&lt;h1&gt;순수하지 못하더라도 예측가능하도록&lt;/h1&gt;
-&lt;p&gt;함수는 부수효과가 없을 경우 기능적으로 “순수”하다고 합니다. 순수 함수는 일련의 입력을 받고, 해당 입력을 기반으로 정확하고 확실하게 출력을 제공합니다. 다른 이펙트가 없고, 직접 입력한 입력외에는 다른 상태를 사용하지 않고, 입력값을 수정하지 않으며, 주어진 입력에 대해 출력은 항상 동일합니다.&lt;/p&gt;
-&lt;p&gt;가능한 순수함수를 작성하는 것이 좋습니다. 순수 함수는 테스트하기 쉽고, 문서화하기 쉽고, 리펙터링하기 쉽습니다.&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/7a5f349506b019015b6833eb5b77f24f/f4b77/functional-1.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 40.54054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAABK0lEQVQY02P4CwZ//vz5////lSvXFixdtWzlhpUr1q9evWH1GhS0dt3Gt2/fAZUBFUN0MUConz9/AkU7OvscFdTjvc2N/Uzl1XXl5HXkFXXkFHXklXTlweS5cxeByn7//o1Fc0/fZDV5TWtLS10Lcw1dM01NM3UNE01tMyDS0DTV0jG/cOESTs1dPRNVFAzsTD1MdO1M9e30bKzNXZ219M11jS1NLRyBms+fx625u2eSnKyWhbGjs5mHq5mnra2rlYOrmZmjua2zrr4VSPMFvJoVlfV09C11dSz1da10tS00tcy0dSz0DW3UNUHux6e5q3uCqLiymoaxgrIeEAENUlTRByFlPSUVfWVVA+zOhkTV/fsPdu/Zf/Dg0QMHj4DQARQSKP7x4yfkqAIAtAQtDodYKCAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;pure-function&quot;
-        title=&quot;&quot;
-        src=&quot;/static/7a5f349506b019015b6833eb5b77f24f/fcda8/functional-1.png&quot;
-        srcset=&quot;/static/7a5f349506b019015b6833eb5b77f24f/12f09/functional-1.png 148w,
-/static/7a5f349506b019015b6833eb5b77f24f/e4a3f/functional-1.png 295w,
-/static/7a5f349506b019015b6833eb5b77f24f/fcda8/functional-1.png 590w,
-/static/7a5f349506b019015b6833eb5b77f24f/f4b77/functional-1.png 770w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;그런데 만약 당신의 함수가 순수 할 수 없다면(실제로 시간이 많이 걸려서) 첫번째로 당신이 해야할 일은 예측가능하게 만드는 것입니다:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;함수가 특정 부수효과를 트리거해야하는 경우, 동일한 입력이 주어질땐 해당 이펙트들이 항상 동일해야합니다. 서로 다른 입력이 서로 다른 부수효과를 트리거한다면, 그러한 이펙트들은 굉장히 예측 가능해야합니다.&lt;/li&gt;
-&lt;li&gt;함수가 다른 스코프(클로저 스코프나, 모듈 스코프 혹은 글로벌 스코프처럼)의 데이터나 상태를 소비해야 하는 경우, 앱의 미래 상태를 기반으로 시간이 지남에 따라 상태가 변경되거나 완전히 존재하지 않도록 복원해야 합니다.&lt;/li&gt;
-&lt;li&gt;함수는 전달된 파라메터가 객체나 배열같은 가변 데이터 구조일지라도 거의 변경하지 않아야 합니다. 이 규칙의 예외는 특정 목적을 가진 함수가 객체를 예측가능한 방식으로 변경하는 것일 겁니다; 부수효과가 명확한 &lt;code class=&quot;language-text&quot;&gt;arrayRemove&lt;/code&gt; 처럼요.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;여기에 의구심이 든다면, 당신이 작성하는 함수에 &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%86%80%EB%9E%8C_%EC%B5%9C%EC%86%8C%ED%99%94_%EC%9B%90%EC%B9%99&quot;&gt;놀람 최소화 원칙(Principle of Least Astonishment)&lt;/a&gt;를 따르세요.&lt;/p&gt;
-&lt;h1&gt;상태 사용에 보수적이 되어라&lt;/h1&gt;
-&lt;p&gt;순수함수는 외부 상태에 의존하지 않습니다. 이는 변수나 데이터가 함수의 내부나 외부에서 바뀌고, 이를 함수가 의존한다면 그 함수는 순수하지 않다는 뜻입니다.&lt;/p&gt;
-&lt;p&gt;현실에서, 코드에 어떤 종류든 상태를 사용하는 것은 피할 수 없습니다. 그렇긴해도 최소한 그 상태가 스테이트풀이 되어야 할지 신중히 고려할 수는 있습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;필요한 데이터가 다른 입력이나 가지고있는 기존 상태를 기반으로 파생되어야 하나요? 만일 그렇다면, 상태로 저장하지 않는 것이 제일 좋습니다.&lt;/li&gt;
-&lt;li&gt;데이터가 한번쓰이고 버려지는 데이터인가요? 만일 그렇다면, 그 데이터의 유용성보다 오래 지속될 상태나 스코프 안에 지속되게 하지 마세요.&lt;/li&gt;
-&lt;li&gt;나중에 필요한 데이터, 혹은 앱의 생명주기(lifecycle) 내에서 점진적인 변경이 일어날 것이라 예상되는 데이터인가요? 드디어 당신은 데이터를 상태 안에 저장할 수 있는 좋은 이유가 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/0940f/functional-2.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 37.83783783783784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAABS0lEQVQY02XRy07CQBSAYV7CmFKQq7TUOtMWSu1Mpy0XoaWKGrfqQqByEfACYaUvgYkJDwkb3EGwiUShJv9mkvNlcnICq9VqvV5/TqbjQW8wHj60n/9qPW0/W52Xhtsfjt4Wiy+PLJfLwA+u37rKEcPlxHCUP/AV2xSJHVM0K0jabDbfwU23n04qUkaHWBMxkQwdiEjO5gFELCenuZwXxyspNoNJZT7fxW5zABkFZQtQQpBggDDIYUHVgIz4jAIUFSqYh2riUFDxqR/XG71kQlClvGFWrcvron1RqNTyds20alrZKZxdmSVH0y0gIA/P/uNIHEARK2pRN6q64RBiZVFZNs9l3cniiigSotsnaokYtn/nmzt3bz8RjYNgiKXoFEUzVIihQ0yQ3kSH03SY9Wa8z/148jG9r3c73dft2rt1Hofe8Ubj999TfQPsO9U1M86IFAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;logUserIn&quot;
-        title=&quot;&quot;
-        src=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/fcda8/functional-2.png&quot;
-        srcset=&quot;/static/055056b0fa4bf0b19f78d0d1ee3fbb04/12f09/functional-2.png 148w,
-/static/055056b0fa4bf0b19f78d0d1ee3fbb04/e4a3f/functional-2.png 295w,
-/static/055056b0fa4bf0b19f78d0d1ee3fbb04/fcda8/functional-2.png 590w,
-/static/055056b0fa4bf0b19f78d0d1ee3fbb04/efc66/functional-2.png 885w,
-/static/055056b0fa4bf0b19f78d0d1ee3fbb04/0940f/functional-2.png 1154w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;h1&gt;범위를 유리하게 사용하라&lt;/h1&gt;
-&lt;p&gt;일단 당신이 실제로 상태가 &lt;em&gt;필요하다고&lt;/em&gt; 정했다고해도, 아직 모든 계산이 끝난게 아닙니다. 어떤 상태는 함수 호출 기간보다 더 오래 존재해야하지만, 그래도 여전히 그 상태가 얼마나 오래 존재해야 하는지는 신중히 고려해야합니다.&lt;/p&gt;
-&lt;p&gt;다양한 범위를 활용해서 상태를 필요한 만큼만 유지할 수 있도록 할 수 있습니다:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;현재 로직에만 필요하다면, &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 나 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;을 사용해서 현재의 블록 스코프에 저장하세요.&lt;/li&gt;
-&lt;li&gt;함수가 호출되는 전체 기간 동안 필요하다면, 함수 내부의 맨 위쪽단에 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 나 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수로 선언해서 그 안에 저장하세요.&lt;/li&gt;
-&lt;li&gt;만약 더 오래 존재해야 한다면 - 비동기 함수 호출이 끝날때까지 - 클로저 스코프 안에 저장하세요.&lt;/li&gt;
-&lt;li&gt;리엑트를 사용한다면 상태를 실제로 필요한 컴포넌트에 최대한 가깝게 두고, 컴포넌트 체인에 너무 높게 끌어올리지(hoist) 마세요.&lt;/li&gt;
-&lt;li&gt;여러 함수 호출에 걸쳐 뭔가 추적해야 할 경우 부모 함수의 스코프 안에 유지하거나, 혹은 모듈 스코프에 저장할 수도 있습니다.&lt;/li&gt;
-&lt;li&gt;상태가 여러 페이지에 걸쳐 유지되야한다면 임시로 서버 스토어나(세션처럼) 로컬스토리지에 저장 합니다.&lt;/li&gt;
-&lt;li&gt;아주 장시간 동안 존재해아 한다면 데이터베이스나 파일시스템 안에 저장하세요.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;상태가 꼭 필요한 만큼만 유지되도록 범위를 선택하도록 노력하세요.&lt;/p&gt;
-&lt;h1&gt;캡슐화된 상태&lt;/h1&gt;
-&lt;p&gt;꽤 자주 스테이트풀한 데이터는 캡슐화될 수 있습니다.&lt;/p&gt;
-&lt;p&gt;예를 들어, 돌리기 위해 고비용을 치뤄야하는 함수가 있다면 - cpu 사이클이 많이 걸리거나, 비동기적으로 데이터를 가져와서 반환하는데 상당한 시간을 쓴다던지 - 몇개의 선택지가 있습니다:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;수동으로 상태 변수를 생성해서 결과를 저장하고, 변수가 채워지지 않은 경우에만 함수를 재호출 하기.&lt;/li&gt;
-&lt;li&gt;아니면, 재사용가능한 &lt;code class=&quot;language-text&quot;&gt;memoize&lt;/code&gt; 함수 안에 상태를 추상화할 수 있습니다:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/c6248ed7773a586003f6eec8db256673/51800/functional-3.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 82.43243243243244%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsSAAALEgHS3X78AAACZElEQVQoz22T604UMRSAeQOjMcptkb3Pre10Zjozvc3sLrcFgR+o4C+jj2GERSPrO2hUFiI+gUZNWAReQuNPfBA8s4uILMk3J22Tr+05PTN0enr688evw273+/Hx/sHRfrfHwQX6K93DPt2Doy9f909OfoM4BN/z9ZcKG0iwfNEtlHoUCcRij0I5o1imfaomu3Ez/377w5nc2nxlFfxYNPw0cSNFQ02VploToYhU1FcukRaKTDsEEOa3R8qdnb0zeb3VzuUswRrEl1gI7HPP18jlhs1MFBoWMy0GsWoGFTOwUXxJ3hoZN7jfEF6DUk1THcg0iFLkcYS4F6S2KwHHldRThMpbw6XOzseLchVhEboppQpzSWKJuXIYJ1RFYtrxNGZ1P57icsZntQF5rOpgbtuR4DOpaEayGdeXRWM5rN0VyXxjajFJ53XaZFHdD5Lh0XKns/efjIiAqhAkKJLU1x5LvSChnoajwrgBY8MKIHNnoGCZDJXwiaaQWyhsNyauCqJ6dhRLAcuJYAvIwsHx1bLks2m6IOtzQs2mtYXm/IrWzZhPT00vgQYgwgdO3tgahYIR7mEVYB307gkPU656FcPvAxeGCIuX5Y3N9sSkg11pWqFlh3BDwOi9bR/ojfM4ILfaYznTdiLY+BzD/Cdn0340B+TWZtvIe0zU3awrEy9JXKFcmbUnDmQY1lXShESwL5AnGKtN3LF3dv++89NnL8ZzJrReoeLmy7hQIfkygDOKGP6QUoVCzJfIZAlDIa5dn3j7bvdMfv1me3FpdXXt8f0Hj67kXo/+eO3hk7nmyqfP30D8AwvISykjZ6xDAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;memoize&quot;
-        title=&quot;&quot;
-        src=&quot;/static/c6248ed7773a586003f6eec8db256673/fcda8/functional-3.png&quot;
-        srcset=&quot;/static/c6248ed7773a586003f6eec8db256673/12f09/functional-3.png 148w,
-/static/c6248ed7773a586003f6eec8db256673/e4a3f/functional-3.png 295w,
-/static/c6248ed7773a586003f6eec8db256673/fcda8/functional-3.png 590w,
-/static/c6248ed7773a586003f6eec8db256673/efc66/functional-3.png 885w,
-/static/c6248ed7773a586003f6eec8db256673/c83ae/functional-3.png 1180w,
-/static/c6248ed7773a586003f6eec8db256673/51800/functional-3.png 1196w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;memoize&lt;/code&gt;는 스테이트풀한 함수입니다. - 우리는 반환된 메모이제이션된 함수가 존재할 동안 &lt;code class=&quot;language-text&quot;&gt;results&lt;/code&gt; 배열을 클로저 스코프 안에 저장합니다. 하지만 이렇게 함으로서, 단일 공간에 상태를 캡슐화하고, 메모이제이션하려는 다른 함수들이 자체 상태를 유지할 필요가 없도록 하며, 매번 잠재적인 새로운 버그를 발생시키는 것에 대해 걱정할 필요가 없게합니다.&lt;/p&gt;
-&lt;p&gt;상태의 특징은: &lt;em&gt;모든 코드&lt;/em&gt; 는 궁극적으로 특정 레벨에서는 스테이트풀하다는 것입니다. 순수함수적인 코드라도 부수효과와 상태가 있습니다; 메모리는 여전히 수정 중이고, 명령이 cpu로 전송되고 있으며, 컴퓨터의 온도는 상승중입니다.&lt;/p&gt;
-&lt;p&gt;중요한 것은: 이런 부수효과들과 상태가 상태와 관련된 버그가 발생하지 않을 정도로 충분히 잘 캡슐화되어 있냐는 것이다. 스테이트풀한 로직에서 과하지않고 적합한 수준의 추상화를 찾는 것이 중요하다.&lt;/p&gt;
-&lt;h1&gt;예외에 너무 많은 걱정을 하지마라&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[Use console.log() like a pro]]></title><description><![CDATA[원문 https://markodenic.com/use-console-log-like-a-pro…]]></description><link>https://seongry.github.io/2021/07-01-use-console-log-like-a-pro/</link><guid isPermaLink="false">https://seongry.github.io/2021/07-01-use-console-log-like-a-pro/</guid><pubDate>Thu, 01 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;원문 &lt;a href=&quot;https://markodenic.com/use-console-log-like-a-pro/&quot;&gt;https://markodenic.com/use-console-log-like-a-pro/&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Use console.log() like a pro]]></title><description><![CDATA[원문 https://markodenic.com/use-console-log-like-a-pro…]]></description><link>https://seongry.github.io/2021/07-01-use-console-log-like-a-pro/</link><guid isPermaLink="false">https://seongry.github.io/2021/07-01-use-console-log-like-a-pro/</guid><pubDate>Thu, 01 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;원문 &lt;a href=&quot;https://markodenic.com/use-console-log-like-a-pro/&quot;&gt;https://markodenic.com/use-console-log-like-a-pro/&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;자바스크립트 디버깅에 &lt;code class=&quot;language-text&quot;&gt;console.log()&lt;/code&gt;를 사용하는 것은 개발자 사이에서 가장 흔한 방법입니다. 다만, 그것 말고도 더 있습니다…&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;console&lt;/code&gt; 객체는 브라우저의 디버깅 콘솔에 접근을 제공합니다. 브라우저별로 세부적인 동작 방식은 다르지만, 일반적으로 제공되는 &lt;em&gt;사실상의&lt;/em&gt; 기능 세트가 있습니다.&lt;/p&gt;
